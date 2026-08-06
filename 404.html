@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>404 — Page Not Found | MIDI Player Online</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .notfound {
+        min-height: 78vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 24px;
+        gap: 8px;
+      }
+      .notfound-code {
+        font-family: var(--mono);
+        font-size: clamp(72px, 14vw, 160px);
+        font-weight: 500;
+        letter-spacing: -0.06em;
+        line-height: 1;
+        margin: 0;
+        color: var(--coral);
+      }
+      .notfound h1 {
+        font-size: clamp(24px, 4vw, 34px);
+        letter-spacing: -0.04em;
+        margin: 12px 0 0;
+      }
+      .notfound p {
+        color: var(--muted);
+        max-width: 420px;
+        margin: 8px 0 30px;
+        line-height: 1.7;
+      }
+      .notfound a {
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 700;
+        border-bottom: 2px solid var(--yellow);
+        padding-bottom: 2px;
+      }
+      .notfound a:hover {
+        color: var(--coral);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER</span></span></a>
+      </header>
+      <main>
+        <section class="notfound">
+          <p class="notfound-code">404</p>
+          <h1>This note isn't in the score.</h1>
+          <p>The page you're looking for doesn't exist or has been moved. Head back to the player to keep playing.</p>
+          <a href="/">← Back to MIDI Player Online</a>
+        </section>
+      </main>
+      <footer><span>© 2025 MIDI PLAYER</span><span>Made for curious ears.</span></footer>
+    </div>
+  </body>
+</html>
