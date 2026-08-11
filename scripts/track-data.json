@@ -1,0 +1,125 @@
+{
+  "_meta": {
+    "note": "Public-domain classical/historical melodies used for SEO landing pages on MIDI Room. Only public-domain compositions (composers dead 70+ years, traditional folk tunes) are used. Each track encodes a recognizable phrase as [start_beat, MIDI_pitch, duration_beats]. BPM is provided per track. No copyrighted arrangements or performances."
+  },
+  "tracks": [
+    {
+      "slug": "fur-elise",
+      "title": "Für Elise",
+      "composer": "Ludwig van Beethoven",
+      "era": "Classical / early Romantic",
+      "key": "A minor",
+      "bpm": 120,
+      "description": "Beethoven's beloved bagatelle in A minor, written around 1810 and published in 1867. Its instantly recognizable opening motif makes it one of the most played piano pieces in the world.",
+      "notes": [
+        [0, 76, 0.60],[0.6, 75, 0.60],[1.2, 76, 0.60],[1.8, 75, 0.60],[2.4, 76, 0.60],
+        [3.0, 71, 0.60],[3.6, 74, 0.60],[4.2, 72, 0.60],[4.8, 69, 1.20],
+        [6.0, 76, 0.60],[6.6, 75, 0.60],[7.2, 76, 0.60],[7.8, 75, 0.60],[8.4, 76, 0.60],
+        [9.0, 71, 0.60],[9.6, 74, 0.60],[10.2, 72, 0.60],[10.8, 69, 1.20]
+      ]
+    },
+    {
+      "slug": "ode-to-joy",
+      "title": "Ode to Joy",
+      "composer": "Ludwig van Beethoven",
+      "era": "Classical",
+      "key": "D major",
+      "bpm": 100,
+      "description": "The famous final movement of Beethoven's Ninth Symphony. The 'Ode to Joy' theme, set to Schiller's poem, has become a universal anthem of brotherhood and is heard worldwide every New Year.",
+      "notes": [
+        [0, 62, 0.75],[0.75, 62, 0.75],[1.5, 63, 0.75],[1.5, 67, 0.75],
+        [3.0, 67, 0.75],[3.75, 65, 0.75],[4.5, 64, 0.75],[5.25, 63, 0.75],[6.0, 62, 0.75],
+        [6.75, 60, 0.75],[7.5, 60, 0.75],[8.25, 64, 0.75],[9.0, 62, 0.75],[9.75, 60, 1.50]
+      ]
+    },
+    {
+      "slug": "canon-in-d",
+      "title": "Canon in D",
+      "composer": "Johann Pachelbel",
+      "era": "Baroque",
+      "key": "D major",
+      "bpm": 90,
+      "description": "Pachelbel's Canon, composed around 1680, is famous for its repeating eight-chord progression and interlocking melody lines. It is among the most requested classical pieces at weddings.",
+      "notes": [
+        [0, 62, 1.0],[1.0, 57, 1.0],[2.0, 59, 1.0],[3.0, 54, 1.0],
+        [4.0, 55, 1.0],[5.0, 62, 1.0],[6.0, 55, 1.0],[7.0, 57, 1.0],
+        [8.0, 62, 1.0],[9.0, 57, 1.0],[10.0, 59, 1.0],[11.0, 54, 1.0],
+        [12.0, 55, 1.0],[13.0, 62, 1.0],[14.0, 64, 1.0],[15.0, 57, 1.0]
+      ]
+    },
+    {
+      "slug": "twinkle-twinkle",
+      "title": "Twinkle, Twinkle, Little Star",
+      "composer": "Traditional French melody",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 100,
+      "description": "This beloved lullaby is set to the 1761 French melody 'Ah! vous dirai-je, maman', later used by Mozart for his Twelve Variations. It is a classic first piece for piano learners.",
+      "notes": [
+        [0, 60, 0.75],[0.75, 60, 0.75],[1.5, 67, 0.75],[2.25, 67, 0.75],
+        [3.0, 69, 0.75],[3.75, 69, 0.75],[4.5, 67, 1.50],
+        [6.0, 65, 0.75],[6.75, 65, 0.75],[7.5, 64, 0.75],[8.25, 64, 0.75],
+        [9.0, 62, 0.75],[9.75, 62, 0.75],[10.5, 60, 1.50]
+      ]
+    },
+    {
+      "slug": "greensleeves",
+      "title": "Greensleeves",
+      "composer": "Traditional English folk song",
+      "era": "Renaissance folk",
+      "key": "A minor",
+      "bpm": 85,
+      "description": "A traditional English folk song from the 16th century, associated with the court of Henry VIII. Its haunting minor melody survives in hundreds of instrumental arrangements.",
+      "notes": [
+        [0, 69, 1.0],[1.0, 71, 1.0],[2.0, 72, 1.0],[3.0, 74, 1.0],
+        [4.0, 76, 2.0],[6.0, 74, 1.0],[7.0, 72, 1.0],[8.0, 71, 2.0]
+      ]
+    },
+    {
+      "slug": "auld-lang-syne",
+      "title": "Auld Lang Syne",
+      "composer": "Traditional Scottish song",
+      "era": "Scots folk",
+      "key": "D major",
+      "bpm": 90,
+      "description": "The legendary Scottish song, set to a pentatonic folk tune and popularized by Robert Burns in 1788. It is sung around the world at New Year's Eve midnight.",
+      "notes": [
+        [0, 62, 1.0],[1.0, 60, 1.0],[2.0, 62, 0.50],[2.5, 64, 0.50],
+        [3.0, 65, 1.0],[4.0, 65, 0.50],[4.5, 64, 0.50],[5.0, 62, 1.0],
+        [6.0, 60, 1.0],[7.0, 59, 1.0],[8.0, 57, 2.0]
+      ]
+    },
+    {
+      "slug": "moonlight-sonata",
+      "title": "Moonlight Sonata (First Movement)",
+      "composer": "Ludwig van Beethoven",
+      "era": "Classical / early Romantic",
+      "key": "C♯ minor",
+      "bpm": 60,
+      "description": "The haunting first movement of Beethoven's Piano Sonata No. 14, 'Quasi una fantasia', composed in 1801. Its rolling broken-chord texture and slow hypnotic melody are unmistakable.",
+      "notes": [
+        [0, 61, 3.0],[0, 65, 3.0],[0, 68, 3.0],
+        [3.0, 61, 3.0],[3.0, 65, 3.0],[3.0, 69, 3.0],
+        [6.0, 61, 3.0],[6.0, 66, 3.0],[6.0, 70, 3.0],
+        [9.0, 61, 3.0],[9.0, 65, 3.0],[9.0, 68, 3.0]
+      ]
+    },
+    {
+      "slug": "jingle-bells",
+      "title": "Jingle Bells",
+      "composer": "James Lord Pierpont",
+      "era": "American carol (1857)",
+      "key": "C major",
+      "bpm": 120,
+      "description": "Written by James Lord Pierpont in 1857, 'Jingle Bells' is one of the most familiar and most-played songs in the world. Its melody entered the public domain decades ago.",
+      "notes": [
+        [0, 64, 0.50],[0.5, 64, 0.50],[1.0, 64, 1.0],[1.5, 64, 0.50],
+        [2.0, 64, 0.50],[2.5, 64, 1.0],[3.0, 64, 0.50],
+        [3.5, 67, 0.50],[4.0, 60, 1.0],[5.0, 62, 0.50],[5.5, 62, 0.50],
+        [6.0, 63, 1.0],[6.5, 63, 0.50],[7.0, 63, 0.50],[7.5, 63, 1.0],
+        [8.0, 62, 0.50],[8.5, 62, 0.50],[9.0, 62, 0.50],[9.5, 62, 0.50],
+        [10.0, 60, 1.0]
+      ]
+    }
+  ]
+}

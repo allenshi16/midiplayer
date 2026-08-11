@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Greensleeves by Traditional English folk song — play this public-domain Renaissance folk melody online instantly with MIDI Room's browser player. No upload, account or install." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://midiplayeronline.com/songs/greensleeves/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Greensleeves — Play Online" />
+    <meta property="og:description" content="Hear Greensleeves instantly in your browser. Free, private, 100% local." />
+    <meta property="og:url" content="https://midiplayeronline.com/songs/greensleeves/" />
+    <meta property="og:image" content="https://midiplayeronline.com/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Greensleeves — Play Online | MIDI Room" />
+    <meta name="twitter:description" content="Play Greensleeves in your browser. No upload, no account, no install." />
+    <title>Greensleeves — Play Online | MIDI Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicComposition","name":"Greensleeves","composer":{"@type":"Person","name":"Traditional English folk song"},"inLanguage":"en","description":"A traditional English folk song from the 16th century, associated with the court of Henry VIII. Its haunting minor melody survives in hundreds of instrumental arrangements.","url":"https://midiplayeronline.com/songs/greensleeves/"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I play Greensleeves online in my browser?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the demo player above to hear this public-domain Renaissance folk melody instantly, or drop your own MIDI file into the MIDI Player Online tool for full piano-roll playback, tempo control and A/B practice looping. Everything runs locally in your browser — no upload, account or install."}},{"@type":"Question","name":"Who composed Greensleeves?","acceptedAnswer":{"@type":"Answer","text":"Greensleeves is a Traditional English folk song (Renaissance folk). It is in the public domain, so it can be freely arranged, performed and used."}},{"@type":"Question","name":"What key is Greensleeves usually played in?","acceptedAnswer":{"@type":"Answer","text":"This arrangement is written in A minor. The demo above uses that key so you can hear the melody as traditionally performed."}},{"@type":"Question","name":"Is a MIDI file version of Greensleeves available?","acceptedAnswer":{"@type":"Answer","text":"Instead of downloading a file, you can hear the melody right here with the built-in player. To practice it, set a slow tempo and use the A/B loop to repeat a section. You can also export or record any MIDI you play from the main MIDI Room player."}}]}</script>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .song-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
+      .song-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 6px;font-weight:800}
+      .song-composer{font-family:var(--mono);color:var(--coral);font-size:12px;letter-spacing:.08em;margin-bottom:28px}
+      .song-stats{display:flex;gap:26px;font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:34px;flex-wrap:wrap}
+      .song-stats b{color:var(--ink);font-weight:600}
+      .demo-shell{background:#242525;border-radius:14px;padding:26px;margin-bottom:40px}
+      #demoCanvas{width:100%;height:220px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 26px,#363a35 27px);border-radius:8px;display:block}
+      .demo-controls{display:flex;align-items:center;gap:18px;margin-top:16px;flex-wrap:wrap}
+      .demo-play{width:46px;height:46px;border-radius:50%;background:var(--coral);border:0;color:#fff;font-size:15px;cursor:pointer;box-shadow:0 0 0 5px rgba(231,109,82,.14)}
+      .demo-progress{flex:1;accent-color:var(--coral);min-width:180px}
+      .demo-time{font:11px var(--mono);color:#eee6d8;min-width:70px}
+      .demo-hint{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:8px}
+      .song-body h2{font-size:24px;letter-spacing:-.04em;margin:34px 0 12px}
+      .song-body p{color:#5f5c55;line-height:1.8;font-size:14px;max-width:640px}
+      .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+      .faq-item{border-left:1px solid var(--line);padding-left:18px}
+      .faq-item h3{font-size:14px;margin:0 0 8px;letter-spacing:-.02em}
+      .faq-item p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}
+      .song-nav{margin-top:50px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px}
+      .song-nav a{color:var(--coral);text-decoration:none}
+      .song-nav a:hover{text-decoration:underline}
+      .back-home{display:inline-block;margin-bottom:26px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none}
+      .back-home:hover{color:var(--coral)}
+      @media(max-width:700px){.faq-grid{grid-template-columns:1fr;gap:20px}.song-nav{flex-direction:column;gap:10px}}
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/songs-index.html">Songs</a></nav>
+      </header>
+      <main class="song-page">
+        <a class="back-home" href="/">← Back to MIDI Player Online</a>
+        <h1>Greensleeves</h1>
+        <div class="song-composer">Traditional English folk song · Renaissance folk</div>
+        <div class="song-stats">
+          <span>Key <b>A minor</b></span>
+          <span>Tempo <b>85 BPM</b></span>
+          <span>Duration <b>7.1s</b></span>
+          <span>Melody <b>8 notes</b></span>
+        </div>
+
+        <section class="demo-shell" aria-label="Greensleeves demo player">
+          <canvas id="demoCanvas"></canvas>
+          <div class="demo-controls">
+            <button class="demo-play" id="demoPlay" aria-label="Play Greensleeves">▶</button>
+            <input class="demo-progress" id="demoProgress" type="range" min="0" max="100" value="0" aria-label="Seek" />
+            <span class="demo-time" id="demoTime">0:00</span>
+          </div>
+          <div class="demo-hint">◇ Plays in your browser — no upload, no account, 100% local</div>
+        </section>
+
+        <article class="song-body">
+          <h2>About this song</h2>
+          <p>A traditional English folk song from the 16th century, associated with the court of Henry VIII. Its haunting minor melody survives in hundreds of instrumental arrangements.</p>
+          <h2>Play it in MIDI Room</h2>
+          <p>This is a simplified single-line arrangement so you can hear the melody instantly. To play the full piece with a piano roll, multi-track view, tempo control and A/B practice looping, use the main <a href="/" style="color:var(--coral)">MIDI Player Online</a> tool with your own MIDI file.</p>
+          <h2>Frequently asked questions</h2>
+          <div class="faq-grid">
+
+      <h3>Can I play Greensleeves online in my browser?</h3>
+      <p>Yes. Use the demo player above to hear this public-domain Renaissance folk melody instantly, or drop your own MIDI file into the MIDI Player Online tool for full piano-roll playback, tempo control and A/B practice looping. Everything runs locally in your browser — no upload, account or install.</p>
+
+      <h3>Who composed Greensleeves?</h3>
+      <p>Greensleeves is a Traditional English folk song (Renaissance folk). It is in the public domain, so it can be freely arranged, performed and used.</p>
+
+      <h3>What key is Greensleeves usually played in?</h3>
+      <p>This arrangement is written in A minor. The demo above uses that key so you can hear the melody as traditionally performed.</p>
+
+      <h3>Is a MIDI file version of Greensleeves available?</h3>
+      <p>Instead of downloading a file, you can hear the melody right here with the built-in player. To practice it, set a slow tempo and use the A/B loop to repeat a section. You can also export or record any MIDI you play from the main MIDI Room player.</p>
+          </div>
+        </article>
+
+        <nav class="song-nav">
+          <span><a href="/songs/twinkle-twinkle/">← Twinkle, Twinkle, Little Star</a></span>
+          <span><a href="/songs/auld-lang-syne/">Auld Lang Syne →</a></span>
+        </nav>
+      </main>
+      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account</span></footer>
+    </div>
+    <script>
+      window.TRACK_DATA = {"title":"Greensleeves","bpm":85,"notes":[[0,69,1],[1,71,1],[2,72,1],[3,74,1],[4,76,2],[6,74,1],[7,72,1],[8,71,2]]};
+    </script>
+    <script src="/songs/demo-player.js"></script>
+  </body>
+</html>
