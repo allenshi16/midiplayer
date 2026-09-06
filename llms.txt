@@ -1,0 +1,6 @@
+# MIDI ROOM
+
+> Free online MIDI player and explorer. Upload or play MIDI files, visualize notes, and explore public-domain songs.
+
+## Main pages
+- [Home](https://midiplayeronline.com/): Online MIDI player
