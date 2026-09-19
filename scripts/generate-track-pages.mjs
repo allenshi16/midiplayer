@@ -17,6 +17,8 @@ const ROOT = join(__dirname, '..');
 const SITE_URL = 'https://midiplayeronline.com';
 // AdSense publisher id (e.g. ca-pub-1234567890123456). Empty = ads disabled.
 const ADSENSE_CLIENT = (process.env.ADSENSE_CLIENT || '').trim();
+// GA4 measurement id (e.g. G-XXXXXXXXXX). Empty = analytics disabled.
+const GA_ID = (process.env.GA_ID || '').trim();
 // Static site: webroot IS the repo root (index.html lives at root, no build step).
 // Songs must be generated here so they deploy with the site.
 const OUT_DIR = join(ROOT, 'songs');
@@ -93,6 +95,7 @@ function renderPage(track, prev, next) {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${SITE_URL}/songs/${track.slug}/" />
     <meta name="adsense-client" content="${ADSENSE_CLIENT}" />
+    <meta name="ga-measurement" content="${GA_ID}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${esc(track.title)} — Play Online" />
     <meta property="og:description" content="Hear ${esc(track.title)} instantly in your browser. Free, private, 100% local." />
@@ -186,6 +189,7 @@ ${faqHtml}
     </script>
     <script src="/songs/demo-player.js"></script>
     <script src="/ads.js" defer></script>
+    <script src="/ga.js" defer></script>
   </body>
 </html>
 `;
@@ -213,6 +217,7 @@ function renderHub(tracks) {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${SITE_URL}/songs/" />
     <meta name="adsense-client" content="${ADSENSE_CLIENT}" />
+    <meta name="ga-measurement" content="${GA_ID}" />
     <meta property="og:title" content="Public Domain Songs — Play Online | MIDI Room" />
     <meta property="og:description" content="Hear famous public-domain melodies in your browser. Free, private, no install." />
     <meta property="og:url" content="${SITE_URL}/songs/" />
@@ -255,6 +260,7 @@ ${items}
       <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
     </div>
     <script src="/ads.js" defer></script>
+    <script src="/ga.js" defer></script>
   </body>
 </html>
 `;
