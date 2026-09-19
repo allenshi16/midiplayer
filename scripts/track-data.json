@@ -2124,6 +2124,1774 @@
           1.5
         ]
       ]
+    },
+    {
+      "slug": "when-the-saints",
+      "title": "When the Saints Go Marching In",
+      "composer": "Traditional American gospel",
+      "era": "American folk",
+      "key": "C major",
+      "bpm": 120,
+      "description": "This New Orleans jazz funeral standard turns a solemn hymn into a celebration. Louis Armstrong's 1938 recording made it world famous, and its marching melody remains the anthem of every brass band from the Mississippi to Mardi Gras.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          64,
+          1
+        ],
+        [
+          2,
+          65,
+          1
+        ],
+        [
+          3,
+          67,
+          2
+        ],
+        [
+          5,
+          60,
+          1
+        ],
+        [
+          6,
+          64,
+          1
+        ],
+        [
+          7,
+          65,
+          1
+        ],
+        [
+          8,
+          67,
+          2
+        ],
+        [
+          10,
+          60,
+          0.5
+        ],
+        [
+          10.5,
+          64,
+          0.5
+        ],
+        [
+          11,
+          67,
+          0.5
+        ],
+        [
+          11.5,
+          65,
+          0.5
+        ],
+        [
+          12,
+          64,
+          1
+        ],
+        [
+          13,
+          60,
+          1
+        ],
+        [
+          14,
+          64,
+          1
+        ],
+        [
+          15,
+          62,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "row-row-row-your-boat",
+      "title": "Row, Row, Row Your Boat",
+      "composer": "Traditional American melody (1852)",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 110,
+      "description": "Published in 1852 with the lyrics 'Have you ever seen a donkey', the song gained its famous rowing text a few years later. As a round, it teaches singers harmony: start the melody two beats apart and it sings itself.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          60,
+          0.5
+        ],
+        [
+          1.5,
+          60,
+          0.5
+        ],
+        [
+          2,
+          62,
+          0.5
+        ],
+        [
+          2.5,
+          64,
+          1.5
+        ],
+        [
+          4,
+          64,
+          0.5
+        ],
+        [
+          4.5,
+          62,
+          0.5
+        ],
+        [
+          5,
+          64,
+          0.5
+        ],
+        [
+          5.5,
+          65,
+          0.5
+        ],
+        [
+          6,
+          67,
+          2
+        ],
+        [
+          8,
+          72,
+          1
+        ],
+        [
+          9,
+          72,
+          0.5
+        ],
+        [
+          9.5,
+          72,
+          0.5
+        ],
+        [
+          10,
+          72,
+          1.5
+        ],
+        [
+          11.5,
+          67,
+          0.5
+        ],
+        [
+          12,
+          67,
+          1.5
+        ],
+        [
+          13.5,
+          64,
+          0.5
+        ],
+        [
+          14,
+          64,
+          1.5
+        ],
+        [
+          15.5,
+          60,
+          0.5
+        ],
+        [
+          16,
+          60,
+          1.5
+        ],
+        [
+          17.5,
+          67,
+          0.5
+        ],
+        [
+          18,
+          65,
+          0.5
+        ],
+        [
+          18.5,
+          64,
+          0.5
+        ],
+        [
+          19,
+          62,
+          0.5
+        ],
+        [
+          19.5,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "itsy-bitsy-spider",
+      "title": "Itsy Bitsy Spider",
+      "composer": "Traditional American nursery rhyme",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 110,
+      "description": "The determined spider climbing the water spout is one of the most sung nursery rhymes in English. Its climbing-and-sliding melody shape mirrors the story, which is why every children's musician has arranged it.",
+      "notes": [
+        [
+          0,
+          67,
+          1
+        ],
+        [
+          1,
+          60,
+          0.5
+        ],
+        [
+          1.5,
+          60,
+          0.5
+        ],
+        [
+          2,
+          60,
+          0.5
+        ],
+        [
+          2.5,
+          62,
+          0.5
+        ],
+        [
+          3,
+          64,
+          1
+        ],
+        [
+          4,
+          64,
+          0.5
+        ],
+        [
+          4.5,
+          62,
+          0.5
+        ],
+        [
+          5,
+          64,
+          0.5
+        ],
+        [
+          5.5,
+          65,
+          0.5
+        ],
+        [
+          6,
+          67,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "this-old-man",
+      "title": "This Old Man",
+      "composer": "Traditional English folk song",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 120,
+      "description": "A counting song in which the old man plays knick-knack on everything from a thumb to a shoe. Its rolling rhythm makes it a favorite for teaching beat and rhyme together in early music classes.",
+      "notes": [
+        [
+          0,
+          67,
+          0.5
+        ],
+        [
+          0.5,
+          64,
+          0.5
+        ],
+        [
+          1,
+          67,
+          1
+        ],
+        [
+          2,
+          67,
+          0.5
+        ],
+        [
+          2.5,
+          64,
+          0.5
+        ],
+        [
+          3,
+          67,
+          1
+        ],
+        [
+          4,
+          69,
+          0.5
+        ],
+        [
+          4.5,
+          67,
+          0.5
+        ],
+        [
+          5,
+          65,
+          0.5
+        ],
+        [
+          5.5,
+          64,
+          0.5
+        ],
+        [
+          6,
+          62,
+          0.5
+        ],
+        [
+          6.5,
+          64,
+          0.5
+        ],
+        [
+          7,
+          65,
+          1
+        ]
+      ]
+    },
+    {
+      "slug": "london-bridge",
+      "title": "London Bridge Is Falling Down",
+      "composer": "Traditional English nursery rhyme",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 110,
+      "description": "Sung for centuries about the real bridges of the Thames that repeatedly collapsed and were rebuilt. The descending two-note phrases make it one of the easiest songs for a beginner to recognize by ear.",
+      "notes": [
+        [
+          0,
+          67,
+          0.5
+        ],
+        [
+          0.5,
+          69,
+          0.5
+        ],
+        [
+          1,
+          67,
+          0.5
+        ],
+        [
+          1.5,
+          65,
+          0.5
+        ],
+        [
+          2,
+          64,
+          0.5
+        ],
+        [
+          2.5,
+          65,
+          0.5
+        ],
+        [
+          3,
+          67,
+          1
+        ],
+        [
+          4,
+          62,
+          0.5
+        ],
+        [
+          4.5,
+          64,
+          0.5
+        ],
+        [
+          5,
+          65,
+          1
+        ],
+        [
+          6,
+          64,
+          0.5
+        ],
+        [
+          6.5,
+          65,
+          0.5
+        ],
+        [
+          7,
+          67,
+          1
+        ]
+      ]
+    },
+    {
+      "slug": "mary-had-a-little-lamb",
+      "title": "Mary Had a Little Lamb",
+      "composer": "Sarah Josepha Hale (1830)",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 100,
+      "description": "Inspired by a real lamb that followed a girl to school in Sterling, Massachusetts. Thomas Edison chose this melody to demonstrate his 1877 phonograph — the first song ever recorded by machine.",
+      "notes": [
+        [
+          0,
+          64,
+          1
+        ],
+        [
+          1,
+          62,
+          1
+        ],
+        [
+          2,
+          60,
+          1
+        ],
+        [
+          3,
+          62,
+          1
+        ],
+        [
+          4,
+          64,
+          1
+        ],
+        [
+          5,
+          64,
+          1
+        ],
+        [
+          6,
+          64,
+          2
+        ],
+        [
+          8,
+          62,
+          1
+        ],
+        [
+          9,
+          62,
+          2
+        ],
+        [
+          11,
+          64,
+          1
+        ],
+        [
+          12,
+          67,
+          1
+        ],
+        [
+          13,
+          67,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "pop-goes-the-weasel",
+      "title": "Pop Goes the Weasel",
+      "composer": "Traditional English (1850s)",
+      "era": "Traditional folk",
+      "key": "C major",
+      "bpm": 130,
+      "description": "A 19th-century dance tune whose 'Pop!' burst became a musical in-joke across generations. The six-eight jig rhythm is a classic exercise in keeping a light, bouncy pulse.",
+      "notes": [
+        [
+          0,
+          60,
+          0.5
+        ],
+        [
+          0.5,
+          60,
+          0.5
+        ],
+        [
+          1,
+          62,
+          0.5
+        ],
+        [
+          1.5,
+          62,
+          0.5
+        ],
+        [
+          2,
+          64,
+          0.5
+        ],
+        [
+          2.5,
+          67,
+          0.5
+        ],
+        [
+          3,
+          64,
+          1
+        ],
+        [
+          4,
+          62,
+          0.5
+        ],
+        [
+          4.5,
+          62,
+          0.5
+        ],
+        [
+          5,
+          64,
+          0.5
+        ],
+        [
+          5.5,
+          64,
+          0.5
+        ],
+        [
+          6,
+          65,
+          0.5
+        ],
+        [
+          6.5,
+          67,
+          0.5
+        ],
+        [
+          7,
+          65,
+          1
+        ],
+        [
+          8,
+          72,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "au-clair-de-la-lune",
+      "title": "Au Clair de la Lune",
+      "composer": "Traditional French melody (1761)",
+      "era": "Traditional folk",
+      "key": "C major",
+      "bpm": 100,
+      "description": "This gentle French bar-song about borrowing a pen by moonlight is historically momentous: a 17-second 1860 recording of it is the earliest recognizably sung melody captured by machine.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          60,
+          1
+        ],
+        [
+          2,
+          60,
+          1
+        ],
+        [
+          3,
+          62,
+          1
+        ],
+        [
+          4,
+          64,
+          2
+        ],
+        [
+          6,
+          62,
+          1.5
+        ],
+        [
+          7.5,
+          64,
+          0.5
+        ],
+        [
+          8,
+          62,
+          1
+        ],
+        [
+          9,
+          62,
+          1
+        ],
+        [
+          10,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "sakura-sakura",
+      "title": "Sakura Sakura",
+      "composer": "Traditional Japanese melody",
+      "era": "Traditional folk",
+      "key": "A minor (Hirajoshi scale)",
+      "bpm": 90,
+      "description": "The celebrated Japanese song welcoming the spring cherry blossoms, built on the pentatonic hirajoshi scale. Its sparse, breathing melody is a gateway into the sound world of traditional Japanese music.",
+      "notes": [
+        [
+          0,
+          69,
+          1.5
+        ],
+        [
+          1.5,
+          69,
+          0.5
+        ],
+        [
+          2,
+          71,
+          2
+        ],
+        [
+          4,
+          69,
+          1.5
+        ],
+        [
+          5.5,
+          69,
+          0.5
+        ],
+        [
+          6,
+          71,
+          2
+        ],
+        [
+          8,
+          69,
+          1
+        ],
+        [
+          9,
+          72,
+          1
+        ],
+        [
+          10,
+          71,
+          1
+        ],
+        [
+          11,
+          69,
+          1
+        ],
+        [
+          12,
+          66,
+          1
+        ],
+        [
+          13,
+          64,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "la-cucaracha",
+      "title": "La Cucaracha",
+      "composer": "Traditional Mexican folk song",
+      "era": "Traditional folk",
+      "key": "C major",
+      "bpm": 130,
+      "description": "The legendary Mexican cockroach song, known worldwide through revolutionary-era verses and mariachi brass. Its punchy call-and-answer phrases make it a favorite for trumpet and accordion practice.",
+      "notes": [
+        [
+          0,
+          60,
+          0.5
+        ],
+        [
+          0.5,
+          60,
+          0.5
+        ],
+        [
+          1,
+          60,
+          0.5
+        ],
+        [
+          1.5,
+          65,
+          1
+        ],
+        [
+          2.5,
+          69,
+          1.5
+        ],
+        [
+          4,
+          60,
+          0.5
+        ],
+        [
+          4.5,
+          60,
+          0.5
+        ],
+        [
+          5,
+          60,
+          0.5
+        ],
+        [
+          5.5,
+          65,
+          1
+        ],
+        [
+          6.5,
+          69,
+          1.5
+        ],
+        [
+          8,
+          65,
+          1
+        ],
+        [
+          9,
+          65,
+          1
+        ],
+        [
+          10,
+          64,
+          1
+        ],
+        [
+          11,
+          64,
+          1
+        ],
+        [
+          12,
+          62,
+          1
+        ],
+        [
+          13,
+          62,
+          1
+        ],
+        [
+          14,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "beethoven-fifth-opening",
+      "title": "Beethoven's Fifth — Opening Motif",
+      "composer": "Ludwig van Beethoven (1808)",
+      "era": "Classical / early Romantic",
+      "key": "C minor",
+      "bpm": 108,
+      "description": "Four notes — 'fate knocking at the door' — became the most recognizable motif in classical music. This opening dominates the entire first movement and opens nearly every 'greatest symphony' discussion ever held.",
+      "notes": [
+        [
+          0,
+          67,
+          0.25
+        ],
+        [
+          0.25,
+          67,
+          0.25
+        ],
+        [
+          0.5,
+          67,
+          0.25
+        ],
+        [
+          0.75,
+          63,
+          1.5
+        ],
+        [
+          2.5,
+          65,
+          0.25
+        ],
+        [
+          2.75,
+          65,
+          0.25
+        ],
+        [
+          3,
+          65,
+          0.25
+        ],
+        [
+          3.25,
+          62,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "eine-kleine-nachtmusik",
+      "title": "Eine Kleine Nachtmusik",
+      "composer": "Wolfgang Amadeus Mozart (1787)",
+      "era": "Classical",
+      "key": "G major",
+      "bpm": 120,
+      "description": "Mozart's 'A Little Night Music' opens with one of the most confident fanfares ever written. Written for strings alone, its compact first bars contain everything elegant about Classical-era phrasing.",
+      "notes": [
+        [
+          0,
+          67,
+          0.5
+        ],
+        [
+          0.5,
+          62,
+          0.5
+        ],
+        [
+          1,
+          67,
+          0.5
+        ],
+        [
+          1.5,
+          62,
+          0.5
+        ],
+        [
+          2,
+          67,
+          0.5
+        ],
+        [
+          2.5,
+          62,
+          0.5
+        ],
+        [
+          3,
+          67,
+          0.5
+        ],
+        [
+          3.5,
+          71,
+          0.5
+        ],
+        [
+          4,
+          74,
+          1
+        ],
+        [
+          5,
+          72,
+          0.5
+        ],
+        [
+          5.5,
+          69,
+          0.5
+        ],
+        [
+          6,
+          72,
+          0.5
+        ],
+        [
+          6.5,
+          67,
+          1
+        ]
+      ]
+    },
+    {
+      "slug": "habanera-carmen",
+      "title": "Habanera (from Carmen)",
+      "composer": "Georges Bizet (1875)",
+      "era": "Romantic opera",
+      "key": "D minor",
+      "bpm": 100,
+      "description": "Carmen's entrance aria, with its descending chromatic line, is the most famous melody in all opera. Built on a Cuban habanera rhythm, it sings about love as a rebellious bird that no one can tame.",
+      "notes": [
+        [
+          0,
+          74,
+          0.75
+        ],
+        [
+          0.75,
+          73,
+          0.25
+        ],
+        [
+          1,
+          72,
+          0.75
+        ],
+        [
+          1.75,
+          71,
+          0.25
+        ],
+        [
+          2,
+          70,
+          0.75
+        ],
+        [
+          2.75,
+          70,
+          0.25
+        ],
+        [
+          3,
+          69,
+          1
+        ],
+        [
+          4,
+          74,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "vivaldi-spring",
+      "title": "Spring (from The Four Seasons)",
+      "composer": "Antonio Vivaldi (1725)",
+      "era": "Baroque",
+      "key": "E major",
+      "bpm": 120,
+      "description": "The opening movement of Vivaldi's Four Seasons is Baroque program music at its finest — birdsong, streams and thunder all painted in a handful of violin phrases. Its joyful opening theme is instantly recognizable after three centuries.",
+      "notes": [
+        [
+          0,
+          64,
+          1
+        ],
+        [
+          1,
+          68,
+          0.5
+        ],
+        [
+          1.5,
+          68,
+          0.5
+        ],
+        [
+          2,
+          68,
+          1
+        ],
+        [
+          3,
+          66,
+          1
+        ],
+        [
+          4,
+          64,
+          1
+        ],
+        [
+          5,
+          71,
+          1
+        ],
+        [
+          6,
+          71,
+          0.5
+        ],
+        [
+          6.5,
+          71,
+          0.5
+        ],
+        [
+          7,
+          71,
+          1
+        ],
+        [
+          8,
+          69,
+          1
+        ],
+        [
+          9,
+          68,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "morning-mood",
+      "title": "Morning Mood (from Peer Gynt)",
+      "composer": "Edvard Grieg (1875)",
+      "era": "Romantic",
+      "key": "E major",
+      "bpm": 90,
+      "description": "Grieg's flute theme rising over a calm horizon is the soundtrack to every cartoon sunrise. Written for Ibsen's play Peer Gynt, its gently falling phrases capture dawn better than any other piece of music.",
+      "notes": [
+        [
+          0,
+          67,
+          1
+        ],
+        [
+          1,
+          64,
+          1
+        ],
+        [
+          2,
+          62,
+          1
+        ],
+        [
+          3,
+          60,
+          1
+        ],
+        [
+          4,
+          62,
+          1
+        ],
+        [
+          5,
+          64,
+          1
+        ],
+        [
+          6,
+          67,
+          1
+        ],
+        [
+          7,
+          64,
+          1
+        ],
+        [
+          8,
+          62,
+          1
+        ],
+        [
+          9,
+          60,
+          1
+        ],
+        [
+          10,
+          62,
+          1
+        ],
+        [
+          11,
+          64,
+          1
+        ]
+      ]
+    },
+    {
+      "slug": "dance-of-the-sugar-plum-fairy",
+      "title": "Dance of the Sugar Plum Fairy",
+      "composer": "Pyotr Ilyich Tchaikovsky (1892)",
+      "era": "Romantic",
+      "key": "E minor",
+      "bpm": 130,
+      "description": "The celesta was brand new when Tchaikovsky used it for this shimmering Nutcracker dance, and he kept the instrument secret to preserve the surprise. Its descending fifth motif still sounds like magic dust.",
+      "notes": [
+        [
+          0,
+          64,
+          0.5
+        ],
+        [
+          0.5,
+          71,
+          0.5
+        ],
+        [
+          1,
+          72,
+          0.5
+        ],
+        [
+          1.5,
+          67,
+          0.5
+        ],
+        [
+          2,
+          74,
+          0.5
+        ],
+        [
+          2.5,
+          69,
+          0.5
+        ],
+        [
+          3,
+          64,
+          0.5
+        ],
+        [
+          3.5,
+          71,
+          0.5
+        ],
+        [
+          4,
+          72,
+          0.5
+        ],
+        [
+          4.5,
+          67,
+          0.5
+        ],
+        [
+          5,
+          74,
+          0.5
+        ],
+        [
+          5.5,
+          69,
+          0.5
+        ]
+      ]
+    },
+    {
+      "slug": "god-rest-ye-merry-gentlemen",
+      "title": "God Rest Ye Merry, Gentlemen",
+      "composer": "Traditional English carol (16th century)",
+      "era": "Christmas carol",
+      "key": "E minor",
+      "bpm": 110,
+      "description": "One of the oldest surviving Christmas carols, referenced by Dickens in A Christmas Carol. Its dark minor-mode melody sets it apart from every other carol in the December songbook.",
+      "notes": [
+        [
+          0,
+          64,
+          1
+        ],
+        [
+          1,
+          71,
+          1
+        ],
+        [
+          2,
+          71,
+          1
+        ],
+        [
+          3,
+          69,
+          1
+        ],
+        [
+          4,
+          67,
+          1
+        ],
+        [
+          5,
+          66,
+          1
+        ],
+        [
+          6,
+          64,
+          2
+        ],
+        [
+          8,
+          62,
+          1
+        ],
+        [
+          9,
+          64,
+          1
+        ],
+        [
+          10,
+          66,
+          1
+        ],
+        [
+          11,
+          67,
+          1
+        ],
+        [
+          12,
+          69,
+          1
+        ],
+        [
+          13,
+          71,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "clementine",
+      "title": "Oh My Darling, Clementine",
+      "composer": "Percy Montrose (1884)",
+      "era": "American folk",
+      "key": "C major",
+      "bpm": 120,
+      "description": "A miner's ballad about a 'dreadful sorry' daughter of a forty-niner, sung with a straight face and a wink. Its western-swing melody became a gold-rush standard and a cowboy-movie staple.",
+      "notes": [
+        [
+          0,
+          60,
+          0.5
+        ],
+        [
+          0.5,
+          60,
+          0.5
+        ],
+        [
+          1,
+          60,
+          0.5
+        ],
+        [
+          1.5,
+          67,
+          0.5
+        ],
+        [
+          2,
+          64,
+          1
+        ],
+        [
+          3,
+          67,
+          1
+        ],
+        [
+          4,
+          67,
+          1
+        ],
+        [
+          5,
+          65,
+          1
+        ],
+        [
+          6,
+          64,
+          2
+        ],
+        [
+          8,
+          60,
+          0.5
+        ],
+        [
+          8.5,
+          60,
+          0.5
+        ],
+        [
+          9,
+          60,
+          0.5
+        ],
+        [
+          9.5,
+          67,
+          0.5
+        ],
+        [
+          10,
+          64,
+          1
+        ],
+        [
+          11,
+          67,
+          1
+        ],
+        [
+          12,
+          65,
+          1
+        ],
+        [
+          13,
+          64,
+          1
+        ],
+        [
+          14,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "lavenders-blue",
+      "title": "Lavender's Blue",
+      "composer": "Traditional English folk song (17th century)",
+      "era": "Traditional folk",
+      "key": "C major",
+      "bpm": 95,
+      "description": "A tender 17th-century love song that became a nursery rhyme, and found a new audience as the theme of the 2015 Cinderella film. Its six-note phrases are a model of folk-melody economy.",
+      "notes": [
+        [
+          0,
+          65,
+          1
+        ],
+        [
+          1,
+          67,
+          1
+        ],
+        [
+          2,
+          69,
+          2
+        ],
+        [
+          4,
+          67,
+          1
+        ],
+        [
+          5,
+          64,
+          1
+        ],
+        [
+          6,
+          60,
+          2
+        ],
+        [
+          8,
+          65,
+          1
+        ],
+        [
+          9,
+          67,
+          1
+        ],
+        [
+          10,
+          69,
+          2
+        ],
+        [
+          12,
+          67,
+          1
+        ],
+        [
+          13,
+          64,
+          1
+        ],
+        [
+          14,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "god-save-the-king",
+      "title": "God Save the King",
+      "composer": "Traditional (1744)",
+      "era": "National anthem",
+      "key": "F major",
+      "bpm": 90,
+      "description": "The world's oldest national anthem, first published in 1744. Its melody traveled the globe under many names — including 'My Country, 'Tis of Thee' in the United States — making it one of the most harmonized tunes in history.",
+      "notes": [
+        [
+          0,
+          65,
+          1
+        ],
+        [
+          1,
+          65,
+          0.5
+        ],
+        [
+          1.5,
+          67,
+          0.5
+        ],
+        [
+          2,
+          64,
+          1.5
+        ],
+        [
+          3.5,
+          65,
+          0.5
+        ],
+        [
+          4,
+          67,
+          0.5
+        ],
+        [
+          4.5,
+          65,
+          0.5
+        ],
+        [
+          5,
+          67,
+          0.5
+        ],
+        [
+          5.5,
+          69,
+          0.5
+        ],
+        [
+          6,
+          67,
+          1.5
+        ],
+        [
+          7.5,
+          65,
+          0.5
+        ],
+        [
+          8,
+          64,
+          0.5
+        ],
+        [
+          8.5,
+          62,
+          0.5
+        ],
+        [
+          9,
+          64,
+          0.5
+        ],
+        [
+          10,
+          65,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "my-bonnie",
+      "title": "My Bonnie Lies over the Ocean",
+      "composer": "Traditional Scottish folk song",
+      "era": "Traditional folk",
+      "key": "C major",
+      "bpm": 100,
+      "description": "A Scottish-derived love ballad that became a campfire and schoolyard standard. The rising octave leap on 'My Bonnie' is one of the great vocal warm-up moments in all of folk singing.",
+      "notes": [
+        [
+          0,
+          72,
+          1
+        ],
+        [
+          1,
+          69,
+          0.5
+        ],
+        [
+          1.5,
+          67,
+          0.5
+        ],
+        [
+          2,
+          69,
+          1
+        ],
+        [
+          3,
+          67,
+          1
+        ],
+        [
+          4,
+          64,
+          1
+        ],
+        [
+          5,
+          60,
+          1
+        ],
+        [
+          6,
+          62,
+          1
+        ],
+        [
+          7,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "in-the-hall-of-the-mountain-king",
+      "title": "In the Hall of the Mountain King",
+      "composer": "Edvard Grieg (1875)",
+      "era": "Romantic",
+      "key": "E minor",
+      "bpm": 140,
+      "description": "Grieg's music for Peer Gynt's escape from the troll king's hall starts sneaky and ends in a frantic sprint — every film chase scene owes it a debt. The theme repeats faster and louder until the hall collapses.",
+      "notes": [
+        [
+          0,
+          64,
+          1
+        ],
+        [
+          1,
+          66,
+          0.5
+        ],
+        [
+          1.5,
+          67,
+          0.5
+        ],
+        [
+          2,
+          69,
+          0.5
+        ],
+        [
+          2.5,
+          67,
+          0.5
+        ],
+        [
+          3,
+          64,
+          0.5
+        ],
+        [
+          3.5,
+          67,
+          0.5
+        ],
+        [
+          4,
+          66,
+          1
+        ],
+        [
+          5,
+          62,
+          0.5
+        ],
+        [
+          5.5,
+          66,
+          0.5
+        ],
+        [
+          6,
+          65,
+          1
+        ],
+        [
+          7,
+          62,
+          0.5
+        ],
+        [
+          7.5,
+          65,
+          0.5
+        ],
+        [
+          8,
+          64,
+          1
+        ],
+        [
+          9,
+          62,
+          1
+        ],
+        [
+          10,
+          64,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "lightly-row",
+      "title": "Lightly Row (Hänschen Klein)",
+      "composer": "Traditional German folk song",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 110,
+      "description": "Known in German as Hänschen klein, the story of a little boy who leaves home and returns a grown man. 'Lightly Row' is among the first melodies every piano method book teaches, and it works beautifully on any instrument.",
+      "notes": [
+        [
+          0,
+          67,
+          1
+        ],
+        [
+          1,
+          64,
+          2
+        ],
+        [
+          3,
+          65,
+          2
+        ],
+        [
+          5,
+          62,
+          2
+        ],
+        [
+          7,
+          60,
+          1
+        ],
+        [
+          8,
+          62,
+          1
+        ],
+        [
+          9,
+          64,
+          1
+        ],
+        [
+          10,
+          65,
+          1
+        ],
+        [
+          11,
+          67,
+          1.5
+        ],
+        [
+          12.5,
+          67,
+          0.5
+        ],
+        [
+          13,
+          67,
+          2
+        ]
+      ]
     }
   ]
 }
