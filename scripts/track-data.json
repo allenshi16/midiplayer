@@ -12,10 +12,96 @@
       "bpm": 120,
       "description": "Beethoven's beloved bagatelle in A minor, written around 1810 and published in 1867. Its instantly recognizable opening motif makes it one of the most played piano pieces in the world.",
       "notes": [
-        [0, 76, 0.60],[0.6, 75, 0.60],[1.2, 76, 0.60],[1.8, 75, 0.60],[2.4, 76, 0.60],
-        [3.0, 71, 0.60],[3.6, 74, 0.60],[4.2, 72, 0.60],[4.8, 69, 1.20],
-        [6.0, 76, 0.60],[6.6, 75, 0.60],[7.2, 76, 0.60],[7.8, 75, 0.60],[8.4, 76, 0.60],
-        [9.0, 71, 0.60],[9.6, 74, 0.60],[10.2, 72, 0.60],[10.8, 69, 1.20]
+        [
+          0,
+          76,
+          0.6
+        ],
+        [
+          0.6,
+          75,
+          0.6
+        ],
+        [
+          1.2,
+          76,
+          0.6
+        ],
+        [
+          1.8,
+          75,
+          0.6
+        ],
+        [
+          2.4,
+          76,
+          0.6
+        ],
+        [
+          3.0,
+          71,
+          0.6
+        ],
+        [
+          3.6,
+          74,
+          0.6
+        ],
+        [
+          4.2,
+          72,
+          0.6
+        ],
+        [
+          4.8,
+          69,
+          1.2
+        ],
+        [
+          6.0,
+          76,
+          0.6
+        ],
+        [
+          6.6,
+          75,
+          0.6
+        ],
+        [
+          7.2,
+          76,
+          0.6
+        ],
+        [
+          7.8,
+          75,
+          0.6
+        ],
+        [
+          8.4,
+          76,
+          0.6
+        ],
+        [
+          9.0,
+          71,
+          0.6
+        ],
+        [
+          9.6,
+          74,
+          0.6
+        ],
+        [
+          10.2,
+          72,
+          0.6
+        ],
+        [
+          10.8,
+          69,
+          1.2
+        ]
       ]
     },
     {
@@ -27,9 +113,76 @@
       "bpm": 100,
       "description": "The famous final movement of Beethoven's Ninth Symphony. The 'Ode to Joy' theme, set to Schiller's poem, has become a universal anthem of brotherhood and is heard worldwide every New Year.",
       "notes": [
-        [0, 62, 0.75],[0.75, 62, 0.75],[1.5, 63, 0.75],[1.5, 67, 0.75],
-        [3.0, 67, 0.75],[3.75, 65, 0.75],[4.5, 64, 0.75],[5.25, 63, 0.75],[6.0, 62, 0.75],
-        [6.75, 60, 0.75],[7.5, 60, 0.75],[8.25, 64, 0.75],[9.0, 62, 0.75],[9.75, 60, 1.50]
+        [
+          0,
+          62,
+          0.75
+        ],
+        [
+          0.75,
+          62,
+          0.75
+        ],
+        [
+          1.5,
+          63,
+          0.75
+        ],
+        [
+          1.5,
+          67,
+          0.75
+        ],
+        [
+          3.0,
+          67,
+          0.75
+        ],
+        [
+          3.75,
+          65,
+          0.75
+        ],
+        [
+          4.5,
+          64,
+          0.75
+        ],
+        [
+          5.25,
+          63,
+          0.75
+        ],
+        [
+          6.0,
+          62,
+          0.75
+        ],
+        [
+          6.75,
+          60,
+          0.75
+        ],
+        [
+          7.5,
+          60,
+          0.75
+        ],
+        [
+          8.25,
+          64,
+          0.75
+        ],
+        [
+          9.0,
+          62,
+          0.75
+        ],
+        [
+          9.75,
+          60,
+          1.5
+        ]
       ]
     },
     {
@@ -41,10 +194,86 @@
       "bpm": 90,
       "description": "Pachelbel's Canon, composed around 1680, is famous for its repeating eight-chord progression and interlocking melody lines. It is among the most requested classical pieces at weddings.",
       "notes": [
-        [0, 62, 1.0],[1.0, 57, 1.0],[2.0, 59, 1.0],[3.0, 54, 1.0],
-        [4.0, 55, 1.0],[5.0, 62, 1.0],[6.0, 55, 1.0],[7.0, 57, 1.0],
-        [8.0, 62, 1.0],[9.0, 57, 1.0],[10.0, 59, 1.0],[11.0, 54, 1.0],
-        [12.0, 55, 1.0],[13.0, 62, 1.0],[14.0, 64, 1.0],[15.0, 57, 1.0]
+        [
+          0,
+          62,
+          1.0
+        ],
+        [
+          1.0,
+          57,
+          1.0
+        ],
+        [
+          2.0,
+          59,
+          1.0
+        ],
+        [
+          3.0,
+          54,
+          1.0
+        ],
+        [
+          4.0,
+          55,
+          1.0
+        ],
+        [
+          5.0,
+          62,
+          1.0
+        ],
+        [
+          6.0,
+          55,
+          1.0
+        ],
+        [
+          7.0,
+          57,
+          1.0
+        ],
+        [
+          8.0,
+          62,
+          1.0
+        ],
+        [
+          9.0,
+          57,
+          1.0
+        ],
+        [
+          10.0,
+          59,
+          1.0
+        ],
+        [
+          11.0,
+          54,
+          1.0
+        ],
+        [
+          12.0,
+          55,
+          1.0
+        ],
+        [
+          13.0,
+          62,
+          1.0
+        ],
+        [
+          14.0,
+          64,
+          1.0
+        ],
+        [
+          15.0,
+          57,
+          1.0
+        ]
       ]
     },
     {
@@ -56,10 +285,76 @@
       "bpm": 100,
       "description": "This beloved lullaby is set to the 1761 French melody 'Ah! vous dirai-je, maman', later used by Mozart for his Twelve Variations. It is a classic first piece for piano learners.",
       "notes": [
-        [0, 60, 0.75],[0.75, 60, 0.75],[1.5, 67, 0.75],[2.25, 67, 0.75],
-        [3.0, 69, 0.75],[3.75, 69, 0.75],[4.5, 67, 1.50],
-        [6.0, 65, 0.75],[6.75, 65, 0.75],[7.5, 64, 0.75],[8.25, 64, 0.75],
-        [9.0, 62, 0.75],[9.75, 62, 0.75],[10.5, 60, 1.50]
+        [
+          0,
+          60,
+          0.75
+        ],
+        [
+          0.75,
+          60,
+          0.75
+        ],
+        [
+          1.5,
+          67,
+          0.75
+        ],
+        [
+          2.25,
+          67,
+          0.75
+        ],
+        [
+          3.0,
+          69,
+          0.75
+        ],
+        [
+          3.75,
+          69,
+          0.75
+        ],
+        [
+          4.5,
+          67,
+          1.5
+        ],
+        [
+          6.0,
+          65,
+          0.75
+        ],
+        [
+          6.75,
+          65,
+          0.75
+        ],
+        [
+          7.5,
+          64,
+          0.75
+        ],
+        [
+          8.25,
+          64,
+          0.75
+        ],
+        [
+          9.0,
+          62,
+          0.75
+        ],
+        [
+          9.75,
+          62,
+          0.75
+        ],
+        [
+          10.5,
+          60,
+          1.5
+        ]
       ]
     },
     {
@@ -71,8 +366,46 @@
       "bpm": 85,
       "description": "A traditional English folk song from the 16th century, associated with the court of Henry VIII. Its haunting minor melody survives in hundreds of instrumental arrangements.",
       "notes": [
-        [0, 69, 1.0],[1.0, 71, 1.0],[2.0, 72, 1.0],[3.0, 74, 1.0],
-        [4.0, 76, 2.0],[6.0, 74, 1.0],[7.0, 72, 1.0],[8.0, 71, 2.0]
+        [
+          0,
+          69,
+          1.0
+        ],
+        [
+          1.0,
+          71,
+          1.0
+        ],
+        [
+          2.0,
+          72,
+          1.0
+        ],
+        [
+          3.0,
+          74,
+          1.0
+        ],
+        [
+          4.0,
+          76,
+          2.0
+        ],
+        [
+          6.0,
+          74,
+          1.0
+        ],
+        [
+          7.0,
+          72,
+          1.0
+        ],
+        [
+          8.0,
+          71,
+          2.0
+        ]
       ]
     },
     {
@@ -84,9 +417,61 @@
       "bpm": 90,
       "description": "The legendary Scottish song, set to a pentatonic folk tune and popularized by Robert Burns in 1788. It is sung around the world at New Year's Eve midnight.",
       "notes": [
-        [0, 62, 1.0],[1.0, 60, 1.0],[2.0, 62, 0.50],[2.5, 64, 0.50],
-        [3.0, 65, 1.0],[4.0, 65, 0.50],[4.5, 64, 0.50],[5.0, 62, 1.0],
-        [6.0, 60, 1.0],[7.0, 59, 1.0],[8.0, 57, 2.0]
+        [
+          0,
+          62,
+          1.0
+        ],
+        [
+          1.0,
+          60,
+          1.0
+        ],
+        [
+          2.0,
+          62,
+          0.5
+        ],
+        [
+          2.5,
+          64,
+          0.5
+        ],
+        [
+          3.0,
+          65,
+          1.0
+        ],
+        [
+          4.0,
+          65,
+          0.5
+        ],
+        [
+          4.5,
+          64,
+          0.5
+        ],
+        [
+          5.0,
+          62,
+          1.0
+        ],
+        [
+          6.0,
+          60,
+          1.0
+        ],
+        [
+          7.0,
+          59,
+          1.0
+        ],
+        [
+          8.0,
+          57,
+          2.0
+        ]
       ]
     },
     {
@@ -98,10 +483,66 @@
       "bpm": 60,
       "description": "The haunting first movement of Beethoven's Piano Sonata No. 14, 'Quasi una fantasia', composed in 1801. Its rolling broken-chord texture and slow hypnotic melody are unmistakable.",
       "notes": [
-        [0, 61, 3.0],[0, 65, 3.0],[0, 68, 3.0],
-        [3.0, 61, 3.0],[3.0, 65, 3.0],[3.0, 69, 3.0],
-        [6.0, 61, 3.0],[6.0, 66, 3.0],[6.0, 70, 3.0],
-        [9.0, 61, 3.0],[9.0, 65, 3.0],[9.0, 68, 3.0]
+        [
+          0,
+          61,
+          3.0
+        ],
+        [
+          0,
+          65,
+          3.0
+        ],
+        [
+          0,
+          68,
+          3.0
+        ],
+        [
+          3.0,
+          61,
+          3.0
+        ],
+        [
+          3.0,
+          65,
+          3.0
+        ],
+        [
+          3.0,
+          69,
+          3.0
+        ],
+        [
+          6.0,
+          61,
+          3.0
+        ],
+        [
+          6.0,
+          66,
+          3.0
+        ],
+        [
+          6.0,
+          70,
+          3.0
+        ],
+        [
+          9.0,
+          61,
+          3.0
+        ],
+        [
+          9.0,
+          65,
+          3.0
+        ],
+        [
+          9.0,
+          68,
+          3.0
+        ]
       ]
     },
     {
@@ -113,12 +554,1575 @@
       "bpm": 120,
       "description": "Written by James Lord Pierpont in 1857, 'Jingle Bells' is one of the most familiar and most-played songs in the world. Its melody entered the public domain decades ago.",
       "notes": [
-        [0, 64, 0.50],[0.5, 64, 0.50],[1.0, 64, 1.0],[1.5, 64, 0.50],
-        [2.0, 64, 0.50],[2.5, 64, 1.0],[3.0, 64, 0.50],
-        [3.5, 67, 0.50],[4.0, 60, 1.0],[5.0, 62, 0.50],[5.5, 62, 0.50],
-        [6.0, 63, 1.0],[6.5, 63, 0.50],[7.0, 63, 0.50],[7.5, 63, 1.0],
-        [8.0, 62, 0.50],[8.5, 62, 0.50],[9.0, 62, 0.50],[9.5, 62, 0.50],
-        [10.0, 60, 1.0]
+        [
+          0,
+          64,
+          0.5
+        ],
+        [
+          0.5,
+          64,
+          0.5
+        ],
+        [
+          1.0,
+          64,
+          1.0
+        ],
+        [
+          1.5,
+          64,
+          0.5
+        ],
+        [
+          2.0,
+          64,
+          0.5
+        ],
+        [
+          2.5,
+          64,
+          1.0
+        ],
+        [
+          3.0,
+          64,
+          0.5
+        ],
+        [
+          3.5,
+          67,
+          0.5
+        ],
+        [
+          4.0,
+          60,
+          1.0
+        ],
+        [
+          5.0,
+          62,
+          0.5
+        ],
+        [
+          5.5,
+          62,
+          0.5
+        ],
+        [
+          6.0,
+          63,
+          1.0
+        ],
+        [
+          6.5,
+          63,
+          0.5
+        ],
+        [
+          7.0,
+          63,
+          0.5
+        ],
+        [
+          7.5,
+          63,
+          1.0
+        ],
+        [
+          8.0,
+          62,
+          0.5
+        ],
+        [
+          8.5,
+          62,
+          0.5
+        ],
+        [
+          9.0,
+          62,
+          0.5
+        ],
+        [
+          9.5,
+          62,
+          0.5
+        ],
+        [
+          10.0,
+          60,
+          1.0
+        ]
+      ]
+    },
+    {
+      "slug": "amazing-grace",
+      "title": "Amazing Grace",
+      "composer": "Traditional (John Newton hymn, 1779)",
+      "era": "Hymn",
+      "key": "G major",
+      "bpm": 90,
+      "description": "Written by John Newton, a former slave trader turned clergyman, Amazing Grace has become the most beloved hymn in the English-speaking world. Its opening phrase is instantly recognizable at funerals, graduations and memorials.",
+      "notes": [
+        [
+          0,
+          62,
+          1
+        ],
+        [
+          1,
+          67,
+          2
+        ],
+        [
+          3,
+          71,
+          0.5
+        ],
+        [
+          3.5,
+          67,
+          0.5
+        ],
+        [
+          4,
+          71,
+          1
+        ],
+        [
+          5,
+          69,
+          1
+        ],
+        [
+          6,
+          67,
+          2
+        ],
+        [
+          8,
+          64,
+          1
+        ],
+        [
+          9,
+          62,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "brahms-lullaby",
+      "title": "Brahms' Lullaby",
+      "composer": "Johannes Brahms (1868)",
+      "era": "Romantic",
+      "key": "C major",
+      "bpm": 90,
+      "description": "The Wiegenlied, Op. 49 No. 4, is the most famous cradle song ever written. Brahms composed it for a friend's newborn child, and its gentle opening phrase is still sung to babies around the world more than 150 years later.",
+      "notes": [
+        [
+          0,
+          64,
+          0.5
+        ],
+        [
+          0.5,
+          64,
+          0.5
+        ],
+        [
+          1,
+          67,
+          1
+        ],
+        [
+          2,
+          64,
+          0.5
+        ],
+        [
+          2.5,
+          64,
+          0.5
+        ],
+        [
+          3,
+          67,
+          1
+        ],
+        [
+          4,
+          64,
+          0.5
+        ],
+        [
+          4.5,
+          67,
+          0.5
+        ],
+        [
+          5,
+          72,
+          1
+        ],
+        [
+          6,
+          71,
+          1
+        ],
+        [
+          7,
+          69,
+          1
+        ],
+        [
+          8,
+          69,
+          1
+        ],
+        [
+          9,
+          67,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "happy-birthday",
+      "title": "Happy Birthday to You",
+      "composer": "Mildred J. Hill & Patty S. Hill (1893, public domain)",
+      "era": "Traditional song",
+      "key": "C major",
+      "bpm": 110,
+      "description": "The Guinness-recognized most sung song in the English language began as 'Good Morning to All', a classroom greeting song by the Hill sisters in 1893. Following the 2016 court ruling it is firmly in the public domain.",
+      "notes": [
+        [
+          0,
+          67,
+          0.5
+        ],
+        [
+          0.5,
+          67,
+          0.5
+        ],
+        [
+          1,
+          69,
+          1
+        ],
+        [
+          2,
+          67,
+          1
+        ],
+        [
+          3,
+          72,
+          1
+        ],
+        [
+          4,
+          71,
+          2
+        ],
+        [
+          6,
+          67,
+          0.5
+        ],
+        [
+          6.5,
+          67,
+          0.5
+        ],
+        [
+          7,
+          69,
+          1
+        ],
+        [
+          8,
+          67,
+          1
+        ],
+        [
+          9,
+          74,
+          1
+        ],
+        [
+          10,
+          72,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "silent-night",
+      "title": "Silent Night",
+      "composer": "Franz Xaver Gruber (1818)",
+      "era": "Christmas carol",
+      "key": "C major",
+      "bpm": 70,
+      "description": "First performed on Christmas Eve 1818 in an Austrian village church with guitar accompaniment, Silent Night was declared an intangible cultural heritage by UNESCO in 2011 and is translated into some 300 languages.",
+      "notes": [
+        [
+          0,
+          67,
+          0.75
+        ],
+        [
+          0.75,
+          69,
+          0.25
+        ],
+        [
+          1,
+          67,
+          1.5
+        ],
+        [
+          2.5,
+          64,
+          2
+        ],
+        [
+          4.5,
+          67,
+          0.75
+        ],
+        [
+          5.25,
+          69,
+          0.25
+        ],
+        [
+          6,
+          67,
+          1.5
+        ],
+        [
+          7.5,
+          64,
+          2
+        ],
+        [
+          9.5,
+          74,
+          1
+        ],
+        [
+          10.5,
+          74,
+          1
+        ],
+        [
+          11.5,
+          71,
+          2
+        ],
+        [
+          13.5,
+          72,
+          1
+        ],
+        [
+          14.5,
+          72,
+          1
+        ],
+        [
+          15.5,
+          67,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "joy-to-the-world",
+      "title": "Joy to the World",
+      "composer": "Lowell Mason / Isaac Watts (1839)",
+      "era": "Christmas carol",
+      "key": "C major",
+      "bpm": 110,
+      "description": "Its descending scale opening is one of the most recognizable down-the-stairs melodies in music. Mason attributed the tune to Handel, and it remains America's most-published Christmas hymn.",
+      "notes": [
+        [
+          0,
+          72,
+          1
+        ],
+        [
+          1,
+          71,
+          0.5
+        ],
+        [
+          1.5,
+          69,
+          0.5
+        ],
+        [
+          2,
+          67,
+          0.5
+        ],
+        [
+          2.5,
+          65,
+          0.5
+        ],
+        [
+          3,
+          64,
+          0.5
+        ],
+        [
+          3.5,
+          62,
+          0.5
+        ],
+        [
+          4,
+          60,
+          1.5
+        ],
+        [
+          5.5,
+          67,
+          0.5
+        ],
+        [
+          6,
+          69,
+          0.5
+        ],
+        [
+          6.5,
+          69,
+          0.5
+        ],
+        [
+          7,
+          71,
+          0.5
+        ],
+        [
+          7.5,
+          71,
+          0.5
+        ],
+        [
+          8,
+          72,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "deck-the-halls",
+      "title": "Deck the Halls",
+      "composer": "Traditional Welsh melody (16th century)",
+      "era": "Christmas carol",
+      "key": "C major",
+      "bpm": 130,
+      "description": "The tune comes from the Welsh winter song 'Nos Galan', and the English 'fa-la-la-la-la' refrain turned it into a Christmas standard. Perfect for practicing fast scalar runs on any instrument.",
+      "notes": [
+        [
+          0,
+          67,
+          1
+        ],
+        [
+          1,
+          65,
+          1
+        ],
+        [
+          2,
+          64,
+          1
+        ],
+        [
+          3,
+          62,
+          1
+        ],
+        [
+          4,
+          60,
+          1
+        ],
+        [
+          5,
+          62,
+          1
+        ],
+        [
+          6,
+          64,
+          2
+        ],
+        [
+          8,
+          62,
+          1
+        ],
+        [
+          9,
+          64,
+          1
+        ],
+        [
+          10,
+          65,
+          1
+        ],
+        [
+          11,
+          62,
+          1
+        ],
+        [
+          12,
+          64,
+          1
+        ],
+        [
+          13,
+          62,
+          1
+        ],
+        [
+          14,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "we-wish-you-a-merry-christmas",
+      "title": "We Wish You a Merry Christmas",
+      "composer": "Traditional English carol (16th century)",
+      "era": "Christmas carol",
+      "key": "G major",
+      "bpm": 120,
+      "description": "A carol from the West Country wassailing tradition, where singers went door to door demanding figgy pudding and good cheer. Its brisk triple rhythm makes it a favorite for beginner MIDI arrangements.",
+      "notes": [
+        [
+          0,
+          62,
+          0.5
+        ],
+        [
+          0.5,
+          67,
+          0.5
+        ],
+        [
+          1,
+          67,
+          0.5
+        ],
+        [
+          1.5,
+          69,
+          0.5
+        ],
+        [
+          2,
+          67,
+          0.5
+        ],
+        [
+          2.5,
+          66,
+          0.5
+        ],
+        [
+          3,
+          64,
+          1.5
+        ],
+        [
+          4.5,
+          72,
+          0.5
+        ],
+        [
+          5,
+          72,
+          0.5
+        ],
+        [
+          5.5,
+          71,
+          0.5
+        ],
+        [
+          6,
+          67,
+          0.5
+        ],
+        [
+          7,
+          64,
+          1.5
+        ],
+        [
+          8.5,
+          64,
+          0.5
+        ],
+        [
+          9,
+          64,
+          0.5
+        ],
+        [
+          9.5,
+          65,
+          0.5
+        ],
+        [
+          10,
+          67,
+          0.5
+        ],
+        [
+          11,
+          66,
+          0.5
+        ],
+        [
+          11.5,
+          64,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "o-christmas-tree",
+      "title": "O Christmas Tree (O Tannenbaum)",
+      "composer": "Traditional German folk song",
+      "era": "Christmas carol",
+      "key": "F major",
+      "bpm": 100,
+      "description": "Based on a Silesian folk melody made famous by the 1824 Ernst Anschütz setting, O Tannenbaum is sung across the German-speaking world and beyond every December.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          65,
+          1
+        ],
+        [
+          2,
+          65,
+          1
+        ],
+        [
+          3,
+          65,
+          1
+        ],
+        [
+          4,
+          67,
+          2
+        ],
+        [
+          6,
+          69,
+          1
+        ],
+        [
+          7,
+          69,
+          1
+        ],
+        [
+          8,
+          69,
+          1
+        ],
+        [
+          9,
+          69,
+          1
+        ],
+        [
+          10,
+          67,
+          1
+        ],
+        [
+          11,
+          69,
+          1
+        ],
+        [
+          12,
+          70,
+          1
+        ],
+        [
+          13,
+          72,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "carol-of-the-bells",
+      "title": "Carol of the Bells",
+      "composer": "Mykola Leontovych (1914)",
+      "era": "Christmas carol",
+      "key": "G minor",
+      "bpm": 150,
+      "description": "Adapted from the Ukrainian folk chant 'Shchedryk', its four-note ostinato repeats like peeling bells. The piece became a pop-culture staple after feature film and commercial use in the 1990s.",
+      "notes": [
+        [
+          0,
+          70,
+          0.5
+        ],
+        [
+          0.5,
+          69,
+          0.5
+        ],
+        [
+          1,
+          70,
+          0.5
+        ],
+        [
+          1.5,
+          67,
+          1.5
+        ],
+        [
+          3,
+          70,
+          0.5
+        ],
+        [
+          3.5,
+          69,
+          0.5
+        ],
+        [
+          4,
+          70,
+          0.5
+        ],
+        [
+          4.5,
+          67,
+          1.5
+        ],
+        [
+          6,
+          72,
+          0.5
+        ],
+        [
+          6.5,
+          71,
+          0.5
+        ],
+        [
+          7,
+          72,
+          0.5
+        ],
+        [
+          7.5,
+          69,
+          1.5
+        ],
+        [
+          9,
+          74,
+          0.5
+        ],
+        [
+          9.5,
+          72,
+          0.5
+        ],
+        [
+          10,
+          74,
+          0.5
+        ],
+        [
+          10.5,
+          71,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "frere-jacques",
+      "title": "Frère Jacques",
+      "composer": "Traditional French melody (18th century)",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 110,
+      "description": "The canon about a sleepy monk who oversleeps for matins is the classic round for beginners — every four-note phrase repeats, and it is taught in virtually every elementary music classroom.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          62,
+          1
+        ],
+        [
+          2,
+          64,
+          1
+        ],
+        [
+          3,
+          60,
+          1
+        ],
+        [
+          4,
+          60,
+          1
+        ],
+        [
+          5,
+          62,
+          1
+        ],
+        [
+          6,
+          64,
+          1
+        ],
+        [
+          7,
+          60,
+          1
+        ],
+        [
+          8,
+          64,
+          1
+        ],
+        [
+          9,
+          65,
+          1
+        ],
+        [
+          10,
+          67,
+          2
+        ],
+        [
+          12,
+          64,
+          1
+        ],
+        [
+          13,
+          65,
+          1
+        ],
+        [
+          14,
+          67,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "old-macdonald",
+      "title": "Old MacDonald Had a Farm",
+      "composer": "Traditional",
+      "era": "Traditional childhood song",
+      "key": "C major",
+      "bpm": 120,
+      "description": "An English-language nursery rhyme with roots in an 18th-century opera tune. Each verse swaps in a new animal, which makes its bounce and call-and-response ideal for ear training.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          60,
+          1
+        ],
+        [
+          2,
+          60,
+          1
+        ],
+        [
+          3,
+          67,
+          1.5
+        ],
+        [
+          4.5,
+          69,
+          0.5
+        ],
+        [
+          5,
+          69,
+          1
+        ],
+        [
+          6,
+          67,
+          2
+        ],
+        [
+          8,
+          64,
+          1
+        ],
+        [
+          9,
+          64,
+          1
+        ],
+        [
+          10,
+          62,
+          1
+        ],
+        [
+          11,
+          67,
+          1
+        ],
+        [
+          12,
+          67,
+          1
+        ],
+        [
+          13,
+          65,
+          1
+        ],
+        [
+          14,
+          65,
+          1
+        ],
+        [
+          15,
+          64,
+          1
+        ],
+        [
+          16,
+          62,
+          1
+        ],
+        [
+          17,
+          62,
+          1
+        ],
+        [
+          18,
+          60,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "yankee-doodle",
+      "title": "Yankee Doodle",
+      "composer": "Traditional American (1750s)",
+      "era": "American folk",
+      "key": "C major",
+      "bpm": 120,
+      "description": "British officers originally sang it to mock colonial troops — who adopted it with pride during the Revolutionary War. It is now the state anthem of Connecticut and a rite of passage for beginner pianists.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          60,
+          1
+        ],
+        [
+          2,
+          62,
+          1
+        ],
+        [
+          3,
+          64,
+          1
+        ],
+        [
+          4,
+          60,
+          1
+        ],
+        [
+          5,
+          64,
+          1
+        ],
+        [
+          6,
+          62,
+          2
+        ],
+        [
+          8,
+          67,
+          1
+        ],
+        [
+          9,
+          67,
+          1
+        ],
+        [
+          10,
+          69,
+          1
+        ],
+        [
+          11,
+          67,
+          1
+        ],
+        [
+          12,
+          69,
+          1
+        ],
+        [
+          13,
+          72,
+          1
+        ],
+        [
+          14,
+          71,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "oh-susanna",
+      "title": "Oh! Susanna",
+      "composer": "Stephen Foster (1848)",
+      "era": "American folk",
+      "key": "C major",
+      "bpm": 120,
+      "description": "Stephen Foster's breakout hit became the unofficial anthem of the California Gold Rush. Its pentatonic melody is a staple of American folk and bluegrass jam sessions to this day.",
+      "notes": [
+        [
+          0,
+          60,
+          1
+        ],
+        [
+          1,
+          62,
+          1
+        ],
+        [
+          2,
+          64,
+          1
+        ],
+        [
+          3,
+          67,
+          1.5
+        ],
+        [
+          4.5,
+          67,
+          0.5
+        ],
+        [
+          5,
+          69,
+          1
+        ],
+        [
+          6,
+          67,
+          1
+        ],
+        [
+          7,
+          64,
+          1
+        ],
+        [
+          8,
+          60,
+          1
+        ],
+        [
+          9,
+          62,
+          1
+        ],
+        [
+          10,
+          64,
+          1.5
+        ],
+        [
+          11.5,
+          64,
+          0.5
+        ],
+        [
+          12,
+          62,
+          1
+        ],
+        [
+          13,
+          60,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "house-of-the-rising-sun",
+      "title": "House of the Rising Sun",
+      "composer": "Traditional American folk song",
+      "era": "American folk",
+      "key": "A minor",
+      "bpm": 100,
+      "description": "An English-derived warning ballad collected in the Appalachian mountains, made world-famous by The Animals' 1964 recording. The arpeggiated minor melody is a right-of-passage for guitar and piano learners.",
+      "notes": [
+        [
+          0,
+          57,
+          1
+        ],
+        [
+          1,
+          60,
+          1
+        ],
+        [
+          2,
+          62,
+          1
+        ],
+        [
+          3,
+          65,
+          1
+        ],
+        [
+          4,
+          69,
+          1.5
+        ],
+        [
+          5.5,
+          67,
+          0.5
+        ],
+        [
+          6,
+          65,
+          1
+        ],
+        [
+          7,
+          62,
+          1
+        ],
+        [
+          8,
+          60,
+          1
+        ],
+        [
+          9,
+          57,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "scarborough-fair",
+      "title": "Scarborough Fair",
+      "composer": "Traditional English folk song",
+      "era": "Traditional folk",
+      "key": "A minor (Dorian)",
+      "bpm": 100,
+      "description": "A riddle-song about impossible tasks between former lovers, tied to the Yorkshire trading fair. Simon & Garfunkel's 1966 arrangement brought the haunting modal melody to a global audience.",
+      "notes": [
+        [
+          0,
+          69,
+          1
+        ],
+        [
+          1,
+          69,
+          1
+        ],
+        [
+          2,
+          76,
+          1.5
+        ],
+        [
+          3.5,
+          76,
+          1.5
+        ],
+        [
+          5,
+          74,
+          1
+        ],
+        [
+          6,
+          72,
+          1
+        ],
+        [
+          7,
+          71,
+          1
+        ],
+        [
+          8,
+          72,
+          1
+        ],
+        [
+          9,
+          69,
+          2
+        ]
+      ]
+    },
+    {
+      "slug": "swan-lake-theme",
+      "title": "Swan Lake Theme",
+      "composer": "Pyotr Ilyich Tchaikovsky (1876)",
+      "era": "Romantic",
+      "key": "A minor",
+      "bpm": 80,
+      "description": "The oboe theme that opens Tchaikovsky's first ballet is the sound of the swan-queen Odette. It is one of the most requested orchestral melodies and a beautiful study in long, breathing phrases.",
+      "notes": [
+        [
+          0,
+          76,
+          1
+        ],
+        [
+          1,
+          81,
+          1
+        ],
+        [
+          2,
+          83,
+          0.5
+        ],
+        [
+          2.5,
+          84,
+          0.5
+        ],
+        [
+          3,
+          83,
+          0.5
+        ],
+        [
+          3.5,
+          81,
+          0.5
+        ],
+        [
+          4,
+          80,
+          0.5
+        ],
+        [
+          4.5,
+          81,
+          1.5
+        ]
+      ]
+    },
+    {
+      "slug": "minuet-in-g",
+      "title": "Minuet in G (BWV Anh. 114)",
+      "composer": "Christian Petzold (1725, formerly attrib. J.S. Bach)",
+      "era": "Baroque",
+      "key": "G major",
+      "bpm": 110,
+      "description": "Found in the Notebook for Anna Magdalena Bach and long attributed to Bach himself, this minuet is the most-played Baroque dance by piano students worldwide. Research in 1970 credited it to Dresden organist Christian Petzold.",
+      "notes": [
+        [
+          0,
+          74,
+          1
+        ],
+        [
+          1,
+          67,
+          0.5
+        ],
+        [
+          1.5,
+          69,
+          0.5
+        ],
+        [
+          2,
+          71,
+          0.5
+        ],
+        [
+          2.5,
+          72,
+          0.5
+        ],
+        [
+          3,
+          74,
+          1
+        ],
+        [
+          4,
+          67,
+          0.5
+        ],
+        [
+          4.5,
+          67,
+          0.5
+        ],
+        [
+          5,
+          79,
+          1
+        ],
+        [
+          6,
+          72,
+          0.5
+        ],
+        [
+          6.5,
+          74,
+          0.5
+        ],
+        [
+          7,
+          76,
+          0.5
+        ],
+        [
+          7.5,
+          78,
+          0.5
+        ],
+        [
+          8,
+          79,
+          1
+        ],
+        [
+          9,
+          67,
+          0.5
+        ],
+        [
+          9.5,
+          67,
+          0.5
+        ]
+      ]
+    },
+    {
+      "slug": "turkish-march",
+      "title": "Turkish March (Rondo alla Turca)",
+      "composer": "Wolfgang Amadeus Mozart (1783)",
+      "era": "Classical",
+      "key": "A minor",
+      "bpm": 120,
+      "description": "The sparkling finale of Mozart's Piano Sonata No. 11 imitates Turkish Janissary bands with its quick grace notes and cymbal-like bursts. Its rolling sixteenth-note pickup is a favorite technical exercise.",
+      "notes": [
+        [
+          0,
+          71,
+          0.25
+        ],
+        [
+          0.25,
+          69,
+          0.25
+        ],
+        [
+          0.5,
+          68,
+          0.25
+        ],
+        [
+          0.75,
+          69,
+          0.25
+        ],
+        [
+          1,
+          72,
+          0.5
+        ],
+        [
+          1.5,
+          69,
+          0.5
+        ],
+        [
+          2,
+          74,
+          0.25
+        ],
+        [
+          2.25,
+          72,
+          0.25
+        ],
+        [
+          2.5,
+          71,
+          0.25
+        ],
+        [
+          2.75,
+          72,
+          0.25
+        ],
+        [
+          3,
+          76,
+          0.5
+        ],
+        [
+          3.5,
+          72,
+          0.5
+        ],
+        [
+          4,
+          77,
+          0.25
+        ],
+        [
+          4.25,
+          76,
+          0.25
+        ],
+        [
+          4.5,
+          75,
+          0.25
+        ],
+        [
+          4.75,
+          76,
+          0.25
+        ],
+        [
+          5,
+          81,
+          0.5
+        ],
+        [
+          5.5,
+          76,
+          0.5
+        ]
+      ]
+    },
+    {
+      "slug": "the-entertainer",
+      "title": "The Entertainer",
+      "composer": "Scott Joplin (1902)",
+      "era": "Ragtime",
+      "key": "C major",
+      "bpm": 76,
+      "description": "Joplin's classic rag returned to the top of the charts 72 years after publication as the theme of the 1973 film The Sting. Its syncopated pickup figure is the signature sound of ragtime piano.",
+      "notes": [
+        [
+          0,
+          62,
+          0.5
+        ],
+        [
+          0.5,
+          63,
+          0.5
+        ],
+        [
+          1,
+          64,
+          0.5
+        ],
+        [
+          1.5,
+          72,
+          0.5
+        ],
+        [
+          2,
+          64,
+          0.5
+        ],
+        [
+          2.5,
+          72,
+          0.5
+        ],
+        [
+          3,
+          64,
+          0.5
+        ],
+        [
+          3.5,
+          72,
+          1.5
+        ]
       ]
     }
   ]
