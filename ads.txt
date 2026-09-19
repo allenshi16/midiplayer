@@ -1,0 +1,3 @@
+# Replace pub-0000000000000000 with your real publisher id after AdSense approval,
+# and mirror the same id into the adsense-client meta / VITE_ADSENSE_CLIENT env var.
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

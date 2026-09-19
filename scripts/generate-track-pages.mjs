@@ -15,6 +15,8 @@ import { dirname, join } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const SITE_URL = 'https://midiplayeronline.com';
+// AdSense publisher id (e.g. ca-pub-1234567890123456). Empty = ads disabled.
+const ADSENSE_CLIENT = (process.env.ADSENSE_CLIENT || '').trim();
 // Static site: webroot IS the repo root (index.html lives at root, no build step).
 // Songs must be generated here so they deploy with the site.
 const OUT_DIR = join(ROOT, 'songs');
@@ -90,6 +92,7 @@ function renderPage(track, prev, next) {
     <meta name="description" content="${esc(track.title)} by ${esc(track.composer)} — play this public-domain ${track.era} melody online instantly with MIDI Room's browser player. No upload, account or install." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${SITE_URL}/songs/${track.slug}/" />
+    <meta name="adsense-client" content="${ADSENSE_CLIENT}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${esc(track.title)} — Play Online" />
     <meta property="og:description" content="Hear ${esc(track.title)} instantly in your browser. Free, private, 100% local." />
@@ -136,7 +139,7 @@ function renderPage(track, prev, next) {
     <div class="shell">
       <header class="topbar">
         <a class="brand" href="/" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
-        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/songs-index.html">Songs</a></nav>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
       </header>
       <main class="song-page">
         <a class="back-home" href="/">← Back to MIDI Player Online</a>
@@ -174,13 +177,15 @@ ${faqHtml}
           <span>${prev ? `<a href="/songs/${prev.slug}/">← ${esc(prev.title)}</a>` : '<span></span>'}</span>
           <span>${next ? `<a href="/songs/${next.slug}/">${esc(next.title)} →</a>` : '<span></span>'}</span>
         </nav>
+        <div class="ad-slot" aria-hidden="true"></div>
       </main>
-      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account</span></footer>
+      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
     </div>
     <script>
       window.TRACK_DATA = ${JSON.stringify({ title: track.title, bpm: track.bpm, notes: track.notes })};
     </script>
     <script src="/songs/demo-player.js"></script>
+    <script src="/ads.js" defer></script>
   </body>
 </html>
 `;
@@ -197,7 +202,7 @@ function renderHub(tracks) {
     '@type': 'CollectionPage',
     name: 'Public Domain Songs — Play Online',
     description: 'Play public-domain classical and folk melodies instantly in your browser with MIDI Room.',
-    url: `${SITE_URL}/songs/songs-index.html`
+    url: `${SITE_URL}/songs/`
   };
   return `<!doctype html>
 <html lang="en">
@@ -206,10 +211,11 @@ function renderHub(tracks) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Play public-domain classical and folk melodies online instantly — Für Elise, Ode to Joy, Canon in D and more, free and 100% local in your browser." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="${SITE_URL}/songs/songs-index.html" />
+    <link rel="canonical" href="${SITE_URL}/songs/" />
+    <meta name="adsense-client" content="${ADSENSE_CLIENT}" />
     <meta property="og:title" content="Public Domain Songs — Play Online | MIDI Room" />
     <meta property="og:description" content="Hear famous public-domain melodies in your browser. Free, private, no install." />
-    <meta property="og:url" content="${SITE_URL}/songs/songs-index.html" />
+    <meta property="og:url" content="${SITE_URL}/songs/" />
     <meta property="og:image" content="${SITE_URL}/og-image.png" />
     <title>Public Domain Songs — Play Online | MIDI Room</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -235,7 +241,7 @@ function renderHub(tracks) {
     <div class="shell">
       <header class="topbar">
         <a class="brand" href="/" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
-        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/songs-index.html">Songs</a></nav>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
       </header>
       <main class="hub-page">
         <a class="back-home" href="/">← Back to MIDI Player Online</a>
@@ -244,9 +250,11 @@ function renderHub(tracks) {
         <div class="song-cards">
 ${items}
         </div>
+        <div class="ad-slot" aria-hidden="true"></div>
       </main>
-      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account</span></footer>
+      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
     </div>
+    <script src="/ads.js" defer></script>
   </body>
 </html>
 `;
@@ -389,7 +397,26 @@ for (let i = 0; i < tracks.length; i++) {
 }
 
 // ---- write hub ----
-await writeFile(join(OUT_DIR, 'songs-index.html'), renderHub(tracks));
+// The hub is served at /songs/ (songs/index.html). songs-index.html is kept only
+// as a legacy redirect stub so old /songs/songs-index.html links don't 404.
+await writeFile(join(OUT_DIR, 'index.html'), renderHub(tracks));
+await writeFile(join(OUT_DIR, 'songs-index.html'), `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Public Domain Songs — Play Online | MIDI Room</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="${SITE_URL}/songs/" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+<p style="padding:40px;font-family:sans-serif">This page has moved to <a href="/songs/">/songs/</a>.</p>
+<meta http-equiv="refresh" content="0; url=/songs/">
+</body>
+</html>
+`);
 
 // ---- update sitemap (static site: sitemap lives at repo root, not public/) ----
 const sitemapPath = join(ROOT, 'sitemap.xml');
@@ -397,14 +424,12 @@ let sitemap = await readFile(sitemapPath, 'utf8');
 const songUrls = tracks
   .map((t) => `  <url>\n    <loc>${SITE_URL}/songs/${t.slug}/</loc>\n    <lastmod>2026-08-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`)
   .join('\n');
-const hubUrl = `  <url>\n    <loc>${SITE_URL}/songs/songs-index.html</loc>\n    <lastmod>2026-08-11</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`;
-// insert before closing </urlset>, avoiding duplicates
+const hubUrl = `  <url>\n    <loc>${SITE_URL}/songs/</loc>\n    <lastmod>2026-08-11</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`;
+// remove previously generated /songs/ entries, then re-insert before </urlset>.
+// The insertion index must be computed AFTER the removal — a stale index leaves
+// </urlset> stranded mid-file once entries shrink the string.
+sitemap = sitemap.replace(/  <url>\n    <loc>https:\/\/midiplayeronline\.com\/songs\/[^<]*<\/loc>[\s\S]*?<\/url>\n/g, '');
 const urlsetIndex = sitemap.indexOf('</urlset>');
-const existingSongBlock = sitemap.match(/  <url>\n    <loc>https:\/\/midiplayeronline\.com\/songs\/[^<]*<\/loc>[\s\S]*?<\/url>/g);
-if (existingSongBlock && existingSongBlock.length) {
-  // sitemap already generated — remove old song entries then re-add
-  sitemap = sitemap.replace(/  <url>\n    <loc>https:\/\/midiplayeronline\.com\/songs\/[^<]*<\/loc>[\s\S]*?<\/url>\n/g, '');
-}
 const newBlock = songUrls + '\n' + hubUrl;
 sitemap = sitemap.slice(0, urlsetIndex) + newBlock + '\n' + sitemap.slice(urlsetIndex);
 await writeFile(sitemapPath, sitemap);
