@@ -274,6 +274,12 @@
           57,
           1.0
         ]
+      ],
+      "extraFaqs": [
+        {
+          "q": "Where can I get Canon in D MIDI for free?",
+          "a": "Pachelbel's Canon in D (c. 1680) is in the public domain, and you can hear our simplified arrangement right here — free, with no download, account or install. For the full multi-track experience, drop any Canon in D MIDI file you own into the main player."
+        }
       ]
     },
     {
@@ -543,6 +549,16 @@
           68,
           3.0
         ]
+      ],
+      "extraFaqs": [
+        {
+          "q": "Is the 3rd movement (Presto agitato) included here?",
+          "a": "This demo covers the famous opening of the First Movement (Adagio sostenuto) — the slow, dreamy theme the sonata is named after. The Third Movement is also public domain, but our simplified arrangement focuses on the First Movement's opening phrase."
+        },
+        {
+          "q": "Is this an easy version for beginners?",
+          "a": "Yes. The demo is a simplified single-line melody, so it is easy to follow on piano or any instrument. Slow the tempo down further in the main MIDI Room player if you want to practice note by note with the A/B loop."
+        }
       ]
     },
     {
@@ -654,6 +670,16 @@
           60,
           1.0
         ]
+      ],
+      "extraFaqs": [
+        {
+          "q": "Can I use this Jingle Bells MIDI for karaoke or a sing-along?",
+          "a": "Yes — play the demo as a backing melody and sing along. It is a simple, easy-to-follow single-line arrangement of the 1857 classic, and the composition is in the public domain, so holiday performances and videos need no licence."
+        },
+        {
+          "q": "Is there a jazz version of Jingle Bells here?",
+          "a": "This demo plays the traditional straight melody. If you want a jazz or swing feel, load your own Jingle Bells MIDI into the main MIDI Room player — it works with any MIDI file and runs entirely in your browser."
+        }
       ]
     },
     {
@@ -857,6 +883,12 @@
           72,
           2
         ]
+      ],
+      "extraFaqs": [
+        {
+          "q": "Can I use the Happy Birthday melody for free in videos or events?",
+          "a": "Yes. 'Happy Birthday to You' was confirmed to be in the public domain in 2016, so the melody is free to perform and use. Our demo is a simplified single-line version you can play along with at any celebration."
+        }
       ]
     },
     {

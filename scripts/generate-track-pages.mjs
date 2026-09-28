@@ -26,6 +26,72 @@ const OUT_DIR = join(ROOT, 'songs');
 const data = JSON.parse(await readFile(join(__dirname, 'track-data.json'), 'utf8'));
 const tracks = data.tracks;
 
+/**
+ * Thematic collection hubs under /songs/<slug>/.
+ * Keywords covered here were demand-validated (Google Suggest + DuckDuckGo
+ * dual-source, 2026-09-28) and competition-checked (SerpApi intitle KGR':
+ * "christmas songs midi"=6, "christmas carols midi"=7, "public domain midi"=8,
+ * "jingle bells midi"=77, "happy birthday midi"=136 — all low).
+ * Copy must stay honest: the site streams built-in demos and does NOT host
+ * downloadable files of these melodies.
+ */
+const COLLECTIONS = [
+  {
+    slug: 'christmas',
+    cardTitle: 'Christmas Songs MIDI',
+    cardSub: '10 holiday carols — play free online',
+    h1: 'Christmas Songs MIDI',
+    pageTitle: 'Christmas Songs MIDI — Play 10 Carols Free Online | MIDI Room',
+    metaDescription: 'Play Christmas songs MIDI online free — Jingle Bells, Silent Night, Joy to the World, Carol of the Bells and more public-domain carols, each with a built-in demo player. No download, no account.',
+    ogDescription: 'Hear 10 public-domain Christmas carols instantly in your browser. Free, private, no install.',
+    sub: 'Every Christmas carol below is in the public domain, so you can listen, practice and perform these melodies freely. Each song page opens with a built-in demo player — hear the tune instantly, slow the tempo for practice, or repeat a section with the A/B loop in the main player. Nothing to download, no account, everything runs locally in your browser.',
+    trackSlugs: [
+      'jingle-bells', 'silent-night', 'joy-to-the-world', 'deck-the-halls',
+      'we-wish-you-a-merry-christmas', 'o-christmas-tree', 'carol-of-the-bells',
+      'god-rest-ye-merry-gentlemen', 'dance-of-the-sugar-plum-fairy', 'auld-lang-syne'
+    ],
+    faqs: [
+      {
+        q: 'Can I play Christmas songs MIDI online for free?',
+        a: 'Yes. Every carol on this page has its own demo player that runs entirely in your browser — click play and the melody starts instantly. There is nothing to download, no account to create, and no plugin to install.'
+      },
+      {
+        q: 'Are these Christmas MIDI melodies copyright free?',
+        a: 'The compositions themselves are public domain — traditional carols like Jingle Bells (1857), Silent Night (1818) and Joy to the World (1839) are free to perform, arrange and share. Our demos are simplified single-line arrangements of those public-domain melodies.'
+      },
+      {
+        q: 'Which Christmas carols can I play here?',
+        a: 'Ten holiday favourites: Jingle Bells, Silent Night, Joy to the World, Deck the Halls, We Wish You a Merry Christmas, O Christmas Tree, Carol of the Bells, God Rest Ye Merry Gentlemen, Dance of the Sugar Plum Fairy (from The Nutcracker) and Auld Lang Syne for New Year.'
+      }
+    ]
+  },
+  {
+    slug: 'public-domain',
+    cardTitle: 'Public Domain MIDI',
+    cardSub: 'Free no-copyright classical & folk melodies',
+    h1: 'Public Domain MIDI',
+    pageTitle: 'Public Domain MIDI — Free No-Copyright Classical & Folk Music | MIDI Room',
+    metaDescription: 'Browse 50+ public-domain MIDI melodies — classical, folk and carols by Beethoven, Mozart, Bach and traditional composers. Free, no copyright, plays instantly in your browser.',
+    ogDescription: 'Free no-copyright public-domain melodies — play instantly in your browser.',
+    sub: 'Looking for MIDI music with no copyright restrictions? Every melody in this library is in the public domain — composed by Beethoven, Mozart, Pachelbel, Grieg and traditional folk writers whose work is free for anyone to play, arrange and perform. Demos stream instantly in your browser; for full piano-roll playback, tempo control and A/B looping, drop any MIDI file of your own into the main player.',
+    trackSlugs: null, // null = all tracks
+    faqs: [
+      {
+        q: 'What is public domain MIDI music?',
+        a: 'Public-domain MIDI music reproduces melodies whose compositions are no longer (or never were) under copyright — typically works by composers who died more than 70 years ago, and traditional folk tunes. You can play, arrange and perform them without licensing.'
+      },
+      {
+        q: 'Can I use these melodies in my own projects?',
+        a: 'The underlying compositions are public domain, so the melodies themselves are free to use. What you hear here are our simplified single-line demo arrangements, played live in your browser rather than distributed as files.'
+      },
+      {
+        q: 'Do you offer free MIDI file downloads?',
+        a: 'We deliberately skip file downloads: every melody plays instantly in the built-in demo player, and the main MIDI Room player lets you load, edit, export and record your own MIDI — all locally, with nothing uploaded to a server.'
+      }
+    ]
+  }
+];
+
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 // MIDI note number -> note name (for display)
@@ -41,7 +107,7 @@ function durationSeconds(track) {
 
 function faq(track) {
   const n = track.notes.length;
-  return [
+  const base = [
     {
       q: `Can I play ${track.title} online in my browser?`,
       a: `Yes. Use the demo player above to hear this public-domain ${track.era} melody instantly, or drop your own MIDI file into the MIDI Player Online tool for full piano-roll playback, tempo control and A/B practice looping. Everything runs locally in your browser — no upload, account or install.`
@@ -59,6 +125,10 @@ function faq(track) {
       a: `Instead of downloading a file, you can hear the melody right here with the built-in player. To practice it, set a slow tempo and use the A/B loop to repeat a section. You can also export or record any MIDI you play from the main MIDI Room player.`
     }
   ];
+  // Per-track extra FAQs (from track-data.json), used to cover verified
+  // search variants (e.g. "3rd movement", "karaoke", "easy") honestly.
+  const extra = Array.isArray(track.extraFaqs) ? track.extraFaqs : [];
+  return [...base, ...extra];
 }
 
 function renderPage(track, prev, next) {
@@ -201,6 +271,11 @@ function renderHub(tracks) {
         <span class="song-card-title">${esc(t.title)}</span>
         <span class="song-card-composer">${esc(t.composer)}</span>
       </a>`).join('\n');
+  const collections = COLLECTIONS.map((c) => `
+      <a class="song-card collection-card" href="/songs/${c.slug}/">
+        <span class="song-card-title">${esc(c.cardTitle)}</span>
+        <span class="song-card-composer">${esc(c.cardSub)}</span>
+      </a>`).join('\n');
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -232,6 +307,9 @@ function renderHub(tracks) {
       .hub-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
       .hub-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 10px;font-weight:800}
       .hub-sub{color:var(--muted);font-size:14px;line-height:1.7;max-width:620px;margin-bottom:40px}
+      .hub-section{font-size:20px;letter-spacing:-.03em;margin:36px 0 14px;font-weight:700}
+      .collection-card{border-color:var(--coral)}
+      .collection-card .song-card-title{color:var(--coral)}
       .song-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
       .song-card{border:1px solid var(--line);border-radius:10px;padding:20px 22px;text-decoration:none;transition:.15s;background:#fff}
       .song-card:hover{border-color:var(--coral);transform:translateY(-2px)}
@@ -252,8 +330,111 @@ function renderHub(tracks) {
         <a class="back-home" href="/">← Back to MIDI Player Online</a>
         <h1>Public Domain Songs</h1>
         <p class="hub-sub">Hear famous public-domain classical and folk melodies instantly in your browser. Each song page includes a built-in demo player, so you can listen before you download or practice.</p>
+        <h2 class="hub-section">Collections</h2>
+        <div class="song-cards collections-row">
+${collections}
+        </div>
+        <h2 class="hub-section">All songs</h2>
         <div class="song-cards">
 ${items}
+        </div>
+        <div class="ad-slot" aria-hidden="true"></div>
+      </main>
+      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
+    </div>
+    <script src="/ads.js" defer></script>
+    <script src="/ga.js" defer></script>
+  </body>
+</html>
+`;
+}
+
+// ---- collection hubs (e.g. /songs/christmas/, /songs/public-domain/) ----
+function renderCollectionHub(c, allTracks) {
+  const selected = c.trackSlugs
+    ? c.trackSlugs.map((s) => allTracks.find((t) => t.slug === s)).filter(Boolean)
+    : allTracks;
+  const items = selected.map((t) => `
+      <a class="song-card" href="/songs/${t.slug}/">
+        <span class="song-card-title">${esc(t.title)}</span>
+        <span class="song-card-composer">${esc(t.composer)}</span>
+      </a>`).join('\n');
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: c.h1,
+    description: c.metaDescription,
+    url: `${SITE_URL}/songs/${c.slug}/`
+  };
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faqs.map((f) => ({
+      '@type': 'Question', name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  };
+  const faqHtml = c.faqs.map((f) => `
+      <div class="faq-item">
+        <h3>${esc(f.q)}</h3>
+        <p>${esc(f.a)}</p>
+      </div>`).join('\n');
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="${esc(c.metaDescription)}" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="${SITE_URL}/songs/${c.slug}/" />
+    <meta name="adsense-client" content="${ADSENSE_CLIENT}" />
+    <meta name="ga-measurement" content="${GA_ID}" />
+    <meta property="og:title" content="${esc(c.pageTitle)}" />
+    <meta property="og:description" content="${esc(c.ogDescription)}" />
+    <meta property="og:url" content="${SITE_URL}/songs/${c.slug}/" />
+    <meta property="og:image" content="${SITE_URL}/og-image.png" />
+    <title>${esc(c.pageTitle)}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+    <script type="application/ld+json">${JSON.stringify(faqLd)}</script>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .hub-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
+      .hub-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 10px;font-weight:800}
+      .hub-sub{color:var(--muted);font-size:14px;line-height:1.7;max-width:620px;margin-bottom:40px}
+      .song-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+      .song-card{border:1px solid var(--line);border-radius:10px;padding:20px 22px;text-decoration:none;transition:.15s;background:#fff}
+      .song-card:hover{border-color:var(--coral);transform:translateY(-2px)}
+      .song-card-title{display:block;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:5px}
+      .song-card-composer{display:block;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em}
+      .hub-section{font-size:22px;letter-spacing:-.03em;margin:44px 0 14px;font-weight:700}
+      .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+      .faq-item{border-left:1px solid var(--line);padding-left:18px}
+      .faq-item h3{font-size:14px;margin:0 0 8px;letter-spacing:-.02em}
+      .faq-item p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}
+      .back-home{display:inline-block;margin-bottom:26px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none}
+      .back-home:hover{color:var(--coral)}
+      @media(max-width:700px){.song-cards{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr;gap:20px}}
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
+      </header>
+      <main class="hub-page">
+        <a class="back-home" href="/songs/">← All songs</a>
+        <h1>${esc(c.h1)}</h1>
+        <p class="hub-sub">${esc(c.sub)}</p>
+        <div class="song-cards">
+${items}
+        </div>
+        <h2 class="hub-section">Frequently asked questions</h2>
+        <div class="faq-grid">
+${faqHtml}
         </div>
         <div class="ad-slot" aria-hidden="true"></div>
       </main>
@@ -402,6 +583,13 @@ for (let i = 0; i < tracks.length; i++) {
   await writeFile(join(dir, 'index.html'), renderPage(track, prev, next));
 }
 
+// ---- write collection hubs ----
+for (const c of COLLECTIONS) {
+  const dir = join(OUT_DIR, c.slug);
+  await mkdir(dir, { recursive: true });
+  await writeFile(join(dir, 'index.html'), renderCollectionHub(c, tracks));
+}
+
 // ---- write hub ----
 // The hub is served at /songs/ (songs/index.html). songs-index.html is kept only
 // as a legacy redirect stub so old /songs/songs-index.html links don't 404.
@@ -427,16 +615,20 @@ await writeFile(join(OUT_DIR, 'songs-index.html'), `<!doctype html>
 // ---- update sitemap (static site: sitemap lives at repo root, not public/) ----
 const sitemapPath = join(ROOT, 'sitemap.xml');
 let sitemap = await readFile(sitemapPath, 'utf8');
+const LASTMOD = '2026-09-28';
 const songUrls = tracks
-  .map((t) => `  <url>\n    <loc>${SITE_URL}/songs/${t.slug}/</loc>\n    <lastmod>2026-08-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`)
+  .map((t) => `  <url>\n    <loc>${SITE_URL}/songs/${t.slug}/</loc>\n    <lastmod>${LASTMOD}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`)
   .join('\n');
-const hubUrl = `  <url>\n    <loc>${SITE_URL}/songs/</loc>\n    <lastmod>2026-08-11</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`;
+const collectionUrls = COLLECTIONS
+  .map((c) => `  <url>\n    <loc>${SITE_URL}/songs/${c.slug}/</loc>\n    <lastmod>${LASTMOD}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`)
+  .join('\n');
+const hubUrl = `  <url>\n    <loc>${SITE_URL}/songs/</loc>\n    <lastmod>${LASTMOD}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`;
 // remove previously generated /songs/ entries, then re-insert before </urlset>.
 // The insertion index must be computed AFTER the removal — a stale index leaves
 // </urlset> stranded mid-file once entries shrink the string.
 sitemap = sitemap.replace(/  <url>\n    <loc>https:\/\/midiplayeronline\.com\/songs\/[^<]*<\/loc>[\s\S]*?<\/url>\n/g, '');
 const urlsetIndex = sitemap.indexOf('</urlset>');
-const newBlock = songUrls + '\n' + hubUrl;
+const newBlock = collectionUrls + '\n' + songUrls + '\n' + hubUrl;
 sitemap = sitemap.slice(0, urlsetIndex) + newBlock + '\n' + sitemap.slice(urlsetIndex);
 await writeFile(sitemapPath, sitemap);
 

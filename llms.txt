@@ -4,3 +4,6 @@
 
 ## Main pages
 - [Home](https://midiplayeronline.com/): Online MIDI player
+- [Songs](https://midiplayeronline.com/songs/): Public-domain song library with built-in demo players
+- [Christmas Songs MIDI](https://midiplayeronline.com/songs/christmas/): 10 public-domain holiday carols, play free online
+- [Public Domain MIDI](https://midiplayeronline.com/songs/public-domain/): Free no-copyright classical & folk melodies
