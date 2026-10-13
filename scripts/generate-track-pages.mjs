@@ -41,7 +41,7 @@ const COLLECTIONS = [
     cardTitle: 'Christmas Songs MIDI',
     cardSub: '10 holiday carols — play free online',
     h1: 'Christmas Songs MIDI',
-    pageTitle: 'Christmas Songs MIDI — Play 10 Carols Free Online | MIDI Room',
+    pageTitle: 'Christmas Songs MIDI — Play 10 Carols Free Online | MIDI Player Online',
     metaDescription: 'Play Christmas songs MIDI online free — Jingle Bells, Silent Night, Joy to the World, Carol of the Bells and more public-domain carols, each with a built-in demo player. No download, no account.',
     ogDescription: 'Hear 10 public-domain Christmas carols instantly in your browser. Free, private, no install.',
     sub: 'Every Christmas carol below is in the public domain, so you can listen, practice and perform these melodies freely. Each song page opens with a built-in demo player — hear the tune instantly, slow the tempo for practice, or repeat a section with the A/B loop in the main player. Nothing to download, no account, everything runs locally in your browser.',
@@ -70,7 +70,7 @@ const COLLECTIONS = [
     cardTitle: 'Public Domain MIDI',
     cardSub: 'Free no-copyright classical & folk melodies',
     h1: 'Public Domain MIDI',
-    pageTitle: 'Public Domain MIDI — Free No-Copyright Classical & Folk Music | MIDI Room',
+    pageTitle: 'Public Domain MIDI — Free No-Copyright Classical & Folk Music | MIDI Player Online',
     metaDescription: 'Browse 50+ public-domain MIDI melodies — classical, folk and carols by Beethoven, Mozart, Bach and traditional composers. Free, no copyright, plays instantly in your browser.',
     ogDescription: 'Free no-copyright public-domain melodies — play instantly in your browser.',
     sub: 'Looking for MIDI music with no copyright restrictions? Every melody in this library is in the public domain — composed by Beethoven, Mozart, Pachelbel, Grieg and traditional folk writers whose work is free for anyone to play, arrange and perform. Demos stream instantly in your browser; for full piano-roll playback, tempo control and A/B looping, drop any MIDI file of your own into the main player.',
@@ -86,7 +86,7 @@ const COLLECTIONS = [
       },
       {
         q: 'Do you offer free MIDI file downloads?',
-        a: 'We deliberately skip file downloads: every melody plays instantly in the built-in demo player, and the main MIDI Room player lets you load, edit, export and record your own MIDI — all locally, with nothing uploaded to a server.'
+        a: 'We deliberately skip file downloads: every melody plays instantly in the built-in demo player, and the main MIDI Player Online player lets you load, edit, export and record your own MIDI — all locally, with nothing uploaded to a server.'
       }
     ]
   }
@@ -122,7 +122,7 @@ function faq(track) {
     },
     {
       q: `Is a MIDI file version of ${track.title} available?`,
-      a: `Instead of downloading a file, you can hear the melody right here with the built-in player. To practice it, set a slow tempo and use the A/B loop to repeat a section. You can also export or record any MIDI you play from the main MIDI Room player.`
+      a: `Instead of downloading a file, you can hear the melody right here with the built-in player. To practice it, set a slow tempo and use the A/B loop to repeat a section. You can also export or record any MIDI you play from the main MIDI Player Online player.`
     }
   ];
   // Per-track extra FAQs (from track-data.json), used to cover verified
@@ -161,7 +161,7 @@ function renderPage(track, prev, next) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="${esc(track.title)} by ${esc(track.composer)} — play this public-domain ${track.era} melody online instantly with MIDI Room's browser player. No upload, account or install." />
+    <meta name="description" content="${esc(track.title)} by ${esc(track.composer)} — play this public-domain ${track.era} melody online instantly with MIDI Player Online's browser player. No upload, account or install." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${SITE_URL}/songs/${track.slug}/" />
     <meta name="adsense-client" content="${ADSENSE_CLIENT}" />
@@ -172,9 +172,9 @@ function renderPage(track, prev, next) {
     <meta property="og:url" content="${SITE_URL}/songs/${track.slug}/" />
     <meta property="og:image" content="${SITE_URL}/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${esc(track.title)} — Play Online | MIDI Room" />
+    <meta name="twitter:title" content="${esc(track.title)} — Play Online | MIDI Player Online" />
     <meta name="twitter:description" content="Play ${esc(track.title)} in your browser. No upload, no account, no install." />
-    <title>${esc(track.title)} — Play Online | MIDI Room</title>
+    <title>${esc(track.title)} — Play Online | MIDI Player Online</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -211,7 +211,7 @@ function renderPage(track, prev, next) {
   <body>
     <div class="shell">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
         <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
       </header>
       <main class="song-page">
@@ -236,10 +236,18 @@ function renderPage(track, prev, next) {
         </section>
 
         <article class="song-body">
-          <h2>About this song</h2>
-          <p>${esc(track.description)}</p>
-          <h2>Play it in MIDI Room</h2>
-          <p>This is a simplified single-line arrangement so you can hear the melody instantly. To play the full piece with a piano roll, multi-track view, tempo control and A/B practice looping, use the main <a href="/" style="color:var(--coral)">MIDI Player Online</a> tool with your own MIDI file.</p>
+          <h2>About ${esc(track.title)}</h2>
+          <p>${esc(track.title)} is one of the most beloved public-domain melodies available to play online. ${esc(track.background || track.description)}</p>
+          <p>As a public-domain composition, ${esc(track.title)} can be freely performed, arranged, and studied by musicians of all levels. The melody has endured for generations because of its memorable contour and emotional resonance.</p>
+          <h2>Musical structure and analysis</h2>
+          <p>This arrangement is written in ${esc(track.key)} at ${track.bpm} BPM. ${esc(track.structure || 'The melody follows a balanced phrase structure typical of ' + track.era.toLowerCase() + ' music. The tonal character of ' + track.key + ' gives it its distinctive sound.')}</p>
+          <h2>Difficulty level and practice tips</h2>
+          <p>${esc(track.difficulty || 'This piece is suitable for beginner to intermediate players. The melody in ' + track.key + ' uses comfortable finger patterns and the tempo of ' + track.bpm + ' BPM is manageable for most instruments. Focus on even tone production and steady rhythm.')}</p>
+          <p>${esc(track.practiceTips || 'Begin by practicing the melody slowly with a metronome at 60 BPM. Focus on clean finger transitions and even dynamics. Once comfortable, gradually increase the tempo. Use the A/B loop feature in our online MIDI player to isolate and repeat difficult passages until they feel natural.')}</p>
+          <h2>Did you know?</h2>
+          <p>${esc(track.funFact || track.description)}</p>
+          <h2>Play ${esc(track.title)} in MIDI Player Online</h2>
+          <p>The demo above plays a simplified single-line melody so you can hear the tune instantly. To explore the full piece with a piano roll visualization, multi-track view, adjustable tempo control and A/B practice looping, load your own MIDI file into the main <a href="/" style="color:var(--coral)">Online MIDI Player</a>. Everything runs locally in your browser — no upload, no account, no install required. You can also browse our <a href="/songs/" style="color:var(--coral)">collection of 50 public-domain songs</a> with built-in demo players.</p>
           <h2>Frequently asked questions</h2>
           <div class="faq-grid">
 ${faqHtml}
@@ -252,7 +260,7 @@ ${faqHtml}
         </nav>
         <div class="ad-slot" aria-hidden="true"></div>
       </main>
-      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
+      <footer><span>MIDI Player Online · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
     </div>
     <script>
       window.TRACK_DATA = ${JSON.stringify({ title: track.title, bpm: track.bpm, notes: track.notes })};
@@ -280,7 +288,7 @@ function renderHub(tracks) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Public Domain Songs — Play Online',
-    description: 'Play public-domain classical and folk melodies instantly in your browser with MIDI Room.',
+    description: 'Play public-domain classical and folk melodies instantly in your browser with MIDI Player Online.',
     url: `${SITE_URL}/songs/`
   };
   return `<!doctype html>
@@ -293,11 +301,11 @@ function renderHub(tracks) {
     <link rel="canonical" href="${SITE_URL}/songs/" />
     <meta name="adsense-client" content="${ADSENSE_CLIENT}" />
     <meta name="ga-measurement" content="${GA_ID}" />
-    <meta property="og:title" content="Public Domain Songs — Play Online | MIDI Room" />
+    <meta property="og:title" content="Public Domain Songs — Play Online | MIDI Player Online" />
     <meta property="og:description" content="Hear famous public-domain melodies in your browser. Free, private, no install." />
     <meta property="og:url" content="${SITE_URL}/songs/" />
     <meta property="og:image" content="${SITE_URL}/og-image.png" />
-    <title>Public Domain Songs — Play Online | MIDI Room</title>
+    <title>Public Domain Songs — Play Online | MIDI Player Online</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -323,7 +331,7 @@ function renderHub(tracks) {
   <body>
     <div class="shell">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
         <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
       </header>
       <main class="hub-page">
@@ -340,7 +348,7 @@ ${items}
         </div>
         <div class="ad-slot" aria-hidden="true"></div>
       </main>
-      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
+      <footer><span>MIDI Player Online · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
     </div>
     <script src="/ads.js" defer></script>
     <script src="/ga.js" defer></script>
@@ -422,7 +430,7 @@ function renderCollectionHub(c, allTracks) {
   <body>
     <div class="shell">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
         <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
       </header>
       <main class="hub-page">
@@ -438,7 +446,7 @@ ${faqHtml}
         </div>
         <div class="ad-slot" aria-hidden="true"></div>
       </main>
-      <footer><span>MIDI Room · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
+      <footer><span>MIDI Player Online · play MIDI files online</span><span>100% local · free · no account · <a href="/privacy.html">Privacy</a></span></footer>
     </div>
     <script src="/ads.js" defer></script>
     <script src="/ga.js" defer></script>
@@ -600,7 +608,7 @@ await writeFile(join(OUT_DIR, 'songs-index.html'), `<!doctype html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <title>Public Domain Songs — Play Online | MIDI Room</title>
+    <title>Public Domain Songs — Play Online | MIDI Player Online</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${SITE_URL}/songs/" />
     <link rel="stylesheet" href="/styles.css" />
@@ -615,7 +623,7 @@ await writeFile(join(OUT_DIR, 'songs-index.html'), `<!doctype html>
 // ---- update sitemap (static site: sitemap lives at repo root, not public/) ----
 const sitemapPath = join(ROOT, 'sitemap.xml');
 let sitemap = await readFile(sitemapPath, 'utf8');
-const LASTMOD = '2026-09-28';
+const LASTMOD = '2026-10-14';
 const songUrls = tracks
   .map((t) => `  <url>\n    <loc>${SITE_URL}/songs/${t.slug}/</loc>\n    <lastmod>${LASTMOD}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`)
   .join('\n');

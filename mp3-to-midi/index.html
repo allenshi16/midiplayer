@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free MP3 to MIDI converter online — upload audio and get a downloadable .mid file. Pitch detection runs in your browser. No upload, no install." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/favicon-180.png" />
+    <link rel="canonical" href="https://midiplayeronline.com/mp3-to-midi/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MP3 to MIDI Converter — Free Online Audio to MIDI Tool" />
+    <meta property="og:description" content="Convert MP3, WAV, or OGG audio to MIDI files online. Free pitch detection and MIDI generation in your browser. No upload required." />
+    <meta property="og:url" content="https://midiplayeronline.com/mp3-to-midi/" />
+    <meta property="og:image" content="https://midiplayeronline.com/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MP3 to MIDI Converter — Free Online Tool" />
+    <meta name="twitter:description" content="Convert audio to MIDI online. Upload MP3, WAV, or OGG and download a .mid file. 100% local, free, no install." />
+    <title>MP3 to MIDI Converter — Free Online Audio to MIDI Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"MP3 to MIDI Converter","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Convert MP3, WAV, and OGG audio files to MIDI. Free online pitch detection and MIDI file generation. No upload, no install.","url":"https://midiplayeronline.com/mp3-to-midi/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is MP3 to MIDI conversion?","acceptedAnswer":{"@type":"Answer","text":"MP3 to MIDI conversion is the process of analyzing an audio recording (such as an MP3, WAV, or OGG file) to detect the pitches being played, then encoding those pitches as note events in a MIDI file. The resulting .mid file contains discrete note-on and note-off messages with pitch, timing, and duration data that can be opened in any DAW or MIDI editor."}},
+        {"@type":"Question","name":"How does this MP3 to MIDI converter work?","acceptedAnswer":{"@type":"Answer","text":"This tool uses your browser's Web Audio API to decode the audio file, then analyzes it frame by frame using an autocorrelation pitch detection algorithm. For each frame, the fundamental frequency is identified and converted to the nearest MIDI note number. Consecutive frames with the same pitch are grouped into notes with start times and durations. The result is written as a Standard MIDI File (Type 0) that you can download and open in any music software."}},
+        {"@type":"Question","name":"Does MP3 to MIDI conversion work with polyphonic audio?","acceptedAnswer":{"@type":"Answer","text":"This tool uses monophonic pitch detection, which means it works best with single-note melodies — a voice humming a tune, a solo instrument, or a simple melody line. Polyphonic audio (chords, full band recordings, piano with bass and melody simultaneously) is much harder to transcribe because multiple frequencies overlap. For polyphonic transcription, dedicated AI-powered tools are needed, though they typically require server-side processing."}},
+        {"@type":"Question","name":"Is this MP3 to MIDI converter free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes. The converter is completely free with no account required, no usage limits, and no watermarks. All processing happens locally in your browser using the Web Audio API. Your audio files are never uploaded to any server."}},
+        {"@type":"Question","name":"What audio formats does this tool support?","acceptedAnswer":{"@type":"Answer","text":"The converter accepts any audio format your browser can decode, which includes MP3, WAV, OGG, FLAC, AAC, and other common formats. The audio is decoded using the browser's built-in audio decoder, so compatibility depends on your specific browser. For best results, use a clean monophonic recording with minimal background noise."}}
+      ]}
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .tool-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
+      .tool-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 10px;font-weight:800}
+      .tool-page .lead{color:#5f5c55;font-size:16px;line-height:1.8;max-width:680px;margin-bottom:36px}
+      .conv-shell{background:#1a1b1b;border-radius:14px;padding:26px;margin-bottom:44px;position:relative;overflow:hidden}
+      .upload-inline{margin-bottom:20px;text-align:center}
+      .upload-inline button{background:var(--ink);color:#fff;border:0;border-radius:2px;padding:12px 20px;font:700 12px var(--sans);cursor:pointer}
+      .upload-inline button:hover{background:var(--coral)}
+      .upload-inline p{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:8px}
+      #rollCanvas{width:100%;height:300px;border-radius:8px;display:block;background:#111}
+      .conv-controls{display:flex;align-items:center;gap:18px;margin-top:16px;flex-wrap:wrap}
+      .conv-play{width:46px;height:46px;border-radius:50%;background:var(--coral);border:0;color:#fff;font-size:15px;cursor:pointer;box-shadow:0 0 0 5px rgba(231,109,82,.14)}
+      .conv-play:disabled{opacity:.4;cursor:default;box-shadow:none}
+      .conv-progress{flex:1;accent-color:var(--coral);min-width:180px}
+      .conv-time{font:11px var(--mono);color:#eee6d8;min-width:70px}
+      .conv-hint{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:10px}
+      .conv-status{color:#e2c15a;font:11px var(--mono);margin-top:8px;min-height:16px}
+      .dl-row{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+      .dl-btn{background:var(--coral);color:#fff;border:0;border-radius:2px;padding:12px 22px;font:700 12px var(--sans);cursor:pointer;display:none}
+      .dl-btn:hover{background:#c95a42}
+      .dl-btn.visible{display:inline-block}
+      .dl-info{font:11px var(--mono);color:#8f938a}
+      .content h2{font-size:24px;letter-spacing:-.04em;margin:44px 0 14px;font-weight:700}
+      .content h2:first-of-type{margin-top:0}
+      .content p{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px}
+      .content strong{color:var(--ink);font-weight:700}
+      .content ul{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px;padding-left:1.5em}
+      .content li{margin-bottom:6px}
+      .faq-section{max-width:720px;margin-top:50px}
+      .faq-section h2{font-size:22px;margin-bottom:20px}
+      .faq-item{border-left:2px solid var(--coral);padding:12px 0 12px 20px;margin-bottom:18px}
+      .faq-item h3{font-size:15px;margin:0 0 6px;letter-spacing:-.02em}
+      .faq-item p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
+      .back-home{display:inline-block;margin-bottom:26px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none}
+      .back-home:hover{color:var(--coral)}
+      .tool-nav{display:flex;gap:16px;flex-wrap:wrap;margin:36px 0 0}
+      .tool-nav a{border:1px solid var(--line);border-radius:8px;padding:12px 16px;text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);transition:.15s}
+      .tool-nav a:hover{border-color:var(--coral)}
+      @media(max-width:700px){.tool-page{padding:40px 16px 60px}}
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
+      </header>
+      <main class="tool-page">
+        <a class="back-home" href="/">&#8592; Back to Online MIDI Player</a>
+        <h1>MP3 to MIDI Converter</h1>
+        <p class="lead">Upload an MP3, WAV, or OGG audio file and convert it to a downloadable MIDI file. Pitch detection runs entirely in your browser using autocorrelation analysis. No upload, no install, completely free.</p>
+
+        <section class="conv-shell" aria-label="MP3 to MIDI converter">
+          <div class="upload-inline">
+            <input id="audioFile" type="file" accept="audio/*" hidden />
+            <button id="chooseBtn">Choose audio file to convert</button>
+            <p>or drag &amp; drop an MP3 / WAV / OGG file</p>
+          </div>
+          <canvas id="rollCanvas"></canvas>
+          <div class="conv-controls">
+            <button class="conv-play" id="playBtn" aria-label="Play" disabled>&#9654;</button>
+            <input class="conv-progress" id="progress" type="range" min="0" max="100" value="0" aria-label="Seek" />
+            <span class="conv-time" id="timeLabel">0:00</span>
+          </div>
+          <div class="conv-status" id="statusLine"></div>
+          <div class="dl-row">
+            <button class="dl-btn" id="dlBtn">Download MIDI</button>
+            <span class="dl-info" id="dlInfo"></span>
+          </div>
+          <div class="conv-hint">&#9671; 100% local &mdash; your audio file never leaves your device</div>
+        </section>
+
+        <article class="content">
+          <h2>What Is MP3 to MIDI Conversion?</h2>
+          <p><strong>MP3 to MIDI conversion</strong> is the process of analyzing a recorded audio file &mdash; whether it is an MP3, WAV, OGG, or another format &mdash; and extracting the musical notes being played so they can be saved as a MIDI file. Unlike audio formats that store waveforms, MIDI stores <em>instructions</em>: which note to play, when to start it, how long to hold it, and when to release it. This makes MIDI files tiny, editable, and compatible with every digital audio workstation and notation software.</p>
+          <p>The conversion is essentially a form of <strong>music transcription</strong>. Just as a musician might listen to a recording and write down the notes on sheet music, the converter listens to the audio digitally, identifies the pitch at each moment, and encodes those pitches as MIDI note events. The result is a .mid file you can open in MuseScore, Logic Pro, Ableton, GarageBand, or any other MIDI-capable application.</p>
+
+          <h2>How the Conversion Works</h2>
+          <p>This tool performs the entire conversion pipeline inside your browser with no server round-trips. Here is the step-by-step process:</p>
+          <ul>
+            <li><strong>Audio decoding.</strong> The uploaded file is decoded using the Web Audio API, which converts the compressed audio (MP3, OGG, etc.) into a raw PCM buffer of samples at a known sample rate.</li>
+            <li><strong>Frame analysis.</strong> The PCM buffer is divided into short overlapping frames (typically 2048 samples each, with 50% overlap). Each frame represents roughly 46 milliseconds of audio at a 44100 Hz sample rate.</li>
+            <li><strong>Pitch detection via autocorrelation.</strong> For each frame, the algorithm computes the autocorrelation function &mdash; a mathematical operation that measures how similar the signal is to a delayed copy of itself. The first significant peak in the autocorrelation curve corresponds to the fundamental period of the sound, which gives us the fundamental frequency (F0).</li>
+            <li><strong>Frequency to MIDI note.</strong> The detected frequency is converted to a MIDI note number using the standard formula: note = 69 + 12 &times; log2(frequency / 440). The result is rounded to the nearest integer.</li>
+            <li><strong>Note grouping.</strong> Consecutive frames with the same MIDI pitch are merged into a single note with a start time, end time, and duration. Short gaps between same-pitch frames are bridged to avoid fragmentation.</li>
+            <li><strong>MIDI file generation.</strong> The note list is written as a Standard MIDI File (Type 0, single track) with a proper MThd header and MTrk chunk containing note-on and note-off events with delta-time encoding at 480 ticks per beat.</li>
+          </ul>
+
+          <h2>Use Cases for MP3 to MIDI Conversion</h2>
+          <p><strong>Transcribing melodies by ear.</strong> If you have a recording of a melody &mdash; perhaps a vocal line you hummed into your phone, or a solo instrument performance &mdash; converting it to MIDI gives you a starting point for notation. You can open the resulting .mid file in a score editor, clean up any detected notes, and export sheet music.</p>
+          <p><strong>Extracting notes from audio recordings.</strong> Music teachers often record student performances. Converting those recordings to MIDI lets you see exactly which notes were played, making it easier to identify mistakes and track progress over time.</p>
+          <p><strong>Creating MIDI from acoustic recordings.</strong> If you play an instrument and record yourself, you can convert the audio to MIDI and then use the note data to drive virtual instruments, apply effects, or rearrange the performance in a DAW.</p>
+          <p><strong>Building music production templates.</strong> Producers sometimes capture a melodic idea as a voice memo, then convert it to MIDI to quickly get the notes into their DAW. This is faster than manually programming each note on a piano roll.</p>
+          <p><strong>Analyzing musical structure.</strong> Converting a monophonic recording to MIDI gives you a visual piano roll of the melody. This is useful for analyzing intervals, identifying motifs, or studying the melodic contour of a piece.</p>
+
+          <h2>Limitations to Keep in Mind</h2>
+          <p>Monophonic pitch detection works well for <strong>single-note sources</strong>: a voice singing a melody, a flute, a trumpet, a violin playing one note at a time, or any instrument where only one pitch sounds at a time. The autocorrelation algorithm is mature and reliable for these cases.</p>
+          <p><strong>Polyphonic audio is significantly harder.</strong> When multiple notes sound simultaneously &mdash; piano chords, guitar strumming, a full band mix &mdash; the autocorrelation method can typically only identify the strongest fundamental frequency. It cannot separate overlapping pitches. Polyphonic transcription requires advanced techniques like non-negative matrix factorization or deep neural networks, which are computationally expensive and generally require server-side processing.</p>
+          <p>For best results, use a <strong>clean recording</strong> with minimal background noise, a clear attack on each note, and a consistent dynamic level. Noisy or heavily processed audio (with reverb, distortion, or heavy compression) will reduce detection accuracy.</p>
+
+          <h2>How This Tool Compares to Desktop Alternatives</h2>
+          <p>Desktop applications like <strong>Melodyne</strong>, <strong>Ableton's Convert Melody to Harmony</strong>, and <strong>Logic Pro's Flex Pitch</strong> offer sophisticated audio-to-MIDI conversion with polyphonic support and detailed manual editing. These are professional tools that cost money and require installation.</p>
+          <p>This online converter trades some accuracy for <strong>convenience and accessibility</strong>. It runs entirely in your browser with zero installation, works on any device with a modern browser, and processes files locally so your audio stays private. For monophonic material &mdash; vocal melodies, single-note solos, simple bass lines &mdash; the results are comparable to what you would get from desktop tools. For complex polyphonic material, dedicated desktop software with AI-assisted transcription will produce better results, but for quick monophonic conversions, this tool gets the job done instantly.</p>
+
+          <div class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item"><h3>What is MP3 to MIDI conversion?</h3><p>MP3 to MIDI conversion analyzes an audio recording to detect the pitches being played, then encodes those pitches as note events in a MIDI file. The resulting .mid file contains discrete note-on and note-off messages with pitch, timing, and duration data that can be opened in any DAW or MIDI editor.</p></div>
+            <div class="faq-item"><h3>How does this MP3 to MIDI converter work?</h3><p>This tool uses the Web Audio API to decode the audio file, then analyzes it frame by frame using an autocorrelation pitch detection algorithm. The fundamental frequency is identified for each frame and converted to the nearest MIDI note number. Consecutive frames with the same pitch are grouped into notes, and the result is written as a Standard MIDI File.</p></div>
+            <div class="faq-item"><h3>Does MP3 to MIDI conversion work with polyphonic audio?</h3><p>This tool uses monophonic pitch detection, so it works best with single-note melodies &mdash; a voice, a solo instrument, or a simple melody line. Polyphonic audio with chords or multiple simultaneous notes is much harder to transcribe and requires dedicated AI-powered tools with server-side processing.</p></div>
+            <div class="faq-item"><h3>Is this MP3 to MIDI converter free and private?</h3><p>Yes. The converter is completely free with no account required, no usage limits, and no watermarks. All processing happens locally in your browser. Your audio files are never uploaded to any server.</p></div>
+            <div class="faq-item"><h3>What audio formats does this tool support?</h3><p>The converter accepts any audio format your browser can decode, including MP3, WAV, OGG, FLAC, and AAC. For best results, use a clean monophonic recording with minimal background noise.</p></div>
+          </div>
+
+          <nav class="tool-nav">
+            <a href="/">Online MIDI Player</a>
+            <a href="/midi-viewer/">MIDI Viewer</a>
+            <a href="/view-midi-files/">View MIDI Files</a>
+            <a href="/online-midi-visualizer/">MIDI Visualizer</a>
+            <a href="/midi-to-piano-sheet/">MIDI to Piano Sheet</a>
+            <a href="/songs/">Browse Songs</a>
+          </nav>
+        </article>
+      </main>
+      <footer><span>&copy; 2026 MIDI PLAYER ONLINE</span><span>Made for curious ears.</span><a href="/songs/">Public-domain songs</a><span>&middot;</span><a href="/privacy.html">Privacy</a></footer>
+    </div>
+    <script>
+    (function(){
+      /* ── DOM refs ── */
+      var canvas    = document.getElementById('rollCanvas'),
+          ctx       = canvas.getContext('2d'),
+          fileInput = document.getElementById('audioFile'),
+          chooseBtn = document.getElementById('chooseBtn'),
+          playBtn   = document.getElementById('playBtn'),
+          progress  = document.getElementById('progress'),
+          timeLabel = document.getElementById('timeLabel'),
+          statusEl  = document.getElementById('statusLine'),
+          dlBtn     = document.getElementById('dlBtn'),
+          dlInfo    = document.getElementById('dlInfo');
+
+      /* ── State ── */
+      var notes       = [],   // {pitch, start (sec), dur (sec)}
+          audioBuffer = null,
+          midiBlob    = null,
+          playing     = false,
+          elapsed     = 0,
+          playStart   = 0,
+          raf         = 0,
+          audioCtx    = null,
+          sourceNode  = null,
+          duration    = 0;
+
+      var NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+      var colors = ['#e76d52','#e2c15a','#6f91b8','#86aa81','#d88cba','#9b9bdb','#ff9f43','#54a0ff'];
+
+      /* ── Helpers ── */
+      function fmt(s){ s = Math.max(0, s); return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); }
+      function midiToFreq(m){ return 440 * Math.pow(2, (m - 69) / 12); }
+      function freqToMidi(f){ return Math.round(69 + 12 * Math.log2(f / 440)); }
+
+      /* ── Canvas sizing ── */
+      function resize(){
+        var dpr = window.devicePixelRatio || 1,
+            rect = canvas.getBoundingClientRect();
+        canvas.width  = rect.width  * dpr;
+        canvas.height = rect.height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        drawRoll();
+      }
+      window.addEventListener('resize', resize);
+
+      /* ── Piano roll drawing ── */
+      function drawRoll(){
+        var dpr = window.devicePixelRatio || 1,
+            w = canvas.width / dpr,
+            h = canvas.height / dpr;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#111';
+        ctx.fillRect(0, 0, w, h);
+
+        if(notes.length === 0){
+          ctx.fillStyle = '#555';
+          ctx.font = '13px "DM Mono", monospace';
+          ctx.textAlign = 'center';
+          ctx.fillText('Upload an audio file to see the piano roll', w/2, h/2);
+          return;
+        }
+
+        /* find pitch range */
+        var minP = 127, maxP = 0;
+        notes.forEach(function(n){ if(n.pitch < minP) minP = n.pitch; if(n.pitch > maxP) maxP = n.pitch; });
+        if(minP === maxP){ minP -= 6; maxP += 6; }
+        var pad = 4;
+        minP = Math.max(0, minP - pad);
+        maxP = Math.min(127, maxP + pad);
+        var rangeP = maxP - minP || 1;
+
+        var keyH = h / (rangeP + 1);
+        var pxPerSec = duration > 0 ? w / duration : w;
+
+        /* draw grid lines for each pitch */
+        for(var p = minP; p <= maxP; p++){
+          var y = h - ((p - minP) / rangeP) * (h - 10) - 5;
+          var isC = (p % 12 === 0);
+          ctx.strokeStyle = isC ? '#333' : '#222';
+          ctx.lineWidth = isC ? 0.8 : 0.4;
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+        }
+
+        /* draw notes */
+        notes.forEach(function(n, i){
+          var y = h - ((n.pitch - minP) / rangeP) * (h - 10) - 5;
+          var x = n.start * pxPerSec;
+          var nw = Math.max(3, n.dur * pxPerSec - 1);
+          var nh = Math.max(keyH * 0.7, 6);
+          if(x + nw < 0 || x > w) return;
+          ctx.fillStyle = colors[i % colors.length];
+          ctx.globalAlpha = 0.88;
+          ctx.fillRect(x, y - nh/2, nw, nh);
+          ctx.globalAlpha = 1;
+          /* label */
+          if(nw > 22){
+            ctx.fillStyle = '#fff';
+            ctx.font = '9px "DM Mono", monospace';
+            ctx.textAlign = 'left';
+            ctx.fillText(NOTE_NAMES[n.pitch % 12] + (Math.floor(n.pitch/12)-1), x + 3, y + 3);
+          }
+        });
+
+        /* playhead */
+        if(duration > 0){
+          var px = elapsed * pxPerSec;
+          ctx.strokeStyle = '#e76d52';
+          ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, h); ctx.stroke();
+        }
+      }
+
+      /* ── Pitch detection: autocorrelation ── */
+      function detectPitch(buf, sampleRate){
+        var SIZE = 2048;
+        var HOP  = 1024;
+        var detected = []; // {pitch, time}
+        var totalFrames = Math.floor((buf.length - SIZE) / HOP) + 1;
+
+        /* downmix to mono if stereo */
+        var mono;
+        if(buf.numberOfChannels === 1){
+          mono = buf.getChannelData(0);
+        } else {
+          var ch0 = buf.getChannelData(0);
+          var ch1 = buf.getChannelData(1);
+          mono = new Float32Array(ch0.length);
+          for(var i = 0; i < ch0.length; i++) mono[i] = (ch0[i] + ch1[i]) * 0.5;
+        }
+
+        for(var f = 0; f < totalFrames; f++){
+          var offset = f * HOP;
+          var frame = mono.subarray(offset, offset + SIZE);
+          var timeSec = offset / sampleRate;
+
+          /* check RMS — skip silence */
+          var rms = 0;
+          for(var i = 0; i < SIZE; i++) rms += frame[i] * frame[i];
+          rms = Math.sqrt(rms / SIZE);
+          if(rms < 0.01) continue;
+
+          /* autocorrelation */
+          var minPeriod = Math.floor(sampleRate / 1200);  /* max freq 1200 Hz */
+          var maxPeriod = Math.floor(sampleRate / 60);     /* min freq 60 Hz  */
+          var bestCorr = 0, bestLag = 0;
+
+          for(var lag = minPeriod; lag <= maxPeriod; lag++){
+            var corr = 0;
+            for(var j = 0; j < SIZE - lag; j++){
+              corr += frame[j] * frame[j + lag];
+            }
+            if(corr > bestCorr){
+              bestCorr = corr;
+              bestLag  = lag;
+            }
+          }
+
+          if(bestLag > 0 && bestCorr > 0){
+            /* parabolic interpolation for sub-sample accuracy */
+            var prevC = 0, nextC = 0;
+            if(bestLag > minPeriod){
+              prevC = 0;
+              for(var j = 0; j < SIZE - (bestLag-1); j++) prevC += frame[j] * frame[j + bestLag - 1];
+            }
+            if(bestLag < maxPeriod){
+              nextC = 0;
+              for(var j = 0; j < SIZE - (bestLag+1); j++) nextC += frame[j] * frame[j + bestLag + 1];
+            }
+            var shift = (prevC - nextC) / (2 * (prevC - 2*bestCorr + nextC));
+            if(!isFinite(shift)) shift = 0;
+            var refinedLag = bestLag + shift;
+            if(refinedLag > 0){
+              var freq = sampleRate / refinedLag;
+              if(freq >= 60 && freq <= 1200){
+                detected.push({ pitch: freqToMidi(freq), time: timeSec });
+              }
+            }
+          }
+        }
+        return detected;
+      }
+
+      /* ── Group detections into notes ── */
+      function groupNotes(detections, minDur){
+        if(detections.length === 0) return [];
+        minDur = minDur || 0.06;
+        var raw = [];
+        var cur = { pitch: detections[0].pitch, start: detections[0].time, end: detections[0].time };
+        for(var i = 1; i < detections.length; i++){
+          var d = detections[i];
+          if(d.pitch === cur.pitch && (d.time - cur.end) < 0.12){
+            cur.end = d.time;
+          } else {
+            if(cur.end - cur.start >= minDur) raw.push({ pitch: cur.pitch, start: cur.start, dur: cur.end - cur.start });
+            cur = { pitch: d.pitch, start: d.time, end: d.time };
+          }
+        }
+        if(cur.end - cur.start >= minDur) raw.push({ pitch: cur.pitch, start: cur.start, dur: cur.end - cur.start });
+        return raw;
+      }
+
+      /* ── MIDI file writer (SMF Type 0) ── */
+      function writeMidi(noteList, tempoBPM){
+        tempoBPM = tempoBPM || 120;
+        var TICKS_PER_BEAT = 480;
+        var usPerBeat = Math.round(60000000 / tempoBPM);
+
+        /* convert seconds to ticks */
+        var secPerBeat = 60 / tempoBPM;
+        var events = []; // {tick, data:[...]}
+        noteList.forEach(function(n){
+          var startTick = Math.round(n.start / secPerBeat * TICKS_PER_BEAT);
+          var endTick   = Math.round((n.start + n.dur) / secPerBeat * TICKS_PER_BEAT);
+          var vel = 90;
+          events.push({ tick: startTick, data: [0x90, n.pitch, vel] });
+          events.push({ tick: endTick,   data: [0x80, n.pitch, 0]   });
+        });
+        events.sort(function(a,b){ return a.tick - b.tick || (a.data[0]&0xf0) - (b.data[0]&0xf0); });
+
+        /* build MTrk data */
+        var trackData = [];
+        /* tempo meta event */
+        trackData.push({ tick: 0, data: [0xFF, 0x51, 0x03,
+          (usPerBeat >> 16) & 0xFF,
+          (usPerBeat >> 8)  & 0xFF,
+           usPerBeat        & 0xFF
+        ]});
+        /* track name meta event */
+        var trackName = [0xFF, 0x03, 0x09];
+        var name = 'Converted';
+        for(var i = 0; i < name.length; i++) trackName.push(name.charCodeAt(i));
+        trackData.push({ tick: 0, data: trackName });
+        /* add note events */
+        events.forEach(function(e){ trackData.push(e); });
+        /* end of track */
+        trackData.push({ tick: trackData.length > 0 ? trackData[trackData.length-1].tick : 0, data: [0xFF, 0x2F, 0x00] });
+        trackData.sort(function(a,b){ return a.tick - b.tick; });
+
+        /* encode variable-length quantity */
+        function writeVarLen(val){
+          var buf = [val & 0x7F];
+          val >>= 7;
+          while(val > 0){
+            buf.unshift((val & 0x7F) | 0x80);
+            val >>= 7;
+          }
+          return buf;
+        }
+
+        /* serialize MTrk */
+        var mtrk = [];
+        var prevTick = 0;
+        trackData.forEach(function(ev){
+          var delta = ev.tick - prevTick;
+          prevTick = ev.tick;
+          var vlBytes = writeVarLen(delta);
+          for(var i = 0; i < vlBytes.length; i++) mtrk.push(vlBytes[i]);
+          for(var i = 0; i < ev.data.length; i++) mtrk.push(ev.data[i]);
+        });
+
+        /* MThd header */
+        var mthd = [
+          0x4D,0x54,0x68,0x64, /* "MThd" */
+          0x00,0x00,0x00,0x06, /* chunk length = 6 */
+          0x00,0x00,            /* format 0 */
+          0x00,0x01,            /* 1 track */
+          (TICKS_PER_BEAT >> 8) & 0xFF, TICKS_PER_BEAT & 0xFF
+        ];
+
+        /* MTrk header */
+        var mtrkHeader = [
+          0x4D,0x54,0x72,0x6B, /* "MTrk" */
+          (mtrk.length >> 24) & 0xFF,
+          (mtrk.length >> 16) & 0xFF,
+          (mtrk.length >> 8)  & 0xFF,
+           mtrk.length        & 0xFF
+        ];
+
+        var fileBytes = new Uint8Array(mthd.length + mtrkHeader.length + mtrk.length);
+        var pos = 0;
+        for(var i = 0; i < mthd.length; i++) fileBytes[pos++] = mthd[i];
+        for(var i = 0; i < mtrkHeader.length; i++) fileBytes[pos++] = mtrkHeader[i];
+        for(var i = 0; i < mtrk.length; i++) fileBytes[pos++] = mtrk[i];
+        return fileBytes;
+      }
+
+      /* ── Playback ── */
+      function ensureAudio(){
+        if(audioCtx){ if(audioCtx.state === 'suspended') audioCtx.resume(); return true; }
+        var AC = window.AudioContext || window.webkitAudioContext;
+        if(!AC) return false;
+        audioCtx = new AC();
+        return true;
+      }
+
+      function scheduleSynth(from){
+        if(!audioCtx) return;
+        var now = audioCtx.currentTime + 0.05;
+        var gain = audioCtx.createGain();
+        gain.gain.value = 0.35;
+        gain.connect(audioCtx.destination);
+        notes.forEach(function(n){
+          if(n.start + n.dur < from) return;
+          var t = now + Math.max(0, n.start - from);
+          if(t < audioCtx.currentTime) return;
+          var osc = audioCtx.createOscillator();
+          var g = audioCtx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.value = midiToFreq(n.pitch);
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(0.5, t + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + Math.max(0.08, n.dur));
+          osc.connect(g).connect(gain);
+          osc.start(t);
+          osc.stop(t + n.dur + 0.05);
+        });
+      }
+
+      function tick(){
+        elapsed = (performance.now() - playStart) / 1000;
+        if(elapsed >= duration){ stopPlayback(); elapsed = duration; }
+        progress.value = String(duration > 0 ? (elapsed / duration) * 100 : 0);
+        timeLabel.textContent = fmt(elapsed) + ' / ' + fmt(duration);
+        drawRoll();
+        if(playing) raf = requestAnimationFrame(tick);
+      }
+
+      function startPlayback(){
+        if(!ensureAudio()) return;
+        playStart = performance.now() - elapsed * 1000;
+        scheduleSynth(elapsed);
+        playing = true;
+        playBtn.innerHTML = '&#10074;&#10074;';
+        raf = requestAnimationFrame(tick);
+      }
+
+      function stopPlayback(){
+        playing = false;
+        cancelAnimationFrame(raf);
+        playBtn.innerHTML = '&#9654;';
+      }
+
+      playBtn.addEventListener('click', function(){
+        if(playing){ stopPlayback(); }
+        else { if(elapsed >= duration) elapsed = 0; startPlayback(); }
+      });
+
+      progress.addEventListener('input', function(){
+        elapsed = (Number(progress.value) / 100) * duration;
+        timeLabel.textContent = fmt(elapsed) + ' / ' + fmt(duration);
+        if(playing) scheduleSynth(elapsed);
+        drawRoll();
+      });
+
+      /* ── File handling ── */
+      chooseBtn.addEventListener('click', function(){ fileInput.click(); });
+
+      fileInput.addEventListener('change', function(e){
+        var file = e.target.files[0];
+        if(file) processFile(file);
+      });
+
+      /* drag & drop */
+      var shell = document.querySelector('.conv-shell');
+      shell.addEventListener('dragover', function(e){ e.preventDefault(); shell.style.outline = '2px dashed var(--coral)'; });
+      shell.addEventListener('dragleave', function(){ shell.style.outline = 'none'; });
+      shell.addEventListener('drop', function(e){
+        e.preventDefault();
+        shell.style.outline = 'none';
+        if(e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]);
+      });
+
+      function processFile(file){
+        stopPlayback();
+        elapsed = 0;
+        notes = [];
+        midiBlob = null;
+        dlBtn.classList.remove('visible');
+        dlInfo.textContent = '';
+        statusEl.textContent = 'Decoding audio...';
+        progress.value = 0;
+        timeLabel.textContent = '0:00';
+        drawRoll();
+
+        var reader = new FileReader();
+        reader.onload = function(ev){
+          var AC = window.AudioContext || window.webkitAudioContext;
+          if(!AC){ statusEl.textContent = 'Web Audio API not supported.'; return; }
+          var tmpCtx = new AC();
+          tmpCtx.decodeAudioData(ev.target.result, function(decoded){
+            audioBuffer = decoded;
+            duration = decoded.duration;
+            statusEl.textContent = 'Detecting pitches...';
+            timeLabel.textContent = fmt(duration);
+
+            /* run pitch detection asynchronously to avoid blocking */
+            setTimeout(function(){
+              var detections = detectPitch(decoded, decoded.sampleRate);
+              notes = groupNotes(detections, 0.08);
+              statusEl.textContent = 'Detected ' + notes.length + ' notes. Generating MIDI...';
+
+              /* generate MIDI */
+              var midiBytes = writeMidi(notes, 120);
+              midiBlob = new Blob([midiBytes], { type: 'audio/midi' });
+              var url = URL.createObjectURL(midiBlob);
+
+              dlBtn.classList.add('visible');
+              dlBtn.onclick = function(){
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = (file.name.replace(/\.[^.]+$/, '') || 'converted') + '.mid';
+                a.click();
+              };
+              dlInfo.textContent = notes.length + ' notes \u00B7 ' + fmt(duration) + ' \u00B7 ' + (midiBytes.length / 1024).toFixed(1) + ' KB';
+              statusEl.textContent = 'Done! ' + notes.length + ' notes detected.';
+              playBtn.disabled = false;
+              drawRoll();
+              tmpCtx.close();
+            }, 50);
+          }, function(err){
+            statusEl.textContent = 'Error decoding audio: ' + err.message;
+            tmpCtx.close();
+          });
+        };
+        reader.readAsArrayBuffer(file);
+      }
+
+      /* ── Init ── */
+      resize();
+      drawRoll();
+    })();
+    </script>
+  </body>
+</html>

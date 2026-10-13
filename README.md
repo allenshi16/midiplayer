@@ -1,4 +1,4 @@
-# MIDI ROOM
+# MIDI PLAYER ONLINE
 
 A free online MIDI player and explorer.
 

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Online MIDI visualizer — see your MIDI files come alive with real-time piano roll animation. Free, no upload, works in any browser." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://midiplayeronline.com/online-midi-visualizer/" />
+    <meta property="og:title" content="Online MIDI Visualizer — Real-Time Piano Roll Animation" />
+    <meta property="og:description" content="Visualize any MIDI file in real time. Piano roll animation, color-coded tracks, tempo control. Free, no upload." />
+    <meta property="og:url" content="https://midiplayeronline.com/online-midi-visualizer/" />
+    <meta property="og:image" content="https://midiplayeronline.com/og-image.png" />
+    <title>Online MIDI Visualizer — Real-Time Piano Roll Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"Online MIDI Visualizer","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Visualize MIDI files in real time with piano roll animation. Free, no upload, 100% local.","url":"https://midiplayeronline.com/online-midi-visualizer/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is an online MIDI visualizer?","acceptedAnswer":{"@type":"Answer","text":"An online MIDI visualizer is a web-based tool that takes a MIDI file and renders its notes as a real-time visual animation — typically a scrolling piano roll where each note appears as a colored bar moving across the screen in sync with playback. Unlike a static image, a visualizer animates the notes as the music plays, giving you a dynamic, engaging view of the arrangement."}},
+        {"@type":"Question","name":"How does a MIDI visualizer work?","acceptedAnswer":{"@type":"Answer","text":"A MIDI visualizer reads the note data from a .mid file — pitch, start time, duration, and channel — and draws each note as a rectangle on an HTML5 Canvas. During playback, the canvas scrolls horizontally to follow the music, with a playhead line showing the current position. Notes are color-coded by track or channel so you can distinguish instruments visually."}},
+        {"@type":"Question","name":"Can I use a MIDI visualizer for performances or videos?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many musicians and content creators use MIDI visualizers to create engaging videos of their music. The scrolling piano roll is visually appealing and helps viewers follow the melody. You can screen-record the visualizer while it plays your MIDI file, then add the audio in post-production for a polished result."}},
+        {"@type":"Question","name":"Is this MIDI visualizer free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The online MIDI visualizer is completely free with no account required, no usage limits, and no watermarks. Your MIDI files are processed locally in your browser — nothing is uploaded."}}
+      ]}
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .tool-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
+      .tool-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 10px;font-weight:800}
+      .tool-page .lead{color:#5f5c55;font-size:16px;line-height:1.8;max-width:680px;margin-bottom:36px}
+      .viz-shell{background:#1a1b1b;border-radius:14px;padding:26px;margin-bottom:44px;position:relative;overflow:hidden}
+      #vizCanvas{width:100%;height:300px;border-radius:8px;display:block;background:#111}
+      .viz-controls{display:flex;align-items:center;gap:18px;margin-top:16px;flex-wrap:wrap}
+      .viz-play{width:46px;height:46px;border-radius:50%;background:var(--coral);border:0;color:#fff;font-size:15px;cursor:pointer;box-shadow:0 0 0 5px rgba(231,109,82,.14)}
+      .viz-progress{flex:1;accent-color:var(--coral);min-width:180px}
+      .viz-time{font:11px var(--mono);color:#eee6d8;min-width:70px}
+      .viz-hint{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:10px}
+      .upload-inline{margin-bottom:20px;text-align:center}
+      .upload-inline button{background:var(--ink);color:#fff;border:0;border-radius:2px;padding:12px 20px;font:700 12px var(--sans);cursor:pointer}
+      .upload-inline button:hover{background:var(--coral)}
+      .upload-inline p{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:8px}
+      .viz-modes{display:flex;gap:8px;margin-bottom:16px}
+      .viz-modes button{border:1px solid #444;background:#222;color:#aaa;padding:6px 12px;font:11px var(--sans);cursor:pointer;border-radius:4px}
+      .viz-modes button.active{color:var(--coral);border-color:var(--coral)}
+      .content h2{font-size:24px;letter-spacing:-.04em;margin:44px 0 14px;font-weight:700}
+      .content h2:first-of-type{margin-top:0}
+      .content p{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px}
+      .content strong{color:var(--ink);font-weight:700}
+      .content ul{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px;padding-left:1.5em}
+      .content li{margin-bottom:6px}
+      .faq-section{max-width:720px;margin-top:50px}
+      .faq-section h2{font-size:22px;margin-bottom:20px}
+      .faq-item{border-left:2px solid var(--coral);padding:12px 0 12px 20px;margin-bottom:18px}
+      .faq-item h3{font-size:15px;margin:0 0 6px;letter-spacing:-.02em}
+      .faq-item p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
+      .back-home{display:inline-block;margin-bottom:26px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none}
+      .back-home:hover{color:var(--coral)}
+      .tool-nav{display:flex;gap:16px;flex-wrap:wrap;margin:36px 0 0}
+      .tool-nav a{border:1px solid var(--line);border-radius:8px;padding:12px 16px;text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);transition:.15s}
+      .tool-nav a:hover{border-color:var(--coral)}
+      @media(max-width:700px){.tool-page{padding:40px 16px 60px}}
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
+      </header>
+      <main class="tool-page">
+        <a class="back-home" href="/">← Back to Online MIDI Player</a>
+        <h1>Online MIDI Visualizer</h1>
+        <p class="lead">Watch your MIDI files come alive with real-time piano roll animation. Drop a .mid file below and see every note light up as it plays — color-coded by track, scrolling in sync with the music.</p>
+
+        <section class="viz-shell" aria-label="MIDI visualizer">
+          <div class="upload-inline">
+            <input id="fileInput" type="file" accept=".mid,.midi,audio/midi,audio/x-midi" hidden />
+            <button id="chooseBtn">Choose MIDI file to visualize</button>
+            <p>or drag &amp; drop a .mid / .midi file</p>
+          </div>
+          <div class="viz-modes">
+            <button class="active" data-mode="roll">Piano Roll</button>
+            <button data-mode="cascade">Cascade</button>
+          </div>
+          <canvas id="vizCanvas"></canvas>
+          <div class="viz-controls">
+            <button class="viz-play" id="vizPlay" aria-label="Play">▶</button>
+            <input class="viz-progress" id="vizProgress" type="range" min="0" max="100" value="0" aria-label="Seek" />
+            <span class="viz-time" id="vizTime">0:00</span>
+          </div>
+          <div class="viz-hint">◇ 100% local — your MIDI file never leaves your device</div>
+        </section>
+
+        <article class="content">
+          <h2>What Is an Online MIDI Visualizer?</h2>
+          <p>An <strong>online MIDI visualizer</strong> takes a MIDI file and turns its note data into a real-time visual animation. Instead of just hearing the music, you see every note as it plays — colored bars scrolling across the screen in sync with the audio, showing pitch, timing, and duration in an engaging, dynamic display.</p>
+          <p>The most common visualization is the <strong>scrolling piano roll</strong>, where notes fall from top to bottom (or scroll left to right) and light up as they reach the playhead. This is the visual style made famous by tools like Synthesia and YouTube MIDI visualization videos. Our online MIDI visualizer brings that same experience to your browser — free, with no install, and with your files processed locally.</p>
+
+          <h2>How the MIDI Visualizer Works</h2>
+          <p>When you load a MIDI file, the visualizer reads every note event: pitch, start time, duration, and which track it belongs to. Each track gets a distinct color. During playback, the HTML5 Canvas redraws at 60 frames per second, scrolling the note display to follow the music. A vertical playhead line shows exactly where you are in the song.</p>
+          <p>The visualizer supports two display modes:</p>
+          <ul>
+            <li><strong>Piano Roll</strong> — the classic horizontal layout with pitch on the vertical axis and time on the horizontal axis. Notes appear as colored bars that scroll past the playhead.</li>
+            <li><strong>Cascade</strong> — notes fall from the top of the screen downward, creating a waterfall effect. This mode is popular for video content because it looks dramatic and is easy to follow.</li>
+          </ul>
+
+          <h2>Use Cases for a MIDI Visualizer</h2>
+          <p><strong>Creating MIDI visualization videos.</strong> Many YouTube channels feature scrolling MIDI visualizations of classical pieces, game music, and pop arrangements. With this online visualizer, you can screen-record the animation while it plays your MIDI file, then combine it with the audio in a video editor. The result is an engaging visual that helps viewers follow the melody.</p>
+          <p><strong>Understanding arrangement structure.</strong> Seeing the notes animate in real time reveals patterns that are hard to catch from audio alone: how the bass line weaves under the melody, where the harmony shifts, how the percussion fills punctuate transitions. The visualizer makes these relationships obvious.</p>
+          <p><strong>Practicing along with visual guidance.</strong> Some musicians learn better with visual input than audio alone. The scrolling notes show you exactly when each key should be pressed, making it easier to follow along on piano or another instrument.</p>
+          <p><strong>Live performances and installations.</strong> Connect a MIDI controller, play live, and project the visualizer on a screen behind you. The audience sees the notes you are playing in real time — an engaging addition to any live MIDI performance.</p>
+
+          <div class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item"><h3>What is an online MIDI visualizer?</h3><p>An online MIDI visualizer is a web-based tool that takes a MIDI file and renders its notes as a real-time visual animation — typically a scrolling piano roll where each note appears as a colored bar moving across the screen in sync with playback. Unlike a static image, a visualizer animates the notes as the music plays.</p></div>
+            <div class="faq-item"><h3>How does a MIDI visualizer work?</h3><p>A MIDI visualizer reads the note data from a .mid file — pitch, start time, duration, and channel — and draws each note as a rectangle on an HTML5 Canvas. During playback, the canvas scrolls to follow the music, with a playhead line showing the current position. Notes are color-coded by track so you can distinguish instruments visually.</p></div>
+            <div class="faq-item"><h3>Can I use a MIDI visualizer for performances or videos?</h3><p>Yes. Many musicians and content creators use MIDI visualizers to create engaging videos. The scrolling piano roll is visually appealing and helps viewers follow the melody. You can screen-record the visualizer while it plays your MIDI file, then add the audio in post-production.</p></div>
+            <div class="faq-item"><h3>Is this MIDI visualizer free?</h3><p>Yes. The online MIDI visualizer is completely free with no account required, no usage limits, and no watermarks. Your MIDI files are processed locally in your browser — nothing is uploaded.</p></div>
+          </div>
+
+          <nav class="tool-nav">
+            <a href="/">Online MIDI Player</a>
+            <a href="/midi-viewer/">MIDI Viewer</a>
+            <a href="/view-midi-files/">View MIDI Files</a>
+            <a href="/midi-to-piano-sheet/">MIDI to Piano Sheet</a>
+            <a href="/songs/">Browse Songs</a>
+          </nav>
+        </article>
+      </main>
+      <footer><span>© 2026 MIDI PLAYER ONLINE</span><span>Made for curious ears.</span><a href="/songs/">Public-domain songs</a><span>·</span><a href="/privacy.html">Privacy</a></footer>
+    </div>
+    <script>
+    (function(){
+      var canvas=document.getElementById('vizCanvas'),btn=document.getElementById('vizPlay'),range=document.getElementById('vizProgress'),timeEl=document.getElementById('vizTime'),fileInput=document.getElementById('fileInput'),chooseBtn=document.getElementById('chooseBtn');
+      var ctx=canvas.getContext('2d'),notes=[],bpm=120,duration=1,playing=false,elapsed=0,playStart=0,raf=0,audioCtx=null,masterGain=null,mode='roll';
+      var colors=['#e76d52','#e2c15a','#6f91b8','#86aa81','#d88cba','#9b9bdb','#ff9f43','#54a0ff'];
+      function fmt(s){s=Math.max(0,s);return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0')}
+      function draw(){
+        var dpr=window.devicePixelRatio||1,w=canvas.width/dpr,h=canvas.height/dpr;
+        ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.scale(dpr,dpr);
+        ctx.fillStyle='#111';ctx.fillRect(0,0,w,h);
+        var minP=36,maxP=96,rangeP=maxP-minP;
+        if(mode==='roll'){
+          var pxPerSec=w/duration;
+          notes.forEach(function(n,i){
+            var y=h-((n.pitch-minP)/rangeP)*(h-20)-10;
+            var x=n.start*pxPerSec-elapsed*pxPerSec+w*0.3;
+            var nw=Math.max(3,n.dur*pxPerSec-2);
+            if(x+nw<0||x>w)return;
+            ctx.fillStyle=colors[n.track%colors.length];
+            ctx.globalAlpha=0.9;ctx.fillRect(x,y,nw,8);
+            ctx.globalAlpha=0.3;ctx.fillRect(x,y+nw*0.1,nw,6);ctx.globalAlpha=1;
+          });
+          ctx.fillStyle='#e76d52';ctx.fillRect(w*0.3,0,2,h);
+        }else{
+          var pxPerSec=h/duration;
+          notes.forEach(function(n,i){
+            var x=((n.pitch-minP)/rangeP)*w;
+            var y=(n.start-elapsed)*pxPerSec+h*0.3;
+            var nh=Math.max(3,n.dur*pxPerSec-2);
+            if(y+nh<0||y>h)return;
+            var nw=Math.max(8,w/rangeP*0.8);
+            ctx.fillStyle=colors[n.track%colors.length];
+            ctx.globalAlpha=0.85;
+            ctx.beginPath();ctx.roundRect(x-nw/2,y,nw,nh,3);ctx.fill();
+            ctx.globalAlpha=1;
+          });
+          ctx.strokeStyle='rgba(231,109,82,0.5)';ctx.lineWidth=1;
+          ctx.beginPath();ctx.moveTo(0,h*0.3);ctx.lineTo(w,h*0.3);ctx.stroke();
+        }
+        ctx.restore();
+      }
+      function ensureAudio(){if(audioCtx){if(audioCtx.state==='suspended')audioCtx.resume();return true}var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;audioCtx=new AC();masterGain=audioCtx.createGain();masterGain.gain.value=0.5;masterGain.connect(audioCtx.destination);return true}
+      function schedule(from){var now=audioCtx.currentTime+0.05;notes.forEach(function(n){var t=now+Math.max(0,n.start-from);if(t<audioCtx.currentTime)return;var osc=audioCtx.createOscillator(),g=audioCtx.createGain();osc.type='triangle';osc.frequency.value=440*Math.pow(2,(n.pitch-69)/12);g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.5,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+Math.max(0.1,n.dur));osc.connect(g).connect(masterGain);osc.start(t);osc.stop(t+n.dur+0.05)})}
+      function tick(){elapsed=(performance.now()-playStart)/1000;if(elapsed>=duration){stop();elapsed=duration}range.value=String((elapsed/duration)*100);timeEl.textContent=fmt(elapsed)+' / '+fmt(duration);draw();if(playing)raf=requestAnimationFrame(tick)}
+      function play(){if(!ensureAudio())return;playStart=performance.now()-elapsed*1000;schedule(elapsed);playing=true;btn.textContent='Ⅱ';raf=requestAnimationFrame(tick)}
+      function stop(){playing=false;cancelAnimationFrame(raf);btn.textContent='▶'}
+      btn.addEventListener('click',function(){if(playing)stop();else{if(elapsed>=duration)elapsed=0;play()}});
+      range.addEventListener('input',function(){elapsed=(Number(range.value)/100)*duration;timeEl.textContent=fmt(elapsed)+' / '+fmt(duration);if(playing)schedule(elapsed);draw()});
+      chooseBtn.addEventListener('click',function(){fileInput.click()});
+      fileInput.addEventListener('change',function(e){var file=e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(ev){parseMidi(new Uint8Array(ev.target.result))};reader.readAsArrayBuffer(file)});
+      document.querySelectorAll('.viz-modes button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.viz-modes button').forEach(function(x){x.classList.remove('active')});b.classList.add('active');mode=b.dataset.mode;draw()})});
+      function parseMidi(data){try{var pos=0;function read(n){var r=data.slice(pos,pos+n);pos+=n;return r}function readU16(){var v=(data[pos]<<8)|data[pos+1];pos+=2;return v}function readU32(){var v=((data[pos]<<24)|(data[pos+1]<<16)|(data[pos+2]<<8)|data[pos+3])>>>0;pos+=4;return v}function readVarLen(){var v=0,b;do{b=data[pos++];v=(v<<7)|(b&0x7f)}while(b&0x80);return v}var header=read(4);if(String.fromCharCode.apply(null,header)!=='MThd')return;var hLen=readU32(),format=readU16(),nTracks=readU16(),division=readU16(),ticksPerBeat=division;notes=[];var maxEnd=0;for(var t=0;t<nTracks;t++){var chunkType=read(4),chunkLen=readU32(),endPos=pos+chunkLen;if(String.fromCharCode.apply(null,chunkType)!=='MTrk'){pos=endPos;continue}var absTick=0,lastStatus=0;while(pos<endPos){var delta=readVarLen();absTick+=delta;var status=data[pos];if(status&0x80){lastStatus=status;pos++}else{status=lastStatus}var type=status&0xf0;if(type===0x90){var note=data[pos++],vel=data[pos++];if(vel>0){var startSec=(absTick/ticksPerBeat)*(60/bpm);notes.push({pitch:note,start:startSec,dur:0.25,track:t})}}else if(type===0x80)pos+=2;else if(type===0xa0||type===0xb0||type===0xe0)pos+=2;else if(type===0xc0||type===0xd0)pos+=1;else if(status===0xff){var metaType=data[pos++],mLen=readVarLen();pos+=mLen}else if(status===0xf0||status===0xf7){var sLen=readVarLen();pos+=sLen}else pos++}pos=endPos}if(notes.length>0){notes.forEach(function(n){maxEnd=Math.max(maxEnd,n.start+n.dur)});duration=maxEnd||1}else duration=1;elapsed=0;range.value=0;timeEl.textContent='0:00 / '+fmt(duration);draw()}catch(e){console.error('MIDI parse error',e)}}
+      function resize(){var dpr=window.devicePixelRatio||1,rect=canvas.getBoundingClientRect();canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.scale(dpr,dpr);draw()}
+      window.addEventListener('resize',resize);resize();timeEl.textContent='0:00';draw();
+    })();
+    </script>
+  </body>
+</html>

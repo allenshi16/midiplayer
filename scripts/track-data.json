@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "note": "Public-domain classical/historical melodies used for SEO landing pages on MIDI Room. Only public-domain compositions (composers dead 70+ years, traditional folk tunes) are used. Each track encodes a recognizable phrase as [start_beat, MIDI_pitch, duration_beats]. BPM is provided per track. No copyrighted arrangements or performances."
+    "note": "Public-domain classical/historical melodies used for SEO landing pages on MIDI Player Online. Only public-domain compositions (composers dead 70+ years, traditional folk tunes) are used. Each track encodes a recognizable phrase as [start_beat, MIDI_pitch, duration_beats]. BPM is provided per track. No copyrighted arrangements or performances."
   },
   "tracks": [
     {
@@ -38,7 +38,7 @@
           0.6
         ],
         [
-          3.0,
+          3,
           71,
           0.6
         ],
@@ -58,7 +58,7 @@
           1.2
         ],
         [
-          6.0,
+          6,
           76,
           0.6
         ],
@@ -83,7 +83,7 @@
           0.6
         ],
         [
-          9.0,
+          9,
           71,
           0.6
         ],
@@ -102,7 +102,12 @@
           69,
           1.2
         ]
-      ]
+      ],
+      "background": "Für Elise (Bagatelle No. 25 in A minor) is one of Beethoven's most beloved short piano works. Composed around 1810 during his middle period, the piece was not published during his lifetime — it was discovered in 1867 by musicologist Ludwig Nohl, who found the manuscript among Beethoven's papers. The identity of \"Elise\" remains debated: candidates include Therese Malfatti (a student Beethoven may have proposed to), Elisabeth Röckel (a soprano singer), and others. The piece exemplifies Beethoven's ability to create profoundly expressive music in a compact form.",
+      "structure": "The piece follows a rondo form: A–B–A–C–A. The famous A section in A minor features the iconic descending chromatic motif (E–D♯–E–D♯–E–B–D–C–A) that repeats with subtle variations. The B section shifts to F major, offering a gentle contrast. The C section is more dramatic, with rapid repeated notes and ascending runs. Each return of the A section brings the listener back to the familiar melody.",
+      "difficulty": "Beginner to intermediate. The A section is accessible to early piano students — the right hand plays a simple melody with small intervals. The B and C sections require more agility, particularly the C section's repeated notes and faster passages. Left-hand accompaniment involves broken chords and arpeggiated patterns.",
+      "practiceTips": "Start with the A section hands separately. The repeated E–D♯ pattern should feel relaxed — avoid tensing the fingers. Practice the chromatic motion slowly with a metronome at 60 BPM. For the C section, isolate the repeated-note figure and build speed gradually. Use the A/B loop on our MIDI player to drill the transition between sections.",
+      "funFact": "The manuscript's title page read \"Für Elise am 27 April 1810, zur Erinnerung von L. v. Bthvn\" (For Elise on April 27, 1810, in remembrance by L. v. Beethoven). However, the handwriting suggests it may have been copied by Nohl himself, and some scholars believe the original dedication was \"Für Therese.\""
     },
     {
       "slug": "ode-to-joy",
@@ -134,7 +139,7 @@
           0.75
         ],
         [
-          3.0,
+          3,
           67,
           0.75
         ],
@@ -154,7 +159,7 @@
           0.75
         ],
         [
-          6.0,
+          6,
           62,
           0.75
         ],
@@ -174,7 +179,7 @@
           0.75
         ],
         [
-          9.0,
+          9,
           62,
           0.75
         ],
@@ -183,7 +188,12 @@
           60,
           1.5
         ]
-      ]
+      ],
+      "background": "Ode to Joy is the choral finale of Beethoven's Symphony No. 9 in D minor, Op. 125, completed in 1824. The melody is based on \"An die Freude\" (To Joy), a poem by Friedrich Schiller written in 1785. Beethoven's setting has become one of the most recognized melodies in Western music. It serves as the anthem of the European Union and is performed annually at the Proms Last Night. The theme appears in the final movement after the orchestra builds through the preceding three movements.",
+      "structure": "The theme is a simple, hymn-like melody in D major with a two-part structure. The first phrase ascends stepwise (F♯–G–A–B–A–G–F♯–E–D) creating a sense of rising optimism. The second phrase mirrors this with a gentle descent. The melody is designed to be singable by a full choir, which is why it translates so naturally to any instrument.",
+      "difficulty": "Beginner. The melody uses primarily stepwise motion within a narrow range (D4 to D5), making it comfortable for the right hand. The rhythm is straightforward quarter notes and half notes. An ideal first piece for piano students learning to read music.",
+      "practiceTips": "Play the melody hands separately first, focusing on even tone and steady rhythm. Once comfortable, add simple left-hand whole notes on the root (D) and dominant (A). Try transposing to other keys — the stepwise pattern is the same in every key. Use our MIDI player's tempo control to slow down and practice clean finger transitions.",
+      "funFact": "Beethoven was completely deaf when he conducted the premiere of the Ninth Symphony on May 7, 1824, in Vienna. He stood on stage beating time, unaware that the audience was applauding behind him. A soloist had to turn him around so he could see the ovation."
     },
     {
       "slug": "canon-in-d",
@@ -197,82 +207,82 @@
         [
           0,
           62,
-          1.0
+          1
         ],
         [
-          1.0,
+          1,
           57,
-          1.0
+          1
         ],
         [
-          2.0,
+          2,
           59,
-          1.0
+          1
         ],
         [
-          3.0,
+          3,
           54,
-          1.0
+          1
         ],
         [
-          4.0,
+          4,
           55,
-          1.0
+          1
         ],
         [
-          5.0,
+          5,
           62,
-          1.0
+          1
         ],
         [
-          6.0,
+          6,
           55,
-          1.0
+          1
         ],
         [
-          7.0,
+          7,
           57,
-          1.0
+          1
         ],
         [
-          8.0,
+          8,
           62,
-          1.0
+          1
         ],
         [
-          9.0,
+          9,
           57,
-          1.0
+          1
         ],
         [
-          10.0,
+          10,
           59,
-          1.0
+          1
         ],
         [
-          11.0,
+          11,
           54,
-          1.0
+          1
         ],
         [
-          12.0,
+          12,
           55,
-          1.0
+          1
         ],
         [
-          13.0,
+          13,
           62,
-          1.0
+          1
         ],
         [
-          14.0,
+          14,
           64,
-          1.0
+          1
         ],
         [
-          15.0,
+          15,
           57,
-          1.0
+          1
         ]
       ],
       "extraFaqs": [
@@ -280,7 +290,12 @@
           "q": "Where can I get Canon in D MIDI for free?",
           "a": "Pachelbel's Canon in D (c. 1680) is in the public domain, and you can hear our simplified arrangement right here — free, with no download, account or install. For the full multi-track experience, drop any Canon in D MIDI file you own into the main player."
         }
-      ]
+      ],
+      "background": "Pachelbel's Canon in D major is one of the most performed pieces of Baroque music. Composed around 1680 by Johann Pachelbel, it was originally scored for three violins and basso continuo. The piece was largely forgotten for centuries until a 1968 recording by the Jean-François Paillard chamber orchestra brought it to mainstream attention. Today it is a staple at weddings, graduations, and ceremonies worldwide.",
+      "structure": "The piece is built on a ground bass — a two-bar repeating bass line (D–A–B–F♯–G–D–G–A) that cycles throughout the entire composition. Over this ostinato, the three violin voices enter in canon: the second violin begins the melody two beats after the first, and the third enters two beats after the second. This creates a layered, interlocking texture that builds in complexity.",
+      "difficulty": "Beginner to intermediate. The melody itself uses simple quarter and eighth notes in D major. The challenge lies in coordinating multiple voices if playing the full arrangement. For single-line melody players, the tune is very accessible.",
+      "practiceTips": "Learn the bass line first — it is the foundation of the entire piece. Once the bass pattern is automatic in your left hand, add the melody with your right hand. Practice each voice separately before combining. The repeating pattern means you can loop any two-bar section with the A/B feature to build muscle memory.",
+      "funFact": "Despite its fame today, Pachelbel's Canon was not published during his lifetime. The only surviving manuscript was found in a Berlin library in the 19th century. The piece's modern popularity is largely credited to the 1968 Paillard recording, which sold millions of copies."
     },
     {
       "slug": "twinkle-twinkle",
@@ -312,7 +327,7 @@
           0.75
         ],
         [
-          3.0,
+          3,
           69,
           0.75
         ],
@@ -327,7 +342,7 @@
           1.5
         ],
         [
-          6.0,
+          6,
           65,
           0.75
         ],
@@ -347,7 +362,7 @@
           0.75
         ],
         [
-          9.0,
+          9,
           62,
           0.75
         ],
@@ -361,7 +376,12 @@
           60,
           1.5
         ]
-      ]
+      ],
+      "background": "Twinkle, Twinkle, Little Star is one of the most universally known nursery rhymes in the English-speaking world. The lyrics come from a poem by Jane Taylor published in 1806 titled \"The Star.\" The melody is a French tune called \"Ah! vous dirai-je, maman\" which dates to 1761 and was later used by Mozart for his famous variations (K. 265). The combination of Taylor's words and the French melody became the standard English version by the mid-19th century.",
+      "structure": "The melody is in simple binary form (A–B). The A section presents the ascending theme (C–C–G–G–A–A–G) and the B section offers a gentle contrast (F–F–E–E–D–D–C) before resolving back to the tonic. The entire melody spans just one octave (C4 to C5), making it ideal for beginner instruments.",
+      "difficulty": "Absolute beginner. All notes fall within the C major scale with no sharps or flats. The rhythm uses only quarter notes and half notes. This is typically one of the first melodies taught to piano, violin, and recorder students.",
+      "practiceTips": "This is the perfect piece for learning to read music. Match each note on the piano roll to its position on your keyboard. Practice saying the note names as you play them. Once comfortable with the melody, try playing it in different octaves or adding a simple bass line (C and G alternating).",
+      "funFact": "Mozart composed 12 variations on this melody (K. 265) around 1778, making it one of the earliest examples of a popular tune being used as the basis for classical composition. The same French melody is also used for the alphabet song (\"A-B-C-D-E-F-G\")."
     },
     {
       "slug": "greensleeves",
@@ -375,44 +395,49 @@
         [
           0,
           69,
-          1.0
+          1
         ],
         [
-          1.0,
+          1,
           71,
-          1.0
+          1
         ],
         [
-          2.0,
+          2,
           72,
-          1.0
+          1
         ],
         [
-          3.0,
+          3,
           74,
-          1.0
+          1
         ],
         [
-          4.0,
+          4,
           76,
-          2.0
+          2
         ],
         [
-          6.0,
+          6,
           74,
-          1.0
+          1
         ],
         [
-          7.0,
+          7,
           72,
-          1.0
+          1
         ],
         [
-          8.0,
+          8,
           71,
-          2.0
+          2
         ]
-      ]
+      ],
+      "background": "Greensleeves is a traditional English folk song first mentioned in 1580, during the Elizabethan era. Despite the persistent legend that Henry VIII composed it for Anne Boleyn, musicologists have determined the song's style is consistent with the later 16th century, after Henry's death. The melody is in the Dorian mode (a minor scale with a raised 6th), giving it a distinctive, melancholy character that differs from both major and natural minor keys.",
+      "structure": "The melody follows a repeating harmonic pattern known as a romanesca — a ground bass progression (i–v–i–v–III–VII–III–VII–i) that was popular in Renaissance England. The melody weaves above this pattern in a flowing, ornamented style. The form is essentially a series of variations over the repeating bass.",
+      "difficulty": "Beginner to intermediate. The melody is mostly stepwise with a few leaps. The Dorian mode means some notes may feel unfamiliar compared to standard major/minor pieces. The rhythm includes both quarter and eighth notes with some syncopation.",
+      "practiceTips": "Focus on the distinctive raised 6th (F♯ in A minor) — this is what gives Greensleeves its characteristic sound. Practice the romanesca bass pattern separately with your left hand. The ornamental turns in the melody should be played lightly. Use our MIDI player to slow the tempo and study the modal intervals.",
+      "funFact": "The melody was published in 1580 by Richard Jones as \"A New Northern Dittye of the Lady Greene Sleeles.\" Shakespeare references it in The Merry Wives of Windsor (1602), where Falstaff exclaims: \"Let the sky rain potatoes... let these things be sung to the tune of Greensleeves.\""
     },
     {
       "slug": "auld-lang-syne",
@@ -426,15 +451,15 @@
         [
           0,
           62,
-          1.0
+          1
         ],
         [
-          1.0,
+          1,
           60,
-          1.0
+          1
         ],
         [
-          2.0,
+          2,
           62,
           0.5
         ],
@@ -444,12 +469,12 @@
           0.5
         ],
         [
-          3.0,
+          3,
           65,
-          1.0
+          1
         ],
         [
-          4.0,
+          4,
           65,
           0.5
         ],
@@ -459,26 +484,31 @@
           0.5
         ],
         [
-          5.0,
+          5,
           62,
-          1.0
+          1
         ],
         [
-          6.0,
+          6,
           60,
-          1.0
+          1
         ],
         [
-          7.0,
+          7,
           59,
-          1.0
+          1
         ],
         [
-          8.0,
+          8,
           57,
-          2.0
+          2
         ]
-      ]
+      ],
+      "background": "Auld Lang Syne is a Scottish song synonymous with New Year's Eve celebrations worldwide. The lyrics were compiled by Robert Burns in 1788, based on older Scottish folk traditions. The title translates roughly as \"old long since\" or \"for the sake of old times.\" The melody we know today was first associated with Burns's words in 1799. The song asks whether old acquaintances and experiences should be forgotten, and urges remembering them with warmth.",
+      "structure": "The melody is in a simple strophic form — the same music repeats for each verse. It uses a pentatonic-like scale in D major with a range of just a ninth (D4 to E5). The phrasing follows a question-and-answer pattern: the first two lines rise (question), and the last two lines resolve downward (answer).",
+      "difficulty": "Beginner. The melody uses only notes from the D major scale with simple rhythms. The range is comfortable for most instruments. The main challenge is maintaining the characteristic swing feel of Scottish folk music.",
+      "practiceTips": "Play the melody with a slight swing — the first beat of each pair should be slightly longer than the second. This gives it the authentic Scottish feel. Practice the rising phrases separately from the resolving phrases. The song is ideal for practicing phrasing and musical expression at a beginner level.",
+      "funFact": "Auld Lang Syne is sung at the stroke of midnight in dozens of countries, though many singers know only the first verse and chorus. The full song has five verses, but the additional verses are rarely performed. In Scotland, it is traditional to cross your arms during the final chorus."
     },
     {
       "slug": "moonlight-sonata",
@@ -492,62 +522,62 @@
         [
           0,
           61,
-          3.0
+          3
         ],
         [
           0,
           65,
-          3.0
+          3
         ],
         [
           0,
           68,
-          3.0
+          3
         ],
         [
-          3.0,
+          3,
           61,
-          3.0
+          3
         ],
         [
-          3.0,
+          3,
           65,
-          3.0
+          3
         ],
         [
-          3.0,
+          3,
           69,
-          3.0
+          3
         ],
         [
-          6.0,
+          6,
           61,
-          3.0
+          3
         ],
         [
-          6.0,
+          6,
           66,
-          3.0
+          3
         ],
         [
-          6.0,
+          6,
           70,
-          3.0
+          3
         ],
         [
-          9.0,
+          9,
           61,
-          3.0
+          3
         ],
         [
-          9.0,
+          9,
           65,
-          3.0
+          3
         ],
         [
-          9.0,
+          9,
           68,
-          3.0
+          3
         ]
       ],
       "extraFaqs": [
@@ -557,9 +587,14 @@
         },
         {
           "q": "Is this an easy version for beginners?",
-          "a": "Yes. The demo is a simplified single-line melody, so it is easy to follow on piano or any instrument. Slow the tempo down further in the main MIDI Room player if you want to practice note by note with the A/B loop."
+          "a": "Yes. The demo is a simplified single-line melody, so it is easy to follow on piano or any instrument. Slow the tempo down further in the main MIDI Player Online player if you want to practice note by note with the A/B loop."
         }
-      ]
+      ],
+      "background": "Moonlight Sonata (Piano Sonata No. 14 in C♯ minor, Op. 27 No. 2) was composed by Beethoven in 1801 and dedicated to his student, Countess Giulietta Guicciardi. The famous \"Moonlight\" nickname was added five years after Beethoven's death by critic Ludwig Rellstab, who compared the first movement to moonlight reflecting on Lake Lucerne. Beethoven himself called it \"Sonata quasi una Fantasia\" (Sonata in the manner of a fantasy), noting its unconventional structure.",
+      "structure": "The first movement (Adagio sostenuto) is built over a haunting triplet accompaniment that persists throughout. The melody floats above this steady pulse in a sparse, contemplative line. The movement is in ternary form (A–B–A), with the B section offering a slightly brighter passage in D♭ major before returning to the dark C♯ minor atmosphere.",
+      "difficulty": "Intermediate. The challenge is not technical virtuosity but control and expression. The right hand must balance a melody against continuous triplets, and the left hand sustains low octaves. Maintaining even triplet rhythm while shaping the melody requires careful practice.",
+      "practiceTips": "Practice the triplet pattern alone until it is completely automatic — it should feel like a gentle rocking motion. Then add the melody notes on top, playing them slightly louder than the triplets. The left-hand octaves should be soft and sustained. Use our MIDI player's tempo control to slow the piece to 50% and study the balance between voices.",
+      "funFact": "Beethoven marked the score \"Si deve suonare tutto questo pezzo delicatissimamente e senza sordino\" (This entire piece should be played very delicately and without dampers) — meaning the sustain pedal should be held down for the entire first movement, creating a hazy, blurred harmonic effect that was revolutionary for its time."
     },
     {
       "slug": "jingle-bells",
@@ -581,9 +616,9 @@
           0.5
         ],
         [
-          1.0,
+          1,
           64,
-          1.0
+          1
         ],
         [
           1.5,
@@ -591,17 +626,17 @@
           0.5
         ],
         [
-          2.0,
+          2,
           64,
           0.5
         ],
         [
           2.5,
           64,
-          1.0
+          1
         ],
         [
-          3.0,
+          3,
           64,
           0.5
         ],
@@ -611,12 +646,12 @@
           0.5
         ],
         [
-          4.0,
+          4,
           60,
-          1.0
+          1
         ],
         [
-          5.0,
+          5,
           62,
           0.5
         ],
@@ -626,9 +661,9 @@
           0.5
         ],
         [
-          6.0,
+          6,
           63,
-          1.0
+          1
         ],
         [
           6.5,
@@ -636,17 +671,17 @@
           0.5
         ],
         [
-          7.0,
+          7,
           63,
           0.5
         ],
         [
           7.5,
           63,
-          1.0
+          1
         ],
         [
-          8.0,
+          8,
           62,
           0.5
         ],
@@ -656,7 +691,7 @@
           0.5
         ],
         [
-          9.0,
+          9,
           62,
           0.5
         ],
@@ -666,9 +701,9 @@
           0.5
         ],
         [
-          10.0,
+          10,
           60,
-          1.0
+          1
         ]
       ],
       "extraFaqs": [
@@ -678,9 +713,14 @@
         },
         {
           "q": "Is there a jazz version of Jingle Bells here?",
-          "a": "This demo plays the traditional straight melody. If you want a jazz or swing feel, load your own Jingle Bells MIDI into the main MIDI Room player — it works with any MIDI file and runs entirely in your browser."
+          "a": "This demo plays the traditional straight melody. If you want a jazz or swing feel, load your own Jingle Bells MIDI into the main MIDI Player Online player — it works with any MIDI file and runs entirely in your browser."
         }
-      ]
+      ],
+      "background": "Jingle Bells was written by James Lord Pierpont in 1857 and originally published as \"One Horse Open Sleigh.\" Despite its association with Christmas today, it was initially a Thanksgiving song celebrating sleigh races in Medford, Massachusetts. Pierpont was a notable figure — he also served as a Confederate soldier during the Civil War and later became a banker and journalist. The song is one of the most performed and most commercially successful songs in history.",
+      "structure": "The verse-chorus form features a catchy, repetitive chorus (\"Jingle bells, jingle bells, jingle all the way\") built on a simple I–V–I chord progression in C major. The melody uses a distinctive opening motif (three repeated notes followed by a stepwise descent) that makes it instantly recognizable. The verse tells the story of a sleigh ride, while the chorus is the sing-along refrain.",
+      "difficulty": "Beginner. The melody is entirely within the C major scale with straightforward rhythms. The repeated-note opening pattern is easy to play. The chorus and verse use similar note patterns, making it quick to learn.",
+      "practiceTips": "The key to Jingle Bells is rhythm — the repeated notes should be crisp and even. Practice the \"jingle bells\" motif (E–E–E) with clean articulation. The chorus is faster than the verse, so start slow and build speed. For a jazz feel, try adding swing rhythm to the eighth notes.",
+      "funFact": "Jingle Bells was the first song broadcast from space. On December 16, 1965, astronauts Thomas Stafford and Wally Schirra played it on a harmonica with sleigh bells aboard Gemini 6, prank-calling NASA Mission Control by reporting they had \"sighted a spacecraft\" approaching — which turned out to be their own capsule playing the song."
     },
     {
       "slug": "amazing-grace",
@@ -736,7 +776,12 @@
           62,
           2
         ]
-      ]
+      ],
+      "background": "Amazing Grace is one of the most recognized hymns in the English language. The lyrics were written in 1772 by John Newton, a former slave ship captain who experienced a religious conversion during a storm at sea. The melody we sing today is \"New Britain,\" an anonymous American tune first paired with Newton's words in 1835 by William Walker's shape-note singing compilation. The hymn's message of redemption and forgiveness has made it a staple at funerals, civil rights events, and national memorials.",
+      "structure": "The melody is in pentatonic scale (five notes: G–A–C–D–E in G major), which gives it a timeless, folk-like quality. The form follows the hymn's four-line meter (8.6.8.6 — common meter): lines 1 and 3 ascend, lines 2 and 4 resolve downward. The pentatonic structure means there are no half-steps, making it naturally consonant and easy to sing.",
+      "difficulty": "Beginner. The pentatonic melody is comfortable under the fingers with no awkward leaps. The rhythm is simple — mostly quarter notes and half notes. The wide range (G3 to D5) may challenge very young players, but can be transposed to a more comfortable octave.",
+      "practiceTips": "Focus on the wide intervals in the opening phrase — the leap from G up to D is the characteristic sound. Practice each phrase as a separate unit. The hymn is ideal for practicing legato playing — connect each note smoothly. Try playing it slowly with the sustain pedal for a church-like resonance.",
+      "funFact": "Amazing Grace has been recorded over 10,000 times, making it one of the most recorded songs in history. Notable versions include Judy Collins's 1970 a cappella rendering, which topped charts worldwide, and the bagpipe version played at memorial services. The hymn was also used as a signal of ceasefire during the Bosnian War."
     },
     {
       "slug": "brahms-lullaby",
@@ -812,7 +857,12 @@
           67,
           2
         ]
-      ]
+      ],
+      "background": "Brahms' Lullaby (\"Wiegenlied,\" Op. 49 No. 4) was composed by Johannes Brahms in 1868 as a gift for his former sweetheart Bertha Faber, who had just given birth to her second son. The melody was reportedly based on a lullaby Bertha used to sing to Brahms years earlier. The original German text begins \"Wiegenlied\" (cradle song) and the gentle 3/4 meter mimics the rocking motion of a cradle. It has since become one of the most universally known lullabies in Western culture.",
+      "structure": "The lullaby is in simple ternary form (A–B–A) in 3/4 time. The A section features a gentle ascending melody (C–E–G–A–G–E–C) that rises and falls like a rocking motion. The B section moves to the dominant (G major) with a slightly more animated melody before settling back to the tonic. The 3/4 meter and narrow range create an inherently soothing effect.",
+      "difficulty": "Beginner. The melody moves in gentle steps and small leaps within a comfortable range. The 3/4 waltz rhythm is natural and easy to feel. The left hand can play simple root-position chords (C, F, G7) or just bass notes on beat one.",
+      "practiceTips": "The key to this lullaby is a gentle, singing tone. Play each note with a soft touch — imagine you are rocking a baby to sleep. Practice the waltz rhythm (strong-weak-weak) with your left hand first. The melody should flow naturally without any harsh accents. Use our MIDI player to slow the tempo for practice.",
+      "funFact": "Brahms subtly embedded a hidden message in the accompaniment: the viola part quotes a Viennese popular song that Bertha Faber used to sing to him. It was his musical inside joke — a personal reference woven into one of the most public and beloved melodies ever written."
     },
     {
       "slug": "happy-birthday",
@@ -889,7 +939,12 @@
           "q": "Can I use the Happy Birthday melody for free in videos or events?",
           "a": "Yes. 'Happy Birthday to You' was confirmed to be in the public domain in 2016, so the melody is free to perform and use. Our demo is a simplified single-line version you can play along with at any celebration."
         }
-      ]
+      ],
+      "background": "Happy Birthday to You originated as a classroom greeting song called \"Good Morning to All,\" written by sisters Mildred J. Hill (melody, 1893) and Patty S. Hill (lyrics) in Louisville, Kentucky. The \"Happy Birthday\" lyrics were adapted from the original by the early 1900s. The song was subject to copyright claims for decades — Warner/Chappell Music claimed copyright until 2015, when a federal judge ruled the copyright was invalid, placing the song firmly in the public domain.",
+      "structure": "The melody is in 3/4 time with a distinctive pickup note (the \"Hap-\" of \"Happy\"). The form is a simple 16-bar song in C major. The melody uses a call-and-response pattern: \"Happy birthday to you\" (call) appears three times, with \"Happy birthday, dear [name]\" (response) providing contrast before the final resolution.",
+      "difficulty": "Beginner. The melody is within the C major scale with a comfortable range. The 3/4 waltz feel and pickup note are the main rhythmic challenges. The \"dear [name]\" section requires a small leap that beginners should practice slowly.",
+      "practiceTips": "Start by clapping the rhythm without playing — the pickup note (anacrusis) is the trickiest part. Once the rhythm is comfortable, play the melody hands separately. The key change for \"dear [name]\" should be smooth — practice the transition. Try playing in different keys to accompany different voice ranges.",
+      "funFact": "Before the 2015 court ruling, restaurants and businesses had to pay licensing fees to use Happy Birthday publicly. Warner/Chappell collected an estimated $2 million per year from the song. The ruling saved filmmakers, greeting card companies, and event organizers from royalty payments."
     },
     {
       "slug": "silent-night",
@@ -970,7 +1025,12 @@
           67,
           2
         ]
-      ]
+      ],
+      "background": "Silent Night (\"Stille Nacht\") was composed on Christmas Eve 1818 by Franz Xaver Gruber, with lyrics by priest Joseph Mohr, in the small Austrian village of Oberndorf. Legend says the church organ was broken, prompting Gruber to compose a guitar-accompanied piece. The song spread through Tyrolean folk singers and eventually became one of the most performed Christmas carols worldwide. In 2011, UNESCO declared it an intangible cultural heritage.",
+      "structure": "The carol is in 6/8 time (compound meter) with a gentle, rocking quality. The melody is in through-composed form with three stanzas. Each stanza follows a similar contour: a rising opening phrase, a climactic peak at \"heavenly peace,\" and a gentle descent to the final \"night.\" The key of C major and the 6/8 meter create the characteristic lullaby-like warmth.",
+      "difficulty": "Beginner. The melody moves in gentle steps within a narrow range (G3 to C5). The 6/8 meter gives a natural swaying feel. The main challenge is maintaining the legato, singing quality that the carol demands.",
+      "practiceTips": "Feel the 6/8 rhythm as two big beats per measure (1-2-3, 4-5-6). Each beat should rock gently like a cradle. Practice the melody without accompaniment first, focusing on smooth, connected notes. The dynamic should be soft throughout — this is a lullaby. Use our MIDI player's tempo control to find a comfortable, rocking pace.",
+      "funFact": "The original 1818 manuscript was lost for over a century. It was rediscovered in 1995 in the Tyrolean state archives in Innsbruck. The manuscript confirmed that Gruber composed the melody and Mohr wrote the lyrics, settling a long debate about authorship."
     },
     {
       "slug": "joy-to-the-world",
@@ -1051,7 +1111,12 @@
           72,
           1.5
         ]
-      ]
+      ],
+      "background": "Joy to the World is one of the most popular Christmas hymns in the English language. The lyrics were written by Isaac Watts in 1719, making them over 300 years old. The melody most commonly sung today was arranged by Lowell Mason in 1839, based on themes attributed to Handel. Watts intended the hymn as a celebration of Christ's anticipated return to Earth, drawing from Psalm 98. The triumphant, descending scale opening is one of the most recognizable gestures in hymnody.",
+      "structure": "The melody opens with a dramatic descending major scale (the \"Joy to the world\" line), immediately establishing the key and energy. The form is strophic with four phrases: the opening descent, a rising response, a climactic peak, and a resolving cadence. The descending scale motif returns throughout, creating unity.",
+      "difficulty": "Beginner to intermediate. The opening descending scale is easy to play but requires clean finger technique. The range spans over an octave, which may challenge very young players. The rhythm is mostly quarter notes and half notes in common time.",
+      "practiceTips": "Practice the descending scale at the opening slowly and evenly — each note should be distinct. The wide leaps in the third phrase (\"Heaven and nature sing\") require careful hand positioning. Use our MIDI player to slow the tempo and practice the transitions between phrases. The song is excellent for practicing scale technique within a musical context.",
+      "funFact": "The melody's attribution to Handel is disputed. Mason credited it to Handel, but musicologists have never found the theme in any of Handel's works. It may be Mason's own composition, attributed to Handel for prestige — a common practice in the 19th century."
     },
     {
       "slug": "deck-the-halls",
@@ -1132,7 +1197,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "Deck the Halls is a traditional Welsh Christmas carol with origins dating to the 16th century. The Welsh melody is called \"Nos Galan\" (New Year's Eve), and the original Welsh lyrics date to at least 1627. The familiar English lyrics (\"Deck the halls with boughs of holly\") were added in 1862 by Scottish musician Thomas Oliphant. The song's infectious \"fa-la-la\" refrain comes from the Welsh tradition of singing nonsense syllables as filler in dance music.",
+      "structure": "The melody is in 12/8 time (or compound quadruple) with a lively, dance-like character. The form is AABB — the A section features the \"Deck the halls\" theme with its characteristic \"fa-la-la\" responses, and the B section provides contrast with a higher, more energetic melody. The key of C major and fast tempo give it a festive, celebratory feel.",
+      "difficulty": "Beginner to intermediate. The melody is fast and requires clean finger technique. The repeated-note figures and quick scale passages demand good articulation. The 12/8 rhythm should feel like a jig — four beats per measure, each divided into three.",
+      "practiceTips": "Start at half tempo and build speed gradually. The \"fa-la-la\" passages should be light and bouncy — avoid playing them too heavily. Practice the scale passages separately for clean technique. The rhythm should have a dance-like lilt. Use our MIDI player's A/B loop to drill the fast transitions.",
+      "funFact": "The original Welsh version, \"Nos Galan,\" was a New Year's Eve song, not a Christmas carol. The connection to Christmas came when the English lyrics were written in the Victorian era, during which many Welsh folk songs were repurposed as Christmas carols."
     },
     {
       "slug": "we-wish-you-a-merry-christmas",
@@ -1233,7 +1303,12 @@
           64,
           1.5
         ]
-      ]
+      ],
+      "background": "We Wish You a Merry Christmas is a traditional English West Country carol dating to the 16th century. It originated from the British custom of wealthy households giving Christmas treats to carolers on Christmas Eve — the song's demands for \"figgy pudding\" and refusal to leave until receiving some reflect this tradition. The melody was first published in 1935 by Arthur Warrell, though the tune and words had been passed down orally for centuries in the western counties of England.",
+      "structure": "The carol uses a call-and-response structure. The main theme (\"We wish you a merry Christmas\") serves as the call, and the figgy pudding demands (\"Now bring us some figgy pudding\") form the response. The melody is in 3/4 time with a bright, major-key character. The repetitive structure makes it easy to learn and sing along.",
+      "difficulty": "Beginner. The melody is entirely within the G major scale with simple rhythms. The repetitive structure means you learn a small pattern and repeat it. The main challenge is maintaining even rhythm at the faster tempo.",
+      "practiceTips": "The song's charm is in its rhythmic energy. Practice the \"figgy pudding\" section separately — the repeated notes should be crisp. The transition between the wish and the demand should be smooth. Try playing at different tempos: slow for practice, fast for festive energy.",
+      "funFact": "Figgy pudding (also called Christmas pudding) is a real British dessert — a dense, steamed pudding made with dried fruits, spices, and often soaked in brandy. The tradition of carolers demanding treats dates to the medieval period, when the poor would go door-to-door during the Christmas season."
     },
     {
       "slug": "o-christmas-tree",
@@ -1309,7 +1384,12 @@
           72,
           2
         ]
-      ]
+      ],
+      "background": "O Christmas Tree (\"O Tannenbaum\") is a German Christmas carol with roots in a 16th-century folk song. The melody is traditional, and the lyrics we know were written by Ernst Anschütz in 1824. The song is not really about a Christmas tree in the modern sense — \"Tannenbaum\" refers to the fir tree as a symbol of constancy and faithfulness, a theme from the original folk song. The Christmas association came from the German tradition of decorating evergreen trees during the winter solstice.",
+      "structure": "The carol is in 3/4 time with a stately, hymn-like character. The melody is in F major with a gentle, ascending opening phrase. The form is strophic (same music for each verse) with a simple AABA phrase structure. The steady waltz rhythm and narrow range make it one of the most accessible Christmas carols.",
+      "difficulty": "Beginner. The melody stays within a comfortable range in F major. The 3/4 waltz rhythm is natural. The main challenge is the key of F major, which uses one flat (B♭) — beginners should practice the B♭ fingering.",
+      "practiceTips": "Pay attention to the B♭ notes — they are the only accidental in the piece. Practice the scale of F major (F–G–A–B♭–C–D–E–F) before tackling the melody. The waltz rhythm should feel stately, not rushed. Use our MIDI player to slow the tempo and practice clean note transitions.",
+      "funFact": "The original German folk song had nothing to do with Christmas. It was a love song about the fir tree's evergreen nature symbolizing faithfulness. The Christmas lyrics were added in the 19th century when the tradition of decorating Christmas trees became popular in Germany."
     },
     {
       "slug": "carol-of-the-bells",
@@ -1400,7 +1480,12 @@
           71,
           1.5
         ]
-      ]
+      ],
+      "background": "Carol of the Bells (\"Shchedryk\") was composed by Ukrainian composer Mykola Leontovych in 1914, based on a traditional Ukrainian folk chant. The original \"Shchedryk\" was a spring carol celebrating the new year (which in pre-Christian Ukraine was celebrated in April). The English lyrics by Peter Wilhousky, written in 1936, reimagined it as a Christmas carol. The distinctive four-note repeating motif represents the ringing of bells, and the piece builds from a simple ostinato to a powerful, full-voiced climax.",
+      "structure": "The piece is built on a four-note ostinato pattern (G–F♯–E–D in G minor) that repeats throughout, creating the bell-like effect. Over this foundation, the melody develops in layers — starting softly, building through sequential repetition, and reaching a dramatic climax. The 3/4 meter and minor key give it a haunting, urgent quality.",
+      "difficulty": "Intermediate. The fast tempo (150 BPM) and repetitive patterns require good finger control. The minor key (G minor with two flats) and chromatic passages add complexity. The main challenge is maintaining even articulation at speed while the pattern shifts between registers.",
+      "practiceTips": "Master the four-note ostinato pattern first — it is the foundation of the entire piece. Practice it in a loop until it is automatic. Then add the melodic variations one at a time. The fast tempo demands relaxed hands — tension will slow you down. Use our MIDI player's A/B loop to drill the transitions between sections.",
+      "funFact": "The song gained massive popularity after being featured in the movie Home Alone (1990). Its use in films and TV shows has made it one of the most recognizable Christmas melodies, despite its relatively recent composition date (1914) and its origins as a Ukrainian spring carol."
     },
     {
       "slug": "frere-jacques",
@@ -1481,7 +1566,12 @@
           67,
           2
         ]
-      ]
+      ],
+      "background": "Frère Jacques is a well-known French nursery rhyme that has been sung since at least the 18th century. The song tells of a friar who overslept and is reminded to ring the morning bell. The melody is a round — it can be sung by multiple voices starting at different times, creating a harmonious canon. The tune has been adapted worldwide and is used in music education to teach rounds and canons.",
+      "structure": "The melody is a simple four-phrase round in C major. Each phrase is four measures long, and the entire song can be sung as a perpetual canon. The first phrase establishes the theme, the second repeats it, the third introduces the \"morning bell\" motif, and the fourth resolves. The repetitive structure makes it ideal for teaching musical form.",
+      "difficulty": "Absolute beginner. The melody uses only notes from the C major scale within a narrow range. The rhythm is simple quarter notes. This is one of the first songs taught in music education worldwide.",
+      "practiceTips": "This is the perfect piece for practicing rounds. Play the melody, then start it again from the beginning while the first iteration is still playing. Our MIDI player can help you hear how the voices interlock. Practice each phrase separately, then connect them. The song is excellent for building sight-reading confidence.",
+      "funFact": "The melody has been adapted in cultures worldwide — in China it is used as a school morning song, in Hebrew it appears as a children's song, and in English it is one of the most common rounds taught in elementary music classes. Gustav Mahler quoted it in the third movement of his Symphony No. 1 in a minor-key, funeral-march setting."
     },
     {
       "slug": "old-macdonald",
@@ -1582,7 +1672,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "Old MacDonald Had a Farm is an American children's song and nursery rhyme about a farmer and the various animals on his farm. The earliest known version was published in 1917 in a book of traditional songs, though the melody and \"E-I-E-I-O\" refrain likely date to earlier folk traditions. The song's structure — introducing a new animal and its sound in each verse — makes it infinitely extensible and a favorite for teaching children about animals and onomatopoeia.",
+      "structure": "The song uses a cumulative verse structure. Each verse follows the pattern: introduction of the farm, introduction of the animal, the animal's sound (repeated), and a return to the farm refrain. The melody is in C major with a simple, repetitive contour. The \"E-I-E-I-O\" refrain serves as a rhythmic and melodic anchor between verses.",
+      "difficulty": "Beginner. The melody is entirely in C major with a narrow range. The repetitive structure means you learn one pattern and repeat it for each verse. The rhythm is straightforward quarter notes and half notes.",
+      "practiceTips": "Learn the basic verse pattern first, then practice adding new animals. The \"E-I-E-I-O\" section should be rhythmic and bouncy. The animal sounds can be played as rhythmic patterns on a single note. This is a great piece for practicing rhythm and timing in a fun, low-pressure context.",
+      "funFact": "The \"E-I-E-I-O\" refrain has no agreed-upon meaning. Some musicologists believe it imitates the sound of farm instruments, while others suggest it is simply a nonsense syllable designed to be fun to sing. The earliest known printed version appeared in \"Tommy's Tunes\" (1917), a WWI-era songbook."
     },
     {
       "slug": "yankee-doodle",
@@ -1663,7 +1758,12 @@
           71,
           2
         ]
-      ]
+      ],
+      "background": "Yankee Doodle is one of the most iconic American patriotic songs, with origins dating to the 1750s. The melody is believed to be based on European folk tunes, possibly Dutch or English. The original lyrics were likely composed by British military doctors to mock the disheveled American colonial troops — a \"Yankee Doodle\" was a simpleton who stuck a feather in his cap and thought he was fashionable. Americans embraced the song during the Revolutionary War, turning the insult into a badge of pride.",
+      "structure": "The melody is in C major with a bright, march-like character in 4/4 time. The form is a simple 16-bar tune with two eight-bar sections. The first section presents the main theme with ascending arpeggios, and the second section provides contrast with stepwise motion before resolving. The rhythm is energetic with a mix of quarter and eighth notes.",
+      "difficulty": "Beginner. The melody is in C major with comfortable finger patterns. The ascending arpeggios in the opening are natural under the fingers. The main challenge is the fast tempo and clean articulation of eighth notes.",
+      "practiceTips": "Practice the ascending arpeggio opening slowly — each note should be clean and distinct. The eighth-note passages require even finger technique. Start at half tempo and build speed. The song works well as a rhythm exercise — try accenting different beats.",
+      "funFact": "The lyrics \"Yankee Doodle went to town, riding on a pony, stuck a feather in his cap and called it macaroni\" reference the 18th-century fashion trend of \"macaroni\" — overly elaborate English dandies. The British were saying Americans were so unsophisticated they thought a feather in a cap was high fashion."
     },
     {
       "slug": "oh-susanna",
@@ -1744,7 +1844,12 @@
           60,
           1.5
         ]
-      ]
+      ],
+      "background": "Oh! Susanna was written by Stephen Foster in 1848 and quickly became one of the most popular American songs of the 19th century. Foster, often called the \"father of American music,\" wrote the song for the Cincinnati glee club that bore his name. The song became an unofficial theme of the California Gold Rush of 1849, with prospectors singing it on the trail west. Despite its popularity, Foster earned only about $100 for the song because he sold the rights cheaply.",
+      "structure": "The song is in C major with a lively, dance-like character in 2/4 time. The verse features a descending melodic line with a distinctive banjo-like rhythm. The chorus (\"Oh, Susanna, don't you cry for me\") opens with the iconic ascending arpeggio that gives the song its energy. The form is verse-chorus with a brief bridge.",
+      "difficulty": "Beginner to intermediate. The melody is in C major with comfortable patterns. The chorus requires clean articulation of the ascending arpeggio. The fast tempo and syncopated rhythms in the verse are the main challenges.",
+      "practiceTips": "The chorus opening (the ascending C major arpeggio) should be played with energy and clean articulation. Practice the verse rhythm separately — the syncopation gives it its folk character. The song works well at various tempos; practice slowly first, then build to performance speed.",
+      "funFact": "Stephen Foster wrote Oh! Susanna before he had ever visited the South, yet the song became associated with minstrel shows. Foster later became known for more sympathetic and artistic songs like \"Beautiful Dreamer\" and \"Jeanie with the Light Brown Hair.\""
     },
     {
       "slug": "house-of-the-rising-sun",
@@ -1805,7 +1910,12 @@
           57,
           2
         ]
-      ]
+      ],
+      "background": "House of the Rising Sun is a traditional American folk song, with the earliest known version dating to around 1905. The song tells of a life gone wrong in New Orleans, with the \"House of the Rising Sun\" variously interpreted as a prison, a brothel, or a gambling house. The most famous recording is by The Animals (1964), whose electric arrangement transformed the folk ballad into a rock classic. The traditional melody is in the Dorian mode, giving it a haunting, ambiguous tonality.",
+      "structure": "The traditional melody is in A minor (Dorian mode) with a slow, ballad-like character. The form is a 12-bar blues-like structure with three four-bar phrases. The melody uses the raised 6th (F♯) characteristic of Dorian mode, creating the distinctive melancholy-but-not-quite-minor sound. The arpeggiated guitar pattern (in the Animals version) follows an Am–C–D–F progression.",
+      "difficulty": "Beginner to intermediate. The melody is slow and mostly stepwise. The Dorian mode means some intervals may feel unfamiliar. The main challenge is capturing the emotional weight of the piece — it should sound mournful and reflective.",
+      "practiceTips": "Focus on the Dorian raised 6th — it is the characteristic note that gives the song its unique sound. Practice the melody slowly with a singing tone. The arpeggiated accompaniment pattern (if playing guitar-style) should be steady and hypnotic. Use our MIDI player to study the modal intervals.",
+      "funFact": "The Animals' 1964 recording of House of the Rising Sun was done in a single take. The famous organ intro was an accident — organist Alan Price was warming up when the recording started, and the producer liked the sound, so they kept it. The song reached #1 on both the UK and US charts."
     },
     {
       "slug": "scarborough-fair",
@@ -1861,7 +1971,12 @@
           69,
           2
         ]
-      ]
+      ],
+      "background": "Scarborough Fair is a traditional English ballad dating to at least the 17th century, referring to the medieval trade fair held in Scarborough, North Yorkshire. The song's lyrics tell of a young man asking the listener to tell his former love to perform a series of impossible tasks. The melody is in the Dorian mode, giving it an ancient, modal character. The song gained worldwide fame when Simon & Garfunkel adapted it in 1966, interweaving it with their anti-war song \"Canticle.\"",
+      "structure": "The melody is in A minor (Dorian mode) with a flowing, 6/8 meter. The form is strophic, with each verse following the same melodic contour. The Dorian raised 6th (F♯ in A minor) creates the distinctive, bittersweet quality. The 6/8 meter gives the melody a gentle, swaying character reminiscent of a ballad.",
+      "difficulty": "Beginner to intermediate. The melody is slow and mostly stepwise. The Dorian mode requires attention to the raised 6th. The 6/8 meter should feel like a gentle waltz. The main challenge is maintaining the modal character — avoid accidentally playing F natural instead of F♯.",
+      "practiceTips": "The raised 6th (F♯) is the key to the song's character. Practice the A Dorian scale (A–B–C–D–E–F♯–G–A) before tackling the melody. The 6/8 rhythm should flow naturally — count \"1-2-3, 2-2-3\" for each measure. The song benefits from a gentle, legato touch.",
+      "funFact": "The real Scarborough Fair was a 33-day trading event held every August from the 14th to the 18th century. Merchants from across England and Europe gathered to buy and sell goods. The fair declined in the 18th century and eventually ceased, though a modern commemorative event is held annually."
     },
     {
       "slug": "swan-lake-theme",
@@ -1912,7 +2027,12 @@
           81,
           1.5
         ]
-      ]
+      ],
+      "background": "Swan Lake (Op. 20) was composed by Pyotr Ilyich Tchaikovsky in 1875–76 for the Bolshoi Theatre in Moscow. The ballet tells the story of Princess Odette, who is cursed to live as a swan by day and human by night. The famous theme represents Odette's sorrow and beauty. The premiere was a failure (due to poor choreography and orchestration), but after Tchaikovsky's death, the ballet was revived with new choreography by Petipa and became one of the most performed ballets in history.",
+      "structure": "The theme is in A minor with a melancholy, lyrical character. It features a rising opening phrase that builds emotional intensity, followed by a descending resolution. The melody is played by oboe in the original orchestration, giving it a plaintive, singing quality. The 4/4 meter and moderate tempo create a stately, processional feel.",
+      "difficulty": "Beginner to intermediate. The melody is slow and lyrical with mostly stepwise motion. The A minor key uses no sharps or flats (natural minor). The main challenge is the expressive phrasing — the melody should sing with emotional depth.",
+      "practiceTips": "Focus on legato playing — each note should connect smoothly to the next. The rising phrases should build in dynamics (get louder as you go up). Practice the melody as if you were singing it — breathe at the phrase breaks. Use our MIDI player to slow the tempo and study the phrasing.",
+      "funFact": "The original 1877 premiere of Swan Lake was a disaster. Critics called the music \"too loud\" and \"too Wagnerian.\" The choreography was considered unimaginative. Tchaikovsky died in 1893 believing the ballet had failed. It was only after his death that the 1895 revival made it a masterpiece."
     },
     {
       "slug": "minuet-in-g",
@@ -2003,7 +2123,12 @@
           67,
           0.5
         ]
-      ]
+      ],
+      "background": "Minuet in G major (BWV Anh. 114) was long attributed to Johann Sebastian Bach but is now known to have been composed by Christian Petzold around 1725. It appears in the Notebook for Anna Magdalena Bach, a collection of keyboard pieces that Bach assembled for his wife. The minuet is one of the most popular beginner piano pieces, valued for its elegant simplicity and clear phrasing. It exemplifies the graceful dance form that was central to Baroque social life.",
+      "structure": "The minuet is in binary form (A–B) in 3/4 time. The A section presents the main theme in G major with a question-and-answer phrase structure. The B section provides contrast, touching on D major (the dominant) before returning to G. The dance rhythm (strong-weak-weak) gives it its characteristic elegance.",
+      "difficulty": "Beginner. The melody is in G major (one sharp: F♯) with comfortable hand positions. The 3/4 dance rhythm is natural. The main challenge is maintaining the graceful, courtly character — the notes should be light and precise, not heavy.",
+      "practiceTips": "The minuet should feel like a dance — light, elegant, with a gentle bounce. Practice the left-hand accompaniment separately first. The F♯ in the key signature requires attention — make sure every F is sharp. The phrasing should be clear: two-measure units with a gentle lift at the end of each phrase.",
+      "funFact": "The misattribution to Bach persisted for over 200 years. It was not until 1970 that musicologist Hans-Joachim Schulze identified Christian Petzold as the true composer. Despite this, the piece remains in the Bach catalog under \"Anhang\" (appendix) as BWV Anh. 114."
     },
     {
       "slug": "turkish-march",
@@ -2104,7 +2229,12 @@
           76,
           0.5
         ]
-      ]
+      ],
+      "background": "Turkish March (Rondo alla Turca) is the third movement of Mozart's Piano Sonata No. 11 in A major, K. 331, composed around 1783. The movement imitates the sound of Turkish Janissary bands, which were fashionable in Viennese classical music. Mozart marked it \"Allegretto\" and wrote it in A minor with sections in A major. The piece has become one of the most recognizable piano showpieces, valued for its brilliant, percussive character.",
+      "structure": "The movement is in rondo form (A–B–C–B–A–Coda). The famous A section features rapid ascending scale passages and repeated notes that imitate Turkish percussion. The B section in A major provides a lyrical contrast. The C section returns to the minor mode with dramatic chords and runs. The coda brings the piece to a brilliant, percussive close.",
+      "difficulty": "Intermediate to advanced. The fast tempo requires excellent finger technique. The rapid scale passages and repeated notes demand precision and evenness. The left-hand accompaniment involves wide leaps and quick position changes. This is a genuine showpiece that rewards dedicated practice.",
+      "practiceTips": "Start with the scale passages at half tempo — each note must be even and clean. The repeated notes should be played with a light, bouncing touch. Practice hands separately before combining. The B section is more lyrical — contrast it with the percussive A section. Use our MIDI player's tempo control extensively.",
+      "funFact": "The \"Turkish\" style (alla turca) was a trend in 18th-century Viennese music. Turkish Janissary bands used cymbals, triangles, and bass drums — instruments that were exotic to European audiences. Mozart, Haydn, and Beethoven all wrote \"Turkish\" movements, typically featuring loud, percussive effects."
     },
     {
       "slug": "the-entertainer",
@@ -2155,7 +2285,12 @@
           72,
           1.5
         ]
-      ]
+      ],
+      "background": "The Entertainer is a ragtime piano composition by Scott Joplin, published in 1902. Joplin, known as the \"King of Ragtime,\" elevated syncopated popular music to an art form. The Entertainer became widely known again when it was used as the theme for the 1973 film The Sting, introducing ragtime to a new generation. The piece exemplifies classic ragtime style with its syncopated melody over a steady march bass.",
+      "structure": "The piece is in C major with the characteristic ragtime syncopation — the melody emphasizes off-beats while the left hand maintains a steady \"oom-pah\" march rhythm. The form follows the classic ragtime pattern: Introduction–A–A–B–B–C–C–D–D. Each section presents a new syncopated theme, building in complexity and energy.",
+      "difficulty": "Intermediate to advanced. The syncopated rhythm is the main challenge — the right hand plays against the beat while the left hand keeps a steady pulse. The fast tempo and wide left-hand leaps require good technique. The piece demands independence between hands.",
+      "practiceTips": "Master the left-hand march pattern first — it must be rock-steady. Then add the right-hand syncopation slowly. The key is to feel the steady beat in your body while your right hand plays around it. Practice each section separately. Use our MIDI player to slow the tempo and internalize the syncopation before building speed.",
+      "funFact": "Scott Joplin died in 1917, believing his music had been forgotten. The 1973 use of The Entertainer in The Sting (which won the Academy Award for Best Picture) sparked a ragtime revival. Joplin was posthumously awarded a Pulitzer Prize in 1976 for his contributions to American music."
     },
     {
       "slug": "when-the-saints",
@@ -2246,7 +2381,12 @@
           62,
           2
         ]
-      ]
+      ],
+      "background": "When the Saints Go Marching In is an American gospel hymn that has become one of the most recognized songs in the world, particularly associated with New Orleans jazz funerals. The lyrics express the singer's desire to be among the saints when they march into heaven. The song was first published in 1896, though the melody and lyrics likely date to earlier oral traditions. It became a jazz standard after Louis Armstrong's famous 1938 recording.",
+      "structure": "The melody is in C major with a simple, march-like character in 4/4 time. The form is a 32-bar song (AABA) with the famous \"Oh, when the saints go marching in\" refrain. The melody uses primarily stepwise motion with a few leaps, making it accessible for most instruments. The call-and-response structure between the verse and refrain gives it its conversational quality.",
+      "difficulty": "Beginner. The melody is entirely in C major with simple rhythms. The march-like character makes the rhythm natural. The range is comfortable for most instruments. This is one of the first jazz melodies taught to beginner musicians.",
+      "practiceTips": "The song should have a joyful, swinging feel. Practice the melody with a slight swing rhythm (long-short eighth notes) for the jazz feel. The call-and-response between phrases should be musical — the \"response\" phrases should feel like an answer to the \"call.\" Try playing it as a round with multiple voices.",
+      "funFact": "In New Orleans tradition, \"When the Saints\" is played during jazz funerals. The first half of the procession is a somber march (hymns and dirges), but after the body is committed, the band switches to \"When the Saints\" and the mood transforms into a celebration of life. This tradition continues to this day."
     },
     {
       "slug": "row-row-row-your-boat",
@@ -2382,7 +2522,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "Row, Row, Row Your Boat is a popular English-language nursery rhyme and round. The earliest known version was published in 1852 with different lyrics set to the same melody. The current words and melody were standardized by the early 20th century. The song is one of the most common rounds taught to children, alongside Frère Jacques. Its simple melody and philosophical lyrics (\"life is but a dream\") have made it enduringly popular.",
+      "structure": "The melody is a simple round in C major with four phrases. Each phrase can be sung by a different voice starting at different times, creating a canon. The first two phrases present the main theme, the third introduces the \"merrily\" motif with repeated notes, and the fourth resolves with \"life is but a dream.\" The 4/4 meter and narrow range make it ideal for young singers.",
+      "difficulty": "Absolute beginner. The melody uses only notes from the C major scale within a narrow range (C4 to E5). The rhythm is simple quarter notes and half notes. This is typically one of the very first songs taught to children.",
+      "practiceTips": "This is the perfect piece for learning to sing or play in a round. Start with one voice, then add a second voice at the beginning while the first continues. Our MIDI player can help you hear how the voices interlock. The \"merrily\" section should be light and bouncy. Practice each phrase separately before combining.",
+      "funFact": "The song's deceptively simple lyrics have inspired numerous interpretations. Some musicologists see it as a meditation on the illusory nature of reality (\"life is but a dream\"), while others view it as a straightforward children's song about a pleasant boat ride. The round format means the song can go on forever, symbolizing the cycle of life."
     },
     {
       "slug": "itsy-bitsy-spider",
@@ -2448,7 +2593,12 @@
           67,
           2
         ]
-      ]
+      ],
+      "background": "Itsy Bitsy Spider (also \"Eensy Weensy Spider\" or \"Incy Wincy Spider\") is a popular American nursery rhyme that describes a spider climbing a water spout. The earliest known version was published in 1910 in a collection of folk songs. The song is often accompanied by hand gestures that mimic the spider climbing, the rain falling, and the sun coming out. It is one of the most common finger-play songs in early childhood education.",
+      "structure": "The melody is in C major with a simple, stepwise contour. The form follows the narrative: the spider climbs up (ascending phrase), the rain washes it out (descending phrase), the sun comes out (ascending resolution), and the spider starts again (return to the opening). The repetitive structure mirrors the spider's persistence.",
+      "difficulty": "Absolute beginner. The melody is entirely in C major with a narrow range. The rhythm is simple. The accompanying hand gestures make it engaging for very young learners. This is an ideal first piece for preschool music education.",
+      "practiceTips": "The song is best learned with the accompanying hand gestures — they help internalize the rhythm and narrative. Practice the melody first, then add the gestures. The ascending and descending phrases should mirror the spider's journey. This is a great piece for teaching young students about musical direction (up and down).",
+      "funFact": "The song exists in many languages and cultures worldwide. In Spanish-speaking countries, it is \"La arañita\" (The Little Spider). In France, a similar song features a spider climbing. The universal appeal of the story — persistence in the face of setbacks — makes it cross-cultural."
     },
     {
       "slug": "this-old-man",
@@ -2524,7 +2674,12 @@
           65,
           1
         ]
-      ]
+      ],
+      "background": "This Old Man (also known as \"This Old Man, He Played One\" or \"Nick-Nack Paddy Whack\") is a traditional English counting song and nursery rhyme. Each verse counts from one to ten, with each number associated with a rhyming phrase (\"one, he played nick-nack on my thumb\"). The song dates to at least the early 20th century and is used in early education to teach counting and rhyming. The \"nick-nack paddy whack\" refrain is a nonsense phrase that adds rhythmic energy.",
+      "structure": "The melody is in C major with a bouncy, march-like character. Each verse follows the same melodic pattern, with the counting words fitting into a simple rhythmic framework. The \"nick-nack paddy whack\" refrain provides a rhythmic break between the counting lines. The repetitive structure makes it easy to learn and remember.",
+      "difficulty": "Beginner. The melody is in C major with simple rhythms. The repetitive structure means you learn one pattern and repeat it for each number. The main challenge is maintaining clean articulation at a faster tempo.",
+      "practiceTips": "The song is excellent for practicing rhythm and articulation. The \"nick-nack\" section should be crisp and bouncy. Practice each verse separately, then chain them together. The counting aspect makes it useful for combining music education with math. Try playing in different keys for variety.",
+      "funFact": "The origins of \"nick-nack paddy whack\" are unclear. Some suggest it refers to the sound of a peddler's wares, while others believe it is simply nonsense syllables designed to be fun to say. The \"dog\" in the final line (\"gave his dog a bone\") varies in different versions of the song."
     },
     {
       "slug": "london-bridge",
@@ -2600,7 +2755,12 @@
           67,
           1
         ]
-      ]
+      ],
+      "background": "London Bridge Is Falling Down is one of the oldest and most widespread nursery rhymes in the English language. The song refers to the repeated destruction and rebuilding of London Bridge over the centuries — from Viking attacks in the 11th century to fires and structural failures. The earliest known printed version dates to 1744, though the song likely existed orally for centuries before that. The melody we sing today was first published in the late 19th century.",
+      "structure": "The melody is in C major (sometimes in minor keys) with a simple, repetitive structure. The form is AABB — the A section presents the \"falling down\" theme, and the B section asks \"how shall we build it up?\" The melody uses stepwise motion within a narrow range, making it accessible for young singers and players.",
+      "difficulty": "Beginner. The melody is in C major with a narrow range and simple rhythms. The repetitive structure makes it quick to learn. The main challenge is maintaining even rhythm through the repeated phrases.",
+      "practiceTips": "The song's charm is in its simplicity. Practice the A and B sections separately, then connect them. The rhythm should be steady — avoid rushing through the repeated phrases. The song works well as a duet or round. Try playing it in a minor key for a darker, more dramatic effect.",
+      "funFact": "The Viking attack theory suggests the nursery rhyme refers to Olaf II of Norway, who in 1014 pulled down London Bridge by tying ropes to the supporting piles and rowing downstream. This event is described in the Heimskringla saga and may have inspired the \"falling down\" lyrics."
     },
     {
       "slug": "mary-had-a-little-lamb",
@@ -2671,7 +2831,12 @@
           67,
           2
         ]
-      ]
+      ],
+      "background": "Mary Had a Little Lamb is one of the most famous nursery rhymes in the English language. The poem was written by Sarah Josepha Hale in 1830 and published in Boston. It was inspired by a real incident: Mary Sawyer, a young girl from Sterling, Massachusetts, who brought her pet lamb to school. The melody was composed by Lowell Mason in 1831. The rhyme has become a cultural touchstone — it was the first phrase Thomas Edison recorded on his phonograph in 1877.",
+      "structure": "The melody is in C major with a simple, descending contour. The form is a four-phrase structure: the first phrase descends from E to C (\"Mary had a little lamb\"), the second repeats the descent, the third ascends (\"its fleece was white as snow\"), and the fourth returns to the opening pattern. The narrow range (E4 down to C4 and back) makes it ideal for beginners.",
+      "difficulty": "Absolute beginner. The melody uses only three notes (E, D, C) for the first phrase, making it one of the simplest melodies ever written. The rhythm is simple quarter notes. This is often the very first piece taught on piano, recorder, and xylophone.",
+      "practiceTips": "This is the ideal first piece for any instrument. The three-note pattern (E–D–C) should be played with even tone and steady rhythm. Once comfortable, try playing the melody starting on different notes to explore different keys. The song is excellent for building confidence in new players.",
+      "funFact": "Mary Had a Little Lamb was the first words ever recorded on a phonograph. In 1877, Thomas Edison recited the nursery rhyme into his tinfoil phonograph as a test. The recording was lost, but Edison later recalled: \"It was a triumph with myself, but I was always afraid it would be a failure with others.\""
     },
     {
       "slug": "pop-goes-the-weasel",
@@ -2757,7 +2922,12 @@
           72,
           2
         ]
-      ]
+      ],
+      "background": "Pop Goes the Weasel is a traditional English nursery rhyme and dance tune dating to the 1850s. The melody was originally a dance tune, and the lyrics were added later. The phrase \"pop goes the weasel\" has multiple interpretations — it may refer to pawning a weasel (slang for a tailor's flat iron), or to the popping sound of a weasel in a spinning wheel. The song became enormously popular in both England and America during the mid-19th century.",
+      "structure": "The melody is in C major with a lively, dance-like character in 6/8 time. The form features a distinctive \"pop\" — a sudden leap or accent on the word \"pop\" that gives the song its name. The melody alternates between stepwise motion and the characteristic leap, creating a playful, unpredictable feel.",
+      "difficulty": "Beginner. The melody is in C major with mostly stepwise motion. The 6/8 dance rhythm gives it a natural lilt. The main challenge is the \"pop\" leap — it requires clean finger technique to execute smoothly at speed.",
+      "practiceTips": "The \"pop\" moment is the key to the song's character. Practice the leap separately — it should be quick and clean. The 6/8 rhythm should feel like a jig (two big beats per measure). The song benefits from a light, playful touch. Use our MIDI player to slow the tempo and practice the transitions.",
+      "funFact": "The dance associated with Pop Goes the Weasel was a popular parlor dance in Victorian England. The \"pop\" moment involved a sudden movement or gesture — dancers would \"pop\" under a partner's arm or make a sudden turn. The dance was considered fashionable in the 1850s."
     },
     {
       "slug": "au-clair-de-la-lune",
@@ -2818,7 +2988,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "Au Clair de la Lune (\"By the Light of the Moon\") is a traditional French folk song first published in 1761. The lyrics tell of a visitor who comes to the speaker's door by moonlight, asking to come in. The song has a gentle, lyrical quality that has made it one of the most beloved French children's songs. The melody is simple enough for beginners but carries a distinctly French melodic character.",
+      "structure": "The melody is in C major with a gentle, lyrical contour. The form is a simple four-phrase structure with a rising opening, a gentle peak, and a resolving descent. The 2/4 meter gives it a walking-pace feel. The melody uses primarily stepwise motion within a narrow range.",
+      "difficulty": "Beginner. The melody is in C major with a narrow range and simple rhythms. The lyrical character requires a gentle, singing touch. The main challenge is maintaining the smooth, legato phrasing that gives the song its French character.",
+      "practiceTips": "The song should be played with a singing, legato touch. Each note should connect smoothly to the next. Practice the melody slowly, focusing on tone quality. The French lyrics can help with phrasing — sing along as you play. Use our MIDI player to study the note transitions.",
+      "funFact": "Au Clair de la Lune is sometimes claimed to be the oldest known melody to be recorded. In 1860, Édouard-Léon Scott de Martinville recorded a version of the song on his phonautograph — the earliest known recording of the human voice, though it could not be played back at the time."
     },
     {
       "slug": "sakura-sakura",
@@ -2889,7 +3064,12 @@
           64,
           2
         ]
-      ]
+      ],
+      "background": "Sakura Sakura (Cherry Blossoms, Cherry Blossoms) is a traditional Japanese folk song dating to the Edo period (1603–1868). Originally composed as a koto (Japanese harp) piece for music education, it became one of the most recognized Japanese melodies worldwide. The lyrics celebrate the beauty of cherry blossoms in spring — a symbol of the transient nature of life in Japanese culture. The melody uses the Hirajoshi scale, a traditional Japanese pentatonic scale that gives it a distinctive, exotic character.",
+      "structure": "The melody is in A minor using the Hirajoshi scale (A–B–C–E–F), which omits the 4th and 7th degrees of the natural minor scale. This creates the distinctive Japanese sound. The form is a simple three-phrase structure with a slow, stately character. The melody moves in a stepwise pattern within the pentatonic framework.",
+      "difficulty": "Beginner to intermediate. The pentatonic scale means fewer notes to navigate, but the intervals may feel unfamiliar to players accustomed to Western scales. The slow tempo and sustained notes require good tone control. The main challenge is capturing the Japanese aesthetic — spare, contemplative, and beautiful in its simplicity.",
+      "practiceTips": "Practice the Hirajoshi scale (A–B–C–E–F) before tackling the melody. The intervals between C and E (a minor third) and between F and A (also a minor third) are the distinctive jumps. The melody should be played with a gentle, contemplative touch — imagine the quiet beauty of cherry blossoms falling. Use our MIDI player to slow the tempo and study the scale patterns.",
+      "funFact": "Sakura Sakura was originally composed during the Edo period as a practice piece for students of the koto, the traditional Japanese 13-string harp. The melody's pentatonic structure is perfectly suited to the koto's tuning, and the piece remains a staple of koto education today."
     },
     {
       "slug": "la-cucaracha",
@@ -2985,7 +3165,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "La Cucaracha (\"The Cockroach\") is a traditional Mexican folk song with origins dating to the Spanish colonial period. The melody is believed to have been brought to Mexico by Spanish sailors, possibly from an Andalusian folk tune. The song became enormously popular during the Mexican Revolution (1910–1920), when satirical verses were composed about political figures and events. The song's structure allows for infinite verses, making it a vehicle for social commentary and humor.",
+      "structure": "The melody is in C major with a lively, dance-like character. The form features a distinctive habanera rhythm (syncopated pattern: long-short-long-short) that gives it a Latin feel. The melody is repetitive and catchy, with a call-and-response structure between the verse and the \"La cucaracha\" refrain. The fast tempo and syncopation give it infectious energy.",
+      "difficulty": "Beginner to intermediate. The melody is in C major with comfortable patterns. The main challenge is the habanera rhythm — the syncopation requires good rhythmic control. The fast tempo demands clean finger technique.",
+      "practiceTips": "Master the habanera rhythm first — it is the key to the song's Latin character. Practice the syncopated pattern slowly with a metronome. The melody should be played with energy and a slight bounce. The \"La cucaracha\" refrain should be crisp and rhythmic. Use our MIDI player to slow the tempo and internalize the rhythm.",
+      "funFact": "During the Mexican Revolution, both sides used La Cucaracha for satirical verses. Pancho Villa and Emiliano Zapata were subjects of numerous verses, as were the opposing government generals. Over 90 different revolutionary verses have been documented, making the song a musical chronicle of the era."
     },
     {
       "slug": "beethoven-fifth-opening",
@@ -3036,7 +3221,12 @@
           62,
           1.5
         ]
-      ]
+      ],
+      "background": "The opening four notes of Beethoven's Symphony No. 5 in C minor, Op. 67 (1808) are arguably the most famous four notes in classical music. The short-short-short-long rhythm (da-da-da-DUM) has been described as \"Fate knocking at the door\" — though this attribution comes from Beethoven's secretary Anton Schindler, whose reliability is disputed. The motif pervades the entire first movement, appearing in every section and development. The symphony as a whole traces a journey from C minor (struggle) to C major (triumph).",
+      "structure": "The opening motif (G–G–G–E♭) is one of the most economical themes in music history — just four notes. The rhythm (short-short-short-long) is the defining element. The motif is immediately repeated a step lower, then developed through sequential patterns. The entire first movement is built from this tiny cell through relentless variation and development.",
+      "difficulty": "Beginner. The four-note motif is simple to play. The rhythm is the main challenge — the three short notes followed by the long note must be precise. The C minor key uses three flats (B♭, E♭, A♭), which may challenge very young players.",
+      "practiceTips": "The rhythm is everything. Practice \"short-short-short-LONG\" as a rhythmic pattern before adding pitches. The three short notes should be exactly equal in duration, and the long note should be precisely three times as long. The motif should sound urgent and dramatic. Use our MIDI player to slow the tempo and perfect the rhythm.",
+      "funFact": "During World War II, the BBC used the opening motif of Beethoven's Fifth as a symbol of victory — the short-short-short-long rhythm matched the Morse code for \"V\" (three dots and a dash). The motif was played before every BBC broadcast to occupied Europe."
     },
     {
       "slug": "eine-kleine-nachtmusik",
@@ -3112,7 +3302,12 @@
           67,
           1
         ]
-      ]
+      ],
+      "background": "Eine Kleine Nachtmusik (Serenade No. 13 in G major, K. 525) was composed by Mozart in 1787. The title translates to \"A Little Night Music\" — Mozart himself described it as \"A little night music consisting of strings.\" The piece was likely written for a social occasion or outdoor performance, as was common for serenades in 18th-century Vienna. It is one of Mozart's most popular compositions, known for its bright, elegant character and memorable opening theme.",
+      "structure": "The first movement is in sonata form (exposition–development–recapitulation) in G major. The famous opening theme is a bold, ascending arpeggio (G–D–G–D–G) followed by a graceful descending phrase. The movement features clear phrase structures, dynamic contrasts, and the elegant symmetry characteristic of Classical-era composition. The 4/4 meter (Allegro) gives it an energetic, dance-like quality.",
+      "difficulty": "Beginner to intermediate. The opening arpeggio is natural under the fingers. The melody is in G major (one sharp: F♯) with comfortable patterns. The main challenge is the fast tempo and clean articulation of the rapid scale passages in the development section.",
+      "practiceTips": "The opening arpeggio should be played with energy and precision — it is one of the most recognizable gestures in classical music. Practice the ascending and descending patterns separately. The dynamic contrasts (loud vs. soft) are essential to the Classical style. Use our MIDI player to slow the tempo for the fast passages.",
+      "funFact": "Despite its fame, the exact occasion for which Eine Kleine Nachtmusik was composed is unknown. The manuscript's second page originally listed five movements, but the second movement (a minuet) has been lost. The surviving four movements were likely all that was needed for the original performance."
     },
     {
       "slug": "habanera-carmen",
@@ -3163,7 +3358,12 @@
           74,
           1.5
         ]
-      ]
+      ],
+      "background": "The Habanera (\"L'amour est un oiseau rebelle\") is an aria from Georges Bizet's opera Carmen, first performed in 1875. Sung by the title character Carmen, it declares that love is a rebellious bird that cannot be tamed. The melody is based on a Cuban habanera rhythm, which Bizet borrowed from a song by Spanish composer Sebastián Yradier (\"El Arreglito\"). The exotic, sensual character of the habanera perfectly captures Carmen's seductive personality. The opera was initially a failure but became one of the most performed operas worldwide after Bizet's death.",
+      "structure": "The habanera is in D minor with the characteristic habanera rhythm (dotted quarter–eighth–quarter–quarter) that gives it a Latin, swaying feel. The melody is built on a descending chromatic bass line (the \"lamento\" bass) that was a common Baroque device for expressing sorrow or passion. The form is strophic — the same music repeats for each verse, with increasing intensity.",
+      "difficulty": "Intermediate. The descending chromatic line requires careful intonation. The habanera rhythm is distinctive and must be precise. The D minor key uses one flat (B♭) plus chromatic alterations. The main challenge is capturing the sultry, confident character of Carmen.",
+      "practiceTips": "The habanera rhythm is the key — practice it as a standalone pattern before adding the melody. The chromatic descent should be smooth and deliberate. The character should be confident and seductive — Carmen is in control. Use our MIDI player to slow the tempo and study the chromatic intervals.",
+      "funFact": "Bizet did not originally compose the habanera melody — he adapted it from Sebastián Yradier's \"El Arreglito,\" a Cuban-style song. Bizet believed it was a folk tune and did not credit Yradier. When he discovered the error, he added an acknowledgment in the printed score."
     },
     {
       "slug": "vivaldi-spring",
@@ -3234,7 +3434,12 @@
           68,
           2
         ]
-      ]
+      ],
+      "background": "Spring (\"La Primavera\") is the first concerto in Antonio Vivaldi's The Four Seasons, composed around 1725. Each concerto is accompanied by a sonnet (possibly written by Vivaldi himself) that describes the scenes the music depicts. Spring opens with a joyful celebration of the season's arrival, followed by a pastoral second movement depicting a sleeping goatherd, and a lively third movement featuring a dance of nymphs and shepherds. The work is a masterpiece of Baroque programmatic music.",
+      "structure": "The first movement (Allegro) is in E major with a bright, celebratory character. The opening ritornello (recurring orchestral theme) features ascending arpeggios and trills that evoke birdsong. The solo violin passages depict babbling brooks and gentle breezes. The movement follows the Baroque ritornello form, with alternating orchestral and solo sections.",
+      "difficulty": "Intermediate to advanced. The fast arpeggios and trills require excellent finger technique. The E major key uses four sharps. The main challenge is the rapid string-crossing patterns and the ornamental trills that depict birdsong.",
+      "practiceTips": "The opening arpeggios should be bright and energetic — they represent the joy of spring arriving. Practice the trills separately (they represent birdsong). The fast passages require relaxed, fluid finger technique. Use our MIDI player to slow the tempo and study the ornamental patterns.",
+      "funFact": "Vivaldi's The Four Seasons is considered the earliest example of program music — instrumental music that tells a story or depicts scenes. Each concerto includes detailed instructions in the sonnet: barking dogs (viola), buzzing flies (solo violin), thunderstorms (tremolo strings), and drunken dancers (slurred notes)."
     },
     {
       "slug": "morning-mood",
@@ -3305,7 +3510,12 @@
           64,
           1
         ]
-      ]
+      ],
+      "background": "Morning Mood (\"Morgenstimmung\") is an orchestral piece by Edvard Grieg, composed in 1875 as part of his incidental music for Henrik Ibsen's play Peer Gynt. It depicts a sunrise in the Moroccan desert, where the character Peer Gynt finds himself at the start of Act IV. The melody, played by a solo flute, is one of the most peaceful and universally recognized pieces in the classical repertoire. Despite its Norwegian composer, the scene is set in Africa — a reminder that programmatic music often takes creative liberties with geography.",
+      "structure": "The piece is in E major with a gentle, pastoral character in 6/8 time. The famous melody is a simple, ascending theme that rises like the sun. It is first played by flute, then taken up by oboe, and builds through the orchestra. The form is a series of variations on the sunrise theme, with increasing orchestral color and dynamic intensity.",
+      "difficulty": "Beginner to intermediate. The melody is slow and lyrical with mostly stepwise motion. The E major key uses four sharps, but the melody primarily uses the first five notes of the scale. The main challenge is the expressive phrasing — the melody should breathe and rise naturally.",
+      "practiceTips": "The melody should feel like a sunrise — starting softly and building gradually. Practice the ascending phrases with a growing dynamic. The 6/8 meter should feel like a gentle rocking motion. The flute-like quality can be approximated with a light, airy touch. Use our MIDI player to study the phrasing and dynamic shape.",
+      "funFact": "Grieg reportedly disliked his Peer Gynt music, calling it \"pandering to Norwegian nationalism\" and saying the incidental music \"smells of cow-dung and uncompromising Norwegian-ness.\" Despite this, Morning Mood has become one of the most beloved pieces in the classical repertoire and a symbol of Norwegian music."
     },
     {
       "slug": "dance-of-the-sugar-plum-fairy",
@@ -3376,7 +3586,12 @@
           69,
           0.5
         ]
-      ]
+      ],
+      "background": "Dance of the Sugar Plum Fairy is from Pyotr Ilyich Tchaikovsky's ballet The Nutcracker, composed in 1892. The dance represents the Sugar Plum Fairy welcoming Clara to the Land of Sweets in Act II. Tchaikovsky famously used the celesta — a newly invented keyboard instrument that produces a bell-like sound — for this piece, keeping its use secret from rival composers. The celesta's ethereal, tinkling sound perfectly captures the magical, delicate character of the Sugar Plum Fairy.",
+      "structure": "The piece is in E minor with a delicate, staccato character. The celesta plays a light, dancing melody over a pizzicato string accompaniment. The form is a simple ternary (A–B–A) with the celesta theme returning after a brief contrasting section. The 6/8 meter gives it a dancing, triple-time feel.",
+      "difficulty": "Intermediate. The staccato notes require precise, light articulation. The E minor key uses one sharp (F♯). The main challenge is the delicate touch — the notes should be crisp but not heavy. The fast tempo requires good finger control.",
+      "practiceTips": "The staccato articulation is essential — each note should be short and light, like sugar plums dancing. Practice the melody with a very light touch. The pizzicato accompaniment (if playing both hands) should be even lighter than the melody. Use our MIDI player to slow the tempo and study the articulation.",
+      "funFact": "Tchaikovsky discovered the celesta in Paris in 1891 and was so enchanted by its sound that he bought one secretly, fearing that Rimsky-Korsakov or Glazunov might use the instrument before him. The Sugar Plum Fairy dance was the celesta's debut in Russian orchestral music."
     },
     {
       "slug": "god-rest-ye-merry-gentlemen",
@@ -3452,7 +3667,12 @@
           71,
           2
         ]
-      ]
+      ],
+      "background": "God Rest Ye Merry, Gentlemen is a traditional English Christmas carol dating to the 16th century, making it one of the oldest Christmas songs in the English language. The title phrase means \"God keep you merry, gentlemen\" — \"rest\" here means \"keep\" or \"make,\" and \"merry\" means \"happy\" or \"prosperous\" in the archaic sense. The carol was first published around 1833 in William Sandys's collection \"Christmas Carols Ancient and Modern.\" The melody is in a minor key, unusual for a Christmas carol, giving it a solemn, medieval character.",
+      "structure": "The carol is in E minor with a stately, processional character. The melody uses the natural minor scale (no raised leading tone), giving it an ancient, modal quality. The form is strophic with a repeating verse-chorus structure. The minor key and steady rhythm create a sense of solemn celebration rather than the bright joy of major-key carols.",
+      "difficulty": "Beginner to intermediate. The E minor key uses one sharp (F♯) with mostly stepwise motion. The main challenge is the minor-key character — the melody should sound dignified, not sad. The steady rhythm requires consistent tempo.",
+      "practiceTips": "The minor key gives this carol its distinctive character. Practice the E natural minor scale (E–F♯–G–A–B–C–D–E) before tackling the melody. The rhythm should be steady and processional — imagine a medieval procession. The \"tidings of comfort and joy\" refrain should be slightly more animated than the verses.",
+      "funFact": "The comma in the title is significant: \"God Rest Ye Merry, Gentlemen\" means \"God keep you happy, gentlemen\" — the comma separates the address from the wish. Without the comma, it could be misread as \"God rest ye [who are] merry gentlemen,\" changing the meaning entirely."
     },
     {
       "slug": "clementine",
@@ -3553,7 +3773,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "Oh My Darling, Clementine was written by Percy Montrose in 1884, though the melody is based on an earlier folk tune. The song tells of a miner's daughter who drowns and is mourned by her father. Despite its melancholy story, the song is typically performed in an upbeat, jaunty manner. It became one of the most popular American folk songs of the late 19th century and remains a staple of campfire sing-alongs. The melody's wide range and memorable contour have made it enduringly popular.",
+      "structure": "The song is in C major with a lively, waltz-like character in 3/4 time. The form is a 32-bar song (AABA) with a distinctive opening that leaps up an octave (\"Oh my darling, Oh my darling\"). The melody uses a mix of stepwise motion and wide leaps, creating a dramatic, singable contour. The chorus is the most memorable section with its ascending arpeggio.",
+      "difficulty": "Beginner to intermediate. The melody is in C major with comfortable patterns. The wide leaps (especially the octave jump in the opening) require clean hand position changes. The 3/4 waltz rhythm should be natural. The main challenge is the wide range.",
+      "practiceTips": "The octave leap at the opening should be practiced separately — your hand needs to move quickly and accurately. The waltz rhythm should have a gentle bounce (strong-weak-weak). The chorus ascending arpeggio should be played with energy. Use our MIDI player to slow the tempo for the wide leaps.",
+      "funFact": "The song's melody is nearly identical to \"Down by the River Liv'd a Maiden,\" an 1860s folk song. Montrose may have adapted the earlier tune rather than composing an original melody. The practice of setting new lyrics to existing folk melodies was common in the 19th-century American songwriting industry."
     },
     {
       "slug": "lavenders-blue",
@@ -3624,7 +3849,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "Lavender's Blue is a traditional English folk song dating to the 17th century. The lyrics describe the simple pleasures of rural life — lavender fields, dancing, and young love. The song became widely known in America through colonial-era transmission and is one of the oldest English folk songs preserved in the American tradition. The melody is gentle and pastoral, perfectly matching the idyllic lyrics.",
+      "structure": "The melody is in C major with a gentle, flowing character in 6/8 time. The form is a simple strophic structure with four phrases per verse. The melody uses primarily stepwise motion within a narrow range. The 6/8 meter gives it a swaying, pastoral quality.",
+      "difficulty": "Beginner. The melody is in C major with a narrow range and simple rhythms. The 6/8 meter should feel like a gentle rocking motion. The main challenge is maintaining the smooth, legato phrasing.",
+      "practiceTips": "The song should feel pastoral and gentle. Practice the 6/8 rhythm as two big beats per measure. The melody should flow naturally without any harsh accents. The lyrics can help with phrasing — sing along as you play. Use our MIDI player to study the note transitions.",
+      "funFact": "Lavender's Blue was sung at American colonial-era spinning bees and quilting gatherings. The song's association with lavender — a plant used for scenting linens — connected it to the domestic work of women in colonial America."
     },
     {
       "slug": "god-save-the-king",
@@ -3710,7 +3940,12 @@
           65,
           1.5
         ]
-      ]
+      ],
+      "background": "God Save the King (or Queen) is the national anthem of the United Kingdom and one of the oldest national anthems in the world. The melody's origins are uncertain — it may date to a 1744 setting of a traditional English tune. The anthem has been used by the British monarchy since the reign of George II and has influenced national anthems worldwide, including those of Germany, Switzerland, and several Scandinavian countries. The lyrics are adapted for the reigning monarch.",
+      "structure": "The anthem is in F major with a stately, hymn-like character. The form is a simple three-phrase structure with a dignified, processional quality. The melody uses stepwise motion with a few characteristic leaps. The 3/4 meter gives it a march-like solemnity. The key of F major (one flat: B♭) gives it a warm, noble character.",
+      "difficulty": "Beginner. The melody is in F major with mostly stepwise motion. The stately tempo makes the rhythm manageable. The main challenge is the B♭ in the key signature and maintaining the dignified, formal character.",
+      "practiceTips": "The anthem should be played with dignity and solemnity — avoid rushing. The B♭ notes require attention — practice the F major scale first. The phrasing should be broad and stately. The dynamic should build toward the climax and resolve gently. Use our MIDI player to slow the tempo and study the phrasing.",
+      "funFact": "The melody of God Save the King has been used as the basis for numerous national anthems worldwide. Switzerland's \"Psalm of the Swiss Confederation\" uses the same melody, as did Germany's \"Heil dir im Siegerkranz\" (used until 1918). The tune's stately character made it a natural model for other nations."
     },
     {
       "slug": "my-bonnie",
@@ -3766,7 +4001,12 @@
           60,
           2
         ]
-      ]
+      ],
+      "background": "My Bonnie Lies over the Ocean is a traditional Scottish folk song that became one of the most popular parlor songs in Victorian America. The lyrics tell of a lover who is far away across the sea. The melody is believed to be based on a Scottish Highland tune. The song gained additional fame as the theme of a popular children's game — players sit when the word \"bring back\" is sung and stand when \"my Bonnie\" is sung. It remains a staple of campfire and classroom singing.",
+      "structure": "The melody is in C major with a gentle, wistful character in 3/4 time. The form is a simple verse structure with a rising opening phrase (\"My Bonnie lies over the ocean\") and a resolving descent (\"bring back my Bonnie to me\"). The 3/4 waltz meter gives it a rocking, nostalgic quality.",
+      "difficulty": "Beginner. The melody is in C major with a narrow range and simple rhythms. The 3/4 waltz meter is natural. The main challenge is the expressive phrasing — the melody should sound longing and wistful.",
+      "practiceTips": "The song should have a gentle, nostalgic character. Practice the waltz rhythm with a slight emphasis on the first beat. The rising phrases should build slightly in dynamics. The \"bring back\" section should sound yearning. Use our MIDI player to slow the tempo and study the phrasing.",
+      "funFact": "The song is associated with a popular children's party game where players must remember to sit or stand based on the lyrics. The game tests concentration and reflexes — when \"My Bonnie lies over the ocean\" is sung, players stand; when \"Bring back, bring back\" is sung, they sit. Confusion between the two commands creates laughter."
     },
     {
       "slug": "in-the-hall-of-the-mountain-king",
@@ -3857,7 +4097,12 @@
           64,
           2
         ]
-      ]
+      ],
+      "background": "In the Hall of the Mountain King is from Edvard Grieg's incidental music for Henrik Ibsen's play Peer Gynt, composed in 1875. The piece depicts the character Peer Gynt being chased by trolls in the mountain hall of the Dovre King. The music starts slowly and quietly, then accelerates and grows louder as the chase intensifies — a masterful example of musical storytelling through tempo and dynamics. It has become one of the most recognizable pieces of classical music.",
+      "structure": "The piece is in E minor with a relentless, building character. It is built on a single, repeating theme that starts slowly in a low register and gradually accelerates, rises in pitch, and grows louder. The form is a continuous crescendo and accelerando — there is no traditional structure, just an unbroken build from whisper to frenzy. The 4/4 meter provides a steady pulse that the tempo deviations play against.",
+      "difficulty": "Intermediate to advanced. The piece starts easy but becomes increasingly demanding as the tempo accelerates. The E minor key uses one sharp (F♯). The main challenge is the accelerating tempo — the player must maintain clarity and control as the speed increases dramatically.",
+      "practiceTips": "Start the piece at the slow, quiet opening and gradually build speed and volume. The theme should be played with increasing urgency. Practice the accelerando separately — plan where you will increase the tempo. The final section should be wild and frenzied. Use our MIDI player to study how the tempo changes throughout.",
+      "funFact": "In Ibsen's play, the trolls sing \"Slå dem! Troll-kokken! Stor-kokken!\" (Beat him! Troll-cook! Big-cook!) as they chase Peer Gynt. The music's accelerando represents Peer's increasing panic as the trolls close in. Grieg originally called the piece \"Trolltog\" (Troll March)."
     },
     {
       "slug": "lightly-row",
@@ -3923,7 +4168,12 @@
           67,
           2
         ]
-      ]
+      ],
+      "background": "Lightly Row (German: \"Hänschen Klein\") is a traditional German folk song that has become popular in English-speaking countries as a children's song and beginner music piece. The German lyrics tell of a little boy (Hänschen) who goes out into the world and returns home to his mother. The melody is simple and gentle, making it a popular choice for music education. The English version (\"Lightly row, lightly row o'er the glassy lake\") sets new lyrics to the same beloved tune.",
+      "structure": "The melody is in C major with a gentle, rocking character in 4/4 time. The form is a simple four-phrase structure with a rising opening, a gentle peak, and a resolving descent. The melody uses primarily stepwise motion within a narrow range. The steady rhythm and narrow range make it ideal for beginners.",
+      "difficulty": "Absolute beginner. The melody is in C major with a narrow range and simple rhythms. The steady 4/4 meter is natural. This is one of the first songs taught in German music education and is popular worldwide for beginner students.",
+      "practiceTips": "The melody should be played with a gentle, flowing character. Practice each phrase separately, then connect them. The steady rhythm should feel like rowing a boat — smooth and even. The song is excellent for practicing even tone and steady tempo. Use our MIDI player to study the note transitions.",
+      "funFact": "The German original \"Hänschen Klein\" has been a staple of German elementary music education for over a century. The song's gentle melody and simple structure make it the German equivalent of \"Twinkle, Twinkle, Little Star\" as a first piece for young musicians."
     }
   ]
 }

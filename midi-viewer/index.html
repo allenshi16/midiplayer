@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free MIDI viewer online — open any .mid file and see notes on a piano roll, inspect tracks, tempo, and structure. No upload, no install. Works in any browser." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://midiplayeronline.com/midi-viewer/" />
+    <meta property="og:title" content="MIDI Viewer — Open & Inspect MIDI Files Online Free" />
+    <meta property="og:description" content="Free online MIDI viewer. See every note on a piano roll, inspect tracks and tempo. No upload, no install." />
+    <meta property="og:url" content="https://midiplayeronline.com/midi-viewer/" />
+    <meta property="og:image" content="https://midiplayeronline.com/og-image.png" />
+    <title>MIDI Viewer — Open & Inspect MIDI Files Online Free</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "MIDI Viewer — MIDI Player Online",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "description": "Open and inspect MIDI files online. Piano roll visualization, track list, tempo display. Free, no upload.",
+        "url": "https://midiplayeronline.com/midi-viewer/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is a MIDI viewer?","acceptedAnswer":{"@type":"Answer","text":"A MIDI viewer is a tool that opens .mid or .midi files and displays their contents visually — typically as a piano roll where each note appears as a bar showing pitch, timing, and duration. Unlike a simple audio player, a MIDI viewer lets you see the structure of the file: how many tracks it has, which instruments are assigned, where the notes fall, and how the arrangement is built."}},
+          {"@type":"Question","name":"Can I view MIDI files without installing software?","acceptedAnswer":{"@type":"Answer","text":"Yes. This MIDI viewer runs entirely in your browser. Just open the page, choose a .mid or .midi file, and the piano roll renders instantly. No software installation, no browser extension, and no account required."}},
+          {"@type":"Question","name":"What is the best free MIDI viewer?","acceptedAnswer":{"@type":"Answer","text":"The best free MIDI viewer depends on your needs. For quick inspection and practice, a browser-based viewer like MIDI Player Online is ideal — it opens files instantly, shows the piano roll, and plays audio without any install. For detailed editing, a desktop tool like MuseScore or a DAW is better. This viewer is free, unlimited, and works on any device with a modern browser."}},
+          {"@type":"Question","name":"Does this MIDI viewer work on Mac and Windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. Because it runs in a web browser, this MIDI viewer works on Mac, Windows, Linux, ChromeOS, iOS, and Android — any device with Chrome, Firefox, Safari, or Edge."}}
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .tool-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
+      .tool-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 10px;font-weight:800}
+      .tool-page .lead{color:#5f5c55;font-size:16px;line-height:1.8;max-width:680px;margin-bottom:36px}
+      .viewer-shell{background:#242525;border-radius:14px;padding:26px;margin-bottom:44px}
+      #demoCanvas{width:100%;height:260px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 26px,#363a35 27px);border-radius:8px;display:block}
+      .viewer-controls{display:flex;align-items:center;gap:18px;margin-top:16px;flex-wrap:wrap}
+      .viewer-play{width:46px;height:46px;border-radius:50%;background:var(--coral);border:0;color:#fff;font-size:15px;cursor:pointer;box-shadow:0 0 0 5px rgba(231,109,82,.14)}
+      .viewer-progress{flex:1;accent-color:var(--coral);min-width:180px}
+      .viewer-time{font:11px var(--mono);color:#eee6d8;min-width:70px}
+      .viewer-hint{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:10px}
+      .upload-inline{margin-bottom:20px;text-align:center}
+      .upload-inline button{background:var(--ink);color:#fff;border:0;border-radius:2px;padding:12px 20px;font:700 12px var(--sans);cursor:pointer}
+      .upload-inline button:hover{background:var(--coral)}
+      .upload-inline p{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:8px}
+      .content h2{font-size:24px;letter-spacing:-.04em;margin:44px 0 14px;font-weight:700}
+      .content h2:first-of-type{margin-top:0}
+      .content h3{font-size:17px;letter-spacing:-.02em;margin:28px 0 10px;font-weight:600}
+      .content p{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px}
+      .content strong{color:var(--ink);font-weight:700}
+      .content ul{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px;padding-left:1.5em}
+      .content li{margin-bottom:6px}
+      .faq-section{max-width:720px;margin-top:50px}
+      .faq-section h2{font-size:22px;margin-bottom:20px}
+      .faq-item{border-left:2px solid var(--coral);padding:12px 0 12px 20px;margin-bottom:18px}
+      .faq-item h3{font-size:15px;margin:0 0 6px;letter-spacing:-.02em}
+      .faq-item p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
+      .back-home{display:inline-block;margin-bottom:26px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none}
+      .back-home:hover{color:var(--coral)}
+      .tool-nav{display:flex;gap:16px;flex-wrap:wrap;margin:36px 0 0}
+      .tool-nav a{border:1px solid var(--line);border-radius:8px;padding:12px 16px;text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);transition:.15s}
+      .tool-nav a:hover{border-color:var(--coral)}
+      @media(max-width:700px){.tool-page{padding:40px 16px 60px}}
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
+      </header>
+      <main class="tool-page">
+        <a class="back-home" href="/">← Back to Online MIDI Player</a>
+        <h1>MIDI Viewer</h1>
+        <p class="lead">Open any MIDI file and see every note on a piano roll. This free MIDI viewer runs in your browser — no software, no upload, no account. Choose a .mid file below to start.</p>
+
+        <section class="viewer-shell" aria-label="MIDI viewer">
+          <div class="upload-inline">
+            <input id="fileInput" type="file" accept=".mid,.midi,audio/midi,audio/x-midi" hidden />
+            <button id="chooseBtn">Choose MIDI file to view</button>
+            <p>or drag &amp; drop a .mid / .midi file</p>
+          </div>
+          <canvas id="demoCanvas"></canvas>
+          <div class="viewer-controls">
+            <button class="viewer-play" id="demoPlay" aria-label="Play">▶</button>
+            <input class="viewer-progress" id="demoProgress" type="range" min="0" max="100" value="0" aria-label="Seek" />
+            <span class="viewer-time" id="demoTime">0:00</span>
+          </div>
+          <div class="viewer-hint">◇ 100% local — your MIDI file never leaves your device</div>
+        </section>
+
+        <article class="content">
+          <h2>What Is a MIDI Viewer?</h2>
+          <p>A <strong>MIDI viewer</strong> is a tool that opens .mid or .midi files and displays their musical contents visually. Instead of just playing audio, a MIDI viewer shows you the actual notes — their pitch, timing, duration, and which instrument track they belong to. The most common visualization is the <strong>piano roll</strong>: a grid where each note appears as a horizontal bar, with pitch on the vertical axis and time on the horizontal axis.</p>
+          <p>This is the same visual format used inside DAWs like FL Studio, Ableton Live, and Logic Pro. But while a DAW is a full production environment that costs hundreds of dollars and requires installation, a browser-based MIDI viewer gives you the visual inspection capability instantly and for free.</p>
+
+          <h2>How to Use This MIDI Viewer</h2>
+          <p>Using this MIDI viewer is straightforward:</p>
+          <ul>
+            <li>Click "Choose MIDI file" or drag a .mid / .midi file onto the page</li>
+            <li>The viewer parses the file locally in your browser and renders the piano roll</li>
+            <li>Press play to hear the MIDI and watch the playhead move across the notes</li>
+            <li>Use the progress bar to jump to any point in the file</li>
+          </ul>
+          <p>The entire process happens on your device. Your MIDI file is never uploaded to any server. The viewer works offline after the initial page load.</p>
+
+          <h2>What You See in the Piano Roll</h2>
+          <p>The piano roll is the standard way to visualize MIDI data. Here is what each element represents:</p>
+          <ul>
+            <li><strong>Vertical position</strong> — the pitch of the note. Higher bars = higher pitches. The grid lines correspond to piano keys.</li>
+            <li><strong>Horizontal position</strong> — when the note starts, measured in beats from the beginning of the file.</li>
+            <li><strong>Bar length</strong> — how long the note is held. A short bar is a staccato note; a long bar is a sustained note.</li>
+            <li><strong>Color</strong> — notes from different tracks are color-coded so you can distinguish piano, bass, strings, drums, and other instruments at a glance.</li>
+          </ul>
+          <p>This visual representation makes it easy to understand the structure of a MIDI arrangement at a glance — something that is impossible from audio alone.</p>
+
+          <h2>MIDI Viewer vs. MIDI Player vs. MIDI Editor</h2>
+          <p>These three terms are related but distinct:</p>
+          <ul>
+            <li><strong>MIDI viewer</strong> — opens a file and shows you the notes visually. Focus is on inspection and understanding. This page.</li>
+            <li><strong>MIDI player</strong> — opens a file and plays it as audio, often with a visualization. Focus is on listening. The <a href="/" style="color:var(--coral)">Online MIDI Player</a> on our homepage adds tempo control, A/B looping, and track muting on top of the viewer.</li>
+            <li><strong>MIDI editor</strong> — lets you change the notes: add, delete, move, or resize them. Focus is on modification. Our <a href="/midi-editor-online/" style="color:var(--coral)">MIDI Editor Online</a> provides this capability.</li>
+          </ul>
+          <p>If you just need to look at what is inside a MIDI file, this viewer is the right tool. If you also want to practice along with tempo control and looping, use the full player. If you need to change the notes, use the editor.</p>
+
+          <h2>Why Use a Browser-Based MIDI Viewer?</h2>
+          <p>Traditional MIDI viewers like VanBasco, MIDI-OX, or the piano roll inside a DAW all require installation. A browser-based MIDI viewer eliminates that step entirely. You open a URL, drop in a file, and see the notes. This is useful when:</p>
+          <ul>
+            <li>You are on a computer where you cannot install software (school, library, work machine)</li>
+            <li>You need to check a MIDI file quickly without launching a heavy application</li>
+            <li>You are on a Chromebook or other device with limited software options</li>
+            <li>You want to share a MIDI viewing tool with students or collaborators without asking them to install anything</li>
+          </ul>
+
+          <div class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item"><h3>What is a MIDI viewer?</h3><p>A MIDI viewer is a tool that opens .mid or .midi files and displays their contents visually — typically as a piano roll where each note appears as a bar showing pitch, timing, and duration. Unlike a simple audio player, a MIDI viewer lets you see the structure of the file: how many tracks it has, which instruments are assigned, where the notes fall, and how the arrangement is built.</p></div>
+            <div class="faq-item"><h3>Can I view MIDI files without installing software?</h3><p>Yes. This MIDI viewer runs entirely in your browser. Just open the page, choose a .mid or .midi file, and the piano roll renders instantly. No software installation, no browser extension, and no account required.</p></div>
+            <div class="faq-item"><h3>What is the best free MIDI viewer?</h3><p>The best free MIDI viewer depends on your needs. For quick inspection and practice, a browser-based viewer like MIDI Player Online is ideal — it opens files instantly, shows the piano roll, and plays audio without any install. For detailed editing, a desktop tool like MuseScore or a DAW is better. This viewer is free, unlimited, and works on any device with a modern browser.</p></div>
+            <div class="faq-item"><h3>Does this MIDI viewer work on Mac and Windows?</h3><p>Yes. Because it runs in a web browser, this MIDI viewer works on Mac, Windows, Linux, ChromeOS, iOS, and Android — any device with Chrome, Firefox, Safari, or Edge.</p></div>
+          </div>
+
+          <nav class="tool-nav">
+            <a href="/">Online MIDI Player</a>
+            <a href="/view-midi-files/">View MIDI Files</a>
+            <a href="/online-midi-visualizer/">MIDI Visualizer</a>
+            <a href="/midi-editor-online/">MIDI Editor</a>
+            <a href="/songs/">Browse Songs</a>
+          </nav>
+        </article>
+      </main>
+      <footer><span>© 2026 MIDI PLAYER ONLINE</span><span>Made for curious ears.</span><a href="/songs/">Public-domain songs</a><span>·</span><a href="/privacy.html">Privacy</a></footer>
+    </div>
+    <script>
+    (function(){
+      var canvas=document.getElementById('demoCanvas'),btn=document.getElementById('demoPlay'),range=document.getElementById('demoProgress'),timeEl=document.getElementById('demoTime'),fileInput=document.getElementById('fileInput'),chooseBtn=document.getElementById('chooseBtn');
+      var ctx=canvas.getContext('2d'),notes=[],bpm=120,duration=1,playing=false,elapsed=0,playStart=0,raf=0,audioCtx=null,masterGain=null;
+      var colors=['#e76d52','#e2c15a','#6f91b8','#86aa81','#d88cba','#9b9bdb'];
+      function fmt(s){s=Math.max(0,s);return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0')}
+      function draw(){var dpr=window.devicePixelRatio||1,w=canvas.width/dpr,h=canvas.height/dpr;ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.scale(dpr,dpr);var minP=48,maxP=84,rangeP=maxP-minP,pxPerSec=w/duration;notes.forEach(function(n,i){var y=h-((n.pitch-minP)/rangeP)*(h-20)-10,x=n.start*pxPerSec,nw=Math.max(3,n.dur*pxPerSec-2);ctx.fillStyle=colors[i%colors.length];ctx.fillRect(x,y,nw,8)});if(playing){var px=elapsed*pxPerSec;ctx.fillStyle='#e76d52';ctx.fillRect(Math.min(w-1,px),0,2,h)}ctx.restore()}
+      function ensureAudio(){if(audioCtx){if(audioCtx.state==='suspended')audioCtx.resume();return true}var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;audioCtx=new AC();masterGain=audioCtx.createGain();masterGain.gain.value=0.5;masterGain.connect(audioCtx.destination);return true}
+      function schedule(from){var now=audioCtx.currentTime+0.05;notes.forEach(function(n){var t=now+Math.max(0,n.start-from);if(t<audioCtx.currentTime)return;var osc=audioCtx.createOscillator(),g=audioCtx.createGain();osc.type='triangle';osc.frequency.value=440*Math.pow(2,(n.pitch-69)/12);g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.5,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+Math.max(0.1,n.dur));osc.connect(g).connect(masterGain);osc.start(t);osc.stop(t+n.dur+0.05)})}
+      function tick(){elapsed=(performance.now()-playStart)/1000;if(elapsed>=duration){stop();elapsed=duration}range.value=String((elapsed/duration)*100);timeEl.textContent=fmt(elapsed)+' / '+fmt(duration);draw();if(playing)raf=requestAnimationFrame(tick)}
+      function play(){if(!ensureAudio())return;playStart=performance.now()-elapsed*1000;schedule(elapsed);playing=true;btn.textContent='Ⅱ';raf=requestAnimationFrame(tick)}
+      function stop(){playing=false;cancelAnimationFrame(raf);btn.textContent='▶'}
+      btn.addEventListener('click',function(){if(playing)stop();else{if(elapsed>=duration)elapsed=0;play()}});
+      range.addEventListener('input',function(){elapsed=(Number(range.value)/100)*duration;timeEl.textContent=fmt(elapsed)+' / '+fmt(duration);if(playing)schedule(elapsed);draw()});
+      chooseBtn.addEventListener('click',function(){fileInput.click()});
+      fileInput.addEventListener('change',function(e){var file=e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(ev){parseMidi(new Uint8Array(ev.target.result))};reader.readAsArrayBuffer(file)});
+      function parseMidi(data){try{var pos=0;function read(n){var r=data.slice(pos,pos+n);pos+=n;return r}function readU16(){var v=(data[pos]<<8)|data[pos+1];pos+=2;return v}function readU32(){var v=((data[pos]<<24)|(data[pos+1]<<16)|(data[pos+2]<<8)|data[pos+3])>>>0;pos+=4;return v}function readVarLen(){var v=0,b;do{b=data[pos++];v=(v<<7)|(b&0x7f)}while(b&0x80);return v}var header=read(4);if(String.fromCharCode.apply(null,header)!=='MThd')return;var hLen=readU32(),format=readU16(),nTracks=readU16(),division=readU16(),ticksPerBeat=division;notes=[];var maxEnd=0;for(var t=0;t<nTracks;t++){var chunkType=read(4),chunkLen=readU32(),endPos=pos+chunkLen;if(String.fromCharCode.apply(null,chunkType)!=='MTrk'){pos=endPos;continue}var absTick=0,lastStatus=0;while(pos<endPos){var delta=readVarLen();absTick+=delta;var status=data[pos];if(status&0x80){lastStatus=status;pos++}else{status=lastStatus}var type=status&0xf0;if(type===0x90){var note=data[pos++],vel=data[pos++];if(vel>0){var startSec=(absTick/ticksPerBeat)*(60/bpm);notes.push({pitch:note,start:startSec,dur:0.25,track:t})}}else if(type===0x80)pos+=2;else if(type===0xa0||type===0xb0||type===0xe0)pos+=2;else if(type===0xc0||type===0xd0)pos+=1;else if(status===0xff){var metaType=data[pos++],mLen=readVarLen();pos+=mLen}else if(status===0xf0||status===0xf7){var sLen=readVarLen();pos+=sLen}else pos++}pos=endPos}if(notes.length>0){notes.forEach(function(n){maxEnd=Math.max(maxEnd,n.start+n.dur)});duration=maxEnd||1}else duration=1;elapsed=0;range.value=0;timeEl.textContent='0:00 / '+fmt(duration);draw()}catch(e){console.error('MIDI parse error',e)}}
+      function resize(){var dpr=window.devicePixelRatio||1,rect=canvas.getBoundingClientRect();canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.scale(dpr,dpr);draw()}
+      window.addEventListener('resize',resize);resize();timeEl.textContent='0:00';draw();
+    })();
+    </script>
+  </body>
+</html>

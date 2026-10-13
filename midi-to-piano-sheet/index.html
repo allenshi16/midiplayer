@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free MIDI to piano sheet music converter online. Upload a .mid file and see notes rendered as sheet music on staff. Print or download as PDF. No install, no upload." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://midiplayeronline.com/midi-to-piano-sheet/" />
+    <meta property="og:title" content="MIDI to Piano Sheet Music — Free Online Converter" />
+    <meta property="og:description" content="Convert MIDI files to piano sheet music online for free. See notes on a staff, print or download as PDF. No install required." />
+    <meta property="og:url" content="https://midiplayeronline.com/midi-to-piano-sheet/" />
+    <meta property="og:image" content="https://midiplayeronline.com/og-image.png" />
+    <title>MIDI to Piano Sheet Music — Free Online Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "MIDI to Piano Sheet Music — MIDI Player Online",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "description": "Convert MIDI files to piano sheet music online. Upload a .mid file and see notes rendered on a staff with treble clef, time signature, and bar lines. Print or download as PDF.",
+        "url": "https://midiplayeronline.com/midi-to-piano-sheet/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["MIDI to sheet music conversion", "Treble clef staff rendering", "Note heads with stems", "Key and time signatures", "Print / PDF export", "Playback with note highlighting"]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"How does MIDI to piano sheet conversion work?","acceptedAnswer":{"@type":"Answer","text":"The converter reads a MIDI file (.mid or .midi), extracts every note event including pitch, start time, and duration, then maps those notes onto a standard five-line staff. Each MIDI note number corresponds to a specific pitch (e.g., 60 = middle C). The converter groups notes into measures based on the time signature, draws note heads at the correct vertical position on the staff, adds stems and beams for shorter durations, and places bar lines at measure boundaries. The result is a readable piano sheet music rendering that you can print or save as PDF."}},
+          {"@type":"Question","name":"Can I print the sheet music or save it as PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. After uploading a MIDI file and viewing the sheet music, click the Download PDF button. This opens your browser's print dialog with a clean, print-optimized layout. From there you can save as PDF using your browser's built-in Save as PDF option, or send it directly to a printer. The printed output includes the treble clef, key signature, time signature, all notes on the staff, and bar lines."}},
+          {"@type":"Question","name":"What are the limitations of this MIDI to sheet converter?","acceptedAnswer":{"@type":"Answer","text":"This is a simplified browser-based converter. It renders notes on a single treble clef staff, which works well for melody lines and simple piano pieces. It does not handle grand staff (treble + bass), multi-voice notation, complex rhythmic groupings, tuplets, dynamics, articulations, or lyrics. For professional-quality engraving with full notation support, dedicated software like MuseScore, Sibelius, or Finale is recommended. This tool is ideal for quick reference, studying arrangements, and printing simple melodies."}},
+          {"@type":"Question","name":"Is this MIDI to sheet converter free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, this MIDI to piano sheet converter is completely free. There are no limits on file size, number of conversions, or features. Your MIDI files are processed entirely in your browser and are never uploaded to any server. The tool works offline after the initial page load."}},
+          {"@type":"Question","name":"How does this compare to MuseScore or Sibelius for MIDI import?","acceptedAnswer":{"@type":"Answer","text":"Professional notation software like MuseScore, Sibelius, and Finale offer comprehensive MIDI import with full engraving: grand staff, multi-voice, accidentals, ties, slurs, dynamics, tempo markings, and lyrics. They also allow you to edit the notation after import. This browser-based converter provides a simplified, read-only rendering on a single treble clef staff. It is best suited for quick visualization of a melody, printing a lead sheet, or studying a simple arrangement. For anything requiring publication-quality notation, professional software is the better choice."}}
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .tool-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
+      .tool-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 10px;font-weight:800}
+      .tool-page .lead{color:#5f5c55;font-size:16px;line-height:1.8;max-width:680px;margin-bottom:36px}
+      .sheet-shell{background:#242525;border-radius:14px;padding:26px;margin-bottom:44px}
+      .upload-inline{margin-bottom:20px;text-align:center}
+      .upload-inline button{background:var(--ink);color:#fff;border:0;border-radius:2px;padding:12px 20px;font:700 12px var(--sans);cursor:pointer}
+      .upload-inline button:hover{background:var(--coral)}
+      .upload-inline p{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:8px}
+      .sheet-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+      .sheet-toolbar button{border:1px solid #555950;background:#242525;color:#ded7c9;padding:8px 14px;font:600 11px var(--sans);cursor:pointer;border-radius:2px;transition:.15s}
+      .sheet-toolbar button:hover{border-color:var(--coral);color:var(--coral)}
+      .sheet-toolbar button.active{background:var(--coral);color:#fff;border-color:var(--coral)}
+      .sheet-toolbar .spacer{flex:1}
+      .sheet-toolbar select{border:1px solid #555950;background:#242525;color:#ded7c9;padding:7px 10px;font:11px var(--mono);cursor:pointer;border-radius:2px}
+      #sheetCanvas{width:100%;background:#fff;border-radius:6px;display:block;min-height:300px}
+      .sheet-hint{color:#8f938a;font-size:11px;font-family:var(--mono);margin-top:10px}
+      .sheet-status{color:var(--yellow);font:10px var(--mono);margin-top:6px}
+      .content h2{font-size:24px;letter-spacing:-.04em;margin:44px 0 14px;font-weight:700}
+      .content h2:first-of-type{margin-top:0}
+      .content h3{font-size:17px;letter-spacing:-.02em;margin:28px 0 10px;font-weight:600}
+      .content p{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px}
+      .content strong{color:var(--ink);font-weight:700}
+      .content ul{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px;padding-left:1.5em}
+      .content li{margin-bottom:6px}
+      .faq-section{max-width:720px;margin-top:50px}
+      .faq-section h2{font-size:22px;margin-bottom:20px}
+      .faq-item{border-left:2px solid var(--coral);padding:12px 0 12px 20px;margin-bottom:18px}
+      .faq-item h3{font-size:15px;margin:0 0 6px;letter-spacing:-.02em}
+      .faq-item p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
+      .back-home{display:inline-block;margin-bottom:26px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none}
+      .back-home:hover{color:var(--coral)}
+      .tool-nav{display:flex;gap:16px;flex-wrap:wrap;margin:36px 0 0}
+      .tool-nav a{border:1px solid var(--line);border-radius:8px;padding:12px 16px;text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);transition:.15s}
+      .tool-nav a:hover{border-color:var(--coral)}
+      @media print{
+        .topbar,.upload-inline,.sheet-toolbar,.sheet-hint,.sheet-status,.content,.faq-section,.tool-nav,footer,.back-home,.sheet-shell{border:0!important;background:none!important;padding:0!important;box-shadow:none!important}
+        .sheet-shell{padding:0!important}
+        .tool-page{padding:0!important;max-width:100%}
+        .topbar,.upload-inline,.sheet-toolbar,.sheet-hint,.sheet-status,.content,.faq-section,.tool-nav,footer,.back-home{display:none!important}
+        #sheetCanvas{width:100%!important;height:auto!important;page-break-inside:avoid;border-radius:0!important}
+        body{background:#fff!important}
+      }
+      @media(max-width:700px){.tool-page{padding:40px 16px 60px}}
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
+      </header>
+      <main class="tool-page">
+        <a class="back-home" href="/">&#8592; Back to Online MIDI Player</a>
+        <h1>MIDI to Piano Sheet Music</h1>
+        <p class="lead">Upload a MIDI file and see the notes rendered as piano sheet music on a staff. This free converter runs in your browser &mdash; no software, no upload, no account. Choose a .mid file below to start.</p>
+
+        <section class="sheet-shell" aria-label="MIDI to sheet music converter">
+          <div class="upload-inline">
+            <input id="fileInput" type="file" accept=".mid,.midi,audio/midi,audio/x-midi" hidden />
+            <button id="chooseBtn">Choose MIDI file to convert</button>
+            <p>or drag &amp; drop a .mid / .midi file</p>
+          </div>
+          <div class="sheet-toolbar" id="toolbar" style="display:none">
+            <button id="playBtn" aria-label="Play">&#9654; Play</button>
+            <button id="stopBtn" aria-label="Stop">&#9632; Stop</button>
+            <button id="printBtn" aria-label="Download PDF">Download PDF</button>
+            <span class="spacer"></span>
+            <label style="color:#8f938a;font:10px var(--mono)">Key:
+              <select id="keySelect">
+                <option value="0">C major</option>
+                <option value="1">G major</option>
+                <option value="-1">F major</option>
+                <option value="2">D major</option>
+                <option value="-2">Bb major</option>
+                <option value="3">A major</option>
+                <option value="-3">Eb major</option>
+              </select>
+            </label>
+          </div>
+          <canvas id="sheetCanvas"></canvas>
+          <div class="sheet-hint">&#9671; 100% local &mdash; your MIDI file never leaves your device</div>
+          <div class="sheet-status" id="statusLine"></div>
+        </section>
+
+        <article class="content">
+          <h2>What Is MIDI to Piano Sheet Conversion?</h2>
+          <p><strong>MIDI to piano sheet conversion</strong> is the process of taking a MIDI file &mdash; a digital format that stores musical note data &mdash; and rendering it as traditional sheet music on a staff. MIDI files contain precise information about every note: its pitch, when it starts, how long it lasts, and how loud it is. Sheet music translates that data into the visual language musicians have used for centuries: note heads on a five-line staff, stems, beams, bar lines, key signatures, and time signatures.</p>
+          <p>This converter does exactly that. Upload a .mid or .midi file and the tool parses the MIDI data, extracts every note event, and draws the corresponding notation on an HTML5 canvas. The result looks like a simplified lead sheet that you can read, study, or print.</p>
+
+          <h2>How the Conversion Works</h2>
+          <p>The conversion happens in three stages, all running locally in your browser:</p>
+          <ul>
+            <li><strong>MIDI parsing</strong> &mdash; The tool reads the Standard MIDI File (SMF) binary format. It handles both Type 0 (single-track) and Type 1 (multi-track) files. It extracts note-on and note-off events, tempo changes, time signatures, and key signatures. Each note is stored with its MIDI pitch number (0&ndash;127), start time in seconds, and duration in seconds.</li>
+            <li><strong>Quantization and grouping</strong> &mdash; Raw MIDI timing is often imprecise. A note that should be a quarter note might be 0.248 seconds instead of exactly 0.25. The converter quantizes note durations to the nearest standard value (whole, half, quarter, eighth, or sixteenth note) and groups notes into measures based on the time signature.</li>
+            <li><strong>Staff rendering</strong> &mdash; Each note is mapped to a vertical position on the treble clef staff. Middle C (C4, MIDI note 60) sits on the first ledger line below the staff. Each step up in pitch moves the note one position higher on the staff (line or space). The renderer draws note heads, stems (up for notes below the middle line, down for notes above), beams connecting eighth notes, bar lines separating measures, and the treble clef symbol at the start.</li>
+          </ul>
+
+          <h2>Use Cases</h2>
+          <p>A MIDI to sheet music converter is useful in many situations:</p>
+          <ul>
+            <li><strong>Printing sheet music</strong> &mdash; You found a MIDI file of a song you want to play. Convert it to sheet music, print it out, and you have a readable score to practice from.</li>
+            <li><strong>Studying arrangements</strong> &mdash; See how a MIDI file is structured visually. Understanding which notes fall on which beats and how phrases are organized helps you learn music theory and arrangement techniques.</li>
+            <li><strong>Teaching</strong> &mdash; Music teachers can quickly generate sheet music from MIDI files to create exercises, examples, or reference material for students without manually engraving notation.</li>
+            <li><strong>Transcription reference</strong> &mdash; If you are learning to play a song by ear, having a rough sheet music reference from the MIDI file can speed up the process significantly.</li>
+            <li><strong>Composition sketching</strong> &mdash; Compose a melody in a MIDI sequencer, then convert it to sheet music to see how it looks in traditional notation. This can reveal rhythmic or melodic patterns you might not notice in piano roll view.</li>
+          </ul>
+
+          <h2>Limitations of This Converter</h2>
+          <p>This is a lightweight, browser-based tool designed for quick conversion. It has some limitations compared to professional notation software:</p>
+          <ul>
+            <li><strong>Single treble clef staff</strong> &mdash; Notes are rendered on one staff only. There is no bass clef, no grand staff (treble + bass combined), and no automatic hand separation for piano.</li>
+            <li><strong>Basic notation</strong> &mdash; The converter handles quarter, eighth, sixteenth, half, and whole notes with stems and beams. It does not render tuplets, ties, slurs, dynamics (p, f, mf), articulations (staccato, accent), or ornament symbols.</li>
+            <li><strong>No editing</strong> &mdash; The output is read-only. You cannot move notes, change durations, add markings, or rearrange measures in this tool.</li>
+            <li><strong>Simplified quantization</strong> &mdash; Complex or heavily quantized MIDI files may not convert perfectly. Swing rhythms, triplets, and micro-timing nuances are simplified to the nearest standard duration.</li>
+          </ul>
+
+          <h2>How This Compares to Professional Notation Software</h2>
+          <p>Dedicated notation programs like <strong>Sibelius</strong>, <strong>Finale</strong>, and the free open-source <strong>MuseScore</strong> offer comprehensive MIDI import with full music engraving capabilities. Here is how they compare to this browser-based converter:</p>
+          <ul>
+            <li><strong>Grand staff</strong> &mdash; Professional tools automatically split notes between treble and bass clef for piano. This converter uses a single treble clef staff.</li>
+            <li><strong>Multi-voice</strong> &mdash; Sibelius and Finale can show two or more independent voices on a single staff (e.g., soprano and alto lines). This converter merges all voices into one sequence.</li>
+            <li><strong>Accidentals</strong> &mdash; Professional software tracks key context and displays sharps, flats, and naturals correctly throughout the piece. This converter shows accidentals for notes outside the selected key.</li>
+            <li><strong>Playback with score sync</strong> &mdash; Both this tool and professional software offer playback with note highlighting. However, professional tools sync the playback cursor with far more precision and support tempo maps.</li>
+            <li><strong>Export quality</strong> &mdash; Professional tools produce publication-ready PDFs and printed scores. This converter provides a clean printout suitable for personal reference and practice.</li>
+            <li><strong>Cost and accessibility</strong> &mdash; Sibelius costs $600+, Finale is comparable, and MuseScore requires a download and installation. This converter is free, requires no install, and works on any device with a modern browser.</li>
+          </ul>
+          <p>For professional engraving, editing, or publication, use dedicated notation software. For quick visualization, practice references, and simple melody sheets, this browser-based MIDI to piano sheet converter does the job instantly and for free.</p>
+
+          <div class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item"><h3>How does MIDI to piano sheet conversion work?</h3><p>The converter reads a MIDI file (.mid or .midi), extracts every note event including pitch, start time, and duration, then maps those notes onto a standard five-line staff. Each MIDI note number corresponds to a specific pitch (e.g., 60 = middle C). The converter groups notes into measures based on the time signature, draws note heads at the correct vertical position on the staff, adds stems and beams for shorter durations, and places bar lines at measure boundaries. The result is a readable piano sheet music rendering that you can print or save as PDF.</p></div>
+            <div class="faq-item"><h3>Can I print the sheet music or save it as PDF?</h3><p>Yes. After uploading a MIDI file and viewing the sheet music, click the Download PDF button. This opens your browser's print dialog with a clean, print-optimized layout. From there you can save as PDF using your browser's built-in Save as PDF option, or send it directly to a printer. The printed output includes the treble clef, key signature, time signature, all notes on the staff, and bar lines.</p></div>
+            <div class="faq-item"><h3>What are the limitations of this MIDI to sheet converter?</h3><p>This is a simplified browser-based converter. It renders notes on a single treble clef staff, which works well for melody lines and simple piano pieces. It does not handle grand staff (treble + bass), multi-voice notation, complex rhythmic groupings, tuplets, dynamics, articulations, or lyrics. For professional-quality engraving with full notation support, dedicated software like MuseScore, Sibelius, or Finale is recommended. This tool is ideal for quick reference, studying arrangements, and printing simple melodies.</p></div>
+            <div class="faq-item"><h3>Is this MIDI to sheet converter free to use?</h3><p>Yes, this MIDI to piano sheet converter is completely free. There are no limits on file size, number of conversions, or features. Your MIDI files are processed entirely in your browser and are never uploaded to any server. The tool works offline after the initial page load.</p></div>
+            <div class="faq-item"><h3>How does this compare to MuseScore or Sibelius for MIDI import?</h3><p>Professional notation software like MuseScore, Sibelius, and Finale offer comprehensive MIDI import with full engraving: grand staff, multi-voice, accidentals, ties, slurs, dynamics, tempo markings, and lyrics. They also allow you to edit the notation after import. This browser-based converter provides a simplified, read-only rendering on a single treble clef staff. It is best suited for quick visualization of a melody, printing a lead sheet, or studying a simple arrangement. For anything requiring publication-quality notation, professional software is the better choice.</p></div>
+          </div>
+
+          <nav class="tool-nav">
+            <a href="/">Online MIDI Player</a>
+            <a href="/midi-viewer/">MIDI Viewer</a>
+            <a href="/view-midi-files/">View MIDI Files</a>
+            <a href="/online-midi-visualizer/">MIDI Visualizer</a>
+            <a href="/midi-editor-online/">MIDI Editor</a>
+            <a href="/songs/">Browse Songs</a>
+          </nav>
+        </article>
+      </main>
+      <footer><span>&copy; 2026 MIDI PLAYER ONLINE</span><span>Made for curious ears.</span><a href="/songs/">Public-domain songs</a><span>&middot;</span><a href="/privacy.html">Privacy</a></footer>
+    </div>
+
+    <script>
+    (function(){
+      /* ── Elements ── */
+      var canvas=document.getElementById('sheetCanvas'),
+          ctx=canvas.getContext('2d'),
+          fileInput=document.getElementById('fileInput'),
+          chooseBtn=document.getElementById('chooseBtn'),
+          toolbar=document.getElementById('toolbar'),
+          playBtn=document.getElementById('playBtn'),
+          stopBtn=document.getElementById('stopBtn'),
+          printBtn=document.getElementById('printBtn'),
+          keySelect=document.getElementById('keySelect'),
+          statusLine=document.getElementById('statusLine');
+
+      /* ── State ── */
+      var notes=[],        // {pitch, start, dur, quantDur}
+          tempoMap=[],     // [{tick, bpm}]
+          timeSig={num:4,den:4},
+          ticksPerBeat=480,
+          midiFormat=0,
+          totalDuration=1,
+          keySig=0,        // sharps positive, flats negative
+          playing=false,
+          playStart=0,
+          playElapsed=0,
+          raf=0,
+          audioCtx=null,
+          masterGain=null,
+          systems=[];      // layout data for rendering
+
+      /* ── Constants ── */
+      var LINE_SP=12,       // spacing between staff lines
+          STAFF_H=LINE_SP*4,
+          MARGIN_L=90,
+          MARGIN_R=30,
+          MARGIN_T=40,
+          PAGE_W=794,       // A4-ish width at 96dpi
+          NOTES_PER_SYSTEM=28,
+          SYSTEM_GAP=30;
+
+      var NOTE_NAMES=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+      var WHITE_STEPS={0:0,2:1,4:2,5:3,7:4,9:5,11:6}; // chromatic -> diatonic step
+
+      /* ── Helpers ── */
+      function fmt(s){s=Math.max(0,s);return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0')}
+
+      function midiToFreq(m){return 440*Math.pow(2,(m-69)/12)}
+
+      function quantizeDuration(durSec,beatSec){
+        var ratios=[4,2,1,0.5,0.25,0.125]; // whole, half, quarter, eighth, sixteenth, thirty-second
+        var names=['whole','half','quarter','eighth','sixteenth','thirtysecond'];
+        var best=4,bestDiff=1e9;
+        for(var i=0;i<ratios.length;i++){
+          var target=beatSec*ratios[i];
+          var diff=Math.abs(durSec-target);
+          if(diff<bestDiff){bestDiff=diff;best=i}
+        }
+        return {idx:best,name:names[best],beats:ratios[best]};
+      }
+
+      /* ── MIDI Parser ── */
+      function parseMidi(data){
+        var pos=0;
+        function rU16(){var v=(data[pos]<<8)|data[pos+1];pos+=2;return v}
+        function rU32(){var v=((data[pos]<<24)|(data[pos+1]<<16)|(data[pos+2]<<8)|data[pos+3])>>>0;pos+=4;return v}
+        function rVar(){var v=0,b;do{b=data[pos++];v=(v<<7)|(b&0x7f)}while(b&0x80);return v}
+        function rBytes(n){var r=data.slice(pos,pos+n);pos+=n;return r}
+
+        var hdr=rBytes(4);
+        if(String.fromCharCode.apply(null,hdr)!=='MThd')throw new Error('Not a MIDI file');
+        var hLen=rU32();
+        midiFormat=rU16();
+        var nTracks=rU16();
+        ticksPerBeat=rU16();
+
+        notes=[];
+        tempoMap=[{tick:0,bpm:120}];
+        timeSig={num:4,den:4};
+
+        for(var t=0;t<nTracks;t++){
+          var cType=rBytes(4),cLen=rU32(),endPos=pos+cLen;
+          if(String.fromCharCode.apply(null,cType)!=='MTrk'){pos=endPos;continue}
+          var absTick=0,lastStatus=0;
+          var activeNotes={}; // key: pitch -> {tick}
+
+          while(pos<endPos){
+            var delta=rVar();
+            absTick+=delta;
+            var status=data[pos];
+            if(status&0x80){lastStatus=status;pos++}else{status=lastStatus}
+            var type=status&0xf0;
+
+            if(type===0x90){ // note on
+              var note=data[pos++],vel=data[pos++];
+              if(vel>0){
+                activeNotes[note]={tick:absTick};
+              } else { // note on vel=0 is note off
+                if(activeNotes[note]){
+                  var startTick=activeNotes[note].tick;
+                  var durTicks=absTick-startTick;
+                  var startSec=tickToSec(startTick);
+                  var durSec=tickToSec(durTicks,ticksPerBeat,tempoMap);
+                  notes.push({pitch:note,start:startSec,dur:durSec,tick:startTick,durTicks:durTicks});
+                  delete activeNotes[note];
+                }
+              }
+            } else if(type===0x80){ // note off
+              var note2=data[pos++];pos++; // vel
+              if(activeNotes[note2]){
+                var startTick2=activeNotes[note2].tick;
+                var durTicks2=absTick-startTick2;
+                var startSec2=tickToSec(startTick2);
+                var durSec2=tickToSec(durTicks2,ticksPerBeat,tempoMap);
+                notes.push({pitch:note2,start:startSec2,dur:durSec2,tick:startTick2,durTicks:durTicks2});
+                delete activeNotes[note2];
+              }
+            } else if(type===0xa0||type===0xb0||type===0xe0){pos+=2}
+            else if(type===0xc0||type===0xd0){pos+=1}
+            else if(status===0xff){ // meta
+              var metaType=data[pos++];
+              var mLen=rVar();
+              if(metaType===0x51&&mLen===3){ // tempo
+                var bpm_val=60000000/((data[pos]<<16)|(data[pos+1]<<8)|data[pos+2]);
+                tempoMap.push({tick:absTick,bpm:bpm_val});
+              } else if(metaType===0x58&&mLen>=2){ // time sig
+                timeSig={num:data[pos],den:Math.pow(2,data[pos+1])};
+              } else if(metaType===0x59&&mLen>=1){ // key sig
+                keySig=data[pos]; // -7 to 7
+              }
+              pos+=mLen;
+            } else if(status===0xf0||status===0xf7){
+              var sLen=rVar();pos+=sLen;
+            } else {pos++}
+          }
+          pos=endPos;
+        }
+
+        // Close any still-active notes
+        for(var p in activeNotes){
+          var st=activeNotes[p].tick;
+          var dt=ticksPerBeat; // default quarter
+          notes.push({pitch:parseInt(p),start:tickToSec(st),dur:tickToSec(dt,ticksPerBeat,tempoMap),tick:st,durTicks:dt});
+        }
+
+        // Sort by start time, then pitch
+        notes.sort(function(a,b){return a.start-b.start||a.pitch-b.pitch});
+
+        // Quantize durations
+        var beatSec=60/tempoMap[0].bpm;
+        notes.forEach(function(n){
+          var q=quantizeDuration(n.dur,beatSec);
+          n.quantIdx=q.idx;
+          n.quantName=q.name;
+          n.quantBeats=q.beats;
+        });
+
+        // Compute total duration
+        totalDuration=0;
+        notes.forEach(function(n){totalDuration=Math.max(totalDuration,n.start+n.dur)});
+        if(totalDuration<0.1)totalDuration=1;
+
+        // Use key from select
+        keySig=parseInt(keySelect.value)||0;
+
+        layoutSystems();
+        renderSheet();
+        toolbar.style.display='flex';
+        statusLine.textContent=notes.length+' notes loaded \u00B7 '+fmt(totalDuration)+' \u00B7 '+timeSig.num+'/'+timeSig.den;
+      }
+
+      function tickToSec(tick){
+        var sec=0,prevTick=0,prevBpm=120;
+        for(var i=0;i<tempoMap.length;i++){
+          if(tempoMap[i].tick>tick)break;
+          sec+=(tempoMap[i].tick-prevTick)/(ticksPerBeat*(prevBpm/60));
+          prevTick=tempoMap[i].tick;
+          prevBpm=tempoMap[i].bpm;
+        }
+        sec+=(tick-prevTick)/(ticksPerBeat*(prevBpm/60));
+        return sec;
+      }
+
+      /* ── Layout: group notes into systems ── */
+      function layoutSystems(){
+        systems=[];
+        var beatsPerMeasure=timeSig.num*(4/timeSig.den);
+        var measureSec=beatsPerMeasure*(60/tempoMap[0].bpm);
+
+        // Group notes into measures
+        var measures=[];
+        var curMeasure={notes:[],start:0,end:measureSec};
+        notes.forEach(function(n){
+          while(n.start>=curMeasure.end){
+            if(curMeasure.notes.length>0||measures.length===0)measures.push(curMeasure);
+            curMeasure={notes:[],start:curMeasure.end,end:curMeasure.end+measureSec};
+          }
+          curMeasure.notes.push(n);
+        });
+        if(curMeasure.notes.length>0)measures.push(curMeasure);
+
+        // Group measures into systems
+        var measuresPerSystem=Math.max(1,Math.floor((PAGE_W-MARGIN_L-MARGIN_R)/80));
+        for(var i=0;i<measures.length;i+=measuresPerSystem){
+          var sysMeasures=measures.slice(i,i+measuresPerSystem);
+          systems.push({measures:sysMeasures,y:0});
+        }
+        if(systems.length===0)systems.push({measures:[],y:0});
+      }
+
+      /* ── Staff position: MIDI note -> y offset from top staff line ── */
+      function pitchToStaffY(pitch){
+        // Middle C (C4=60) is one ledger line below staff
+        // Staff top line = F5 (77), bottom line = E4 (64) in treble clef
+        // Each diatonic step = half a line spacing
+        var octave=Math.floor(pitch/12)-1; // C4 -> octave 4
+        var pc=pitch%12;
+        var step=WHITE_STEPS[pc]!==undefined?WHITE_STEPS[pc]:WHITE_STEPS[(pc-1+12)%12]+0.5;
+        // Diatonic position: C4=0, D4=1, E4=2, F4=3, G4=4, A4=5, B4=6, C5=7...
+        var diatonicPos=(octave-4)*7+step;
+        // F5 (top line) = diatonic 10 (F above middle C = 3 + 7 = 10)
+        // We want top line at y=0, bottom line at y=STAFF_H
+        // Each diatonic step = LINE_SP/2 pixels down
+        var topLineDiatonic=10; // F5
+        var y=(topLineDiatonic-diatonicPos)*(LINE_SP/2);
+        return y;
+      }
+
+      function isAccidental(pitch){
+        var pc=pitch%12;
+        return [1,3,6,8,10].indexOf(pc)!==-1;
+      }
+
+      function isInKey(pitch){
+        // Determine if accidental is in the current key
+        var absKey=Math.abs(keySig);
+        if(keySig>=0){
+          // Sharp keys: F#, C#, G#, D#, A#, E#
+          var sharpNotes=[65,72,60,67,74,62]; // F,C,G,D,A,E for each sharp
+          for(var i=0;i<absKey&&i<sharpNotes.length;i++){
+            if(pitch%12===sharpNotes[i]%12)return true;
+          }
+        } else {
+          // Flat keys: Bb, Eb, Ab, Db, Gb, Cb
+          var flatNotes=[70,65,68,63,66,71]; // B,E,A,D,G,C
+          for(var j=0;j<absKey&&j<flatNotes.length;j++){
+            if(pitch%12===flatNotes[j]%12)return true;
+          }
+        }
+        return false;
+      }
+
+      /* ── Render ── */
+      function renderSheet(highlightPitch,highlightTime){
+        var dpr=window.devicePixelRatio||1;
+        var displayW=canvas.parentElement.clientWidth-52;
+        if(displayW<300)displayW=300;
+
+        // Calculate total height
+        var systemH=STAFF_H+MARGIN_T+60;
+        var totalH=systems.length*systemH+(systems.length-1)*SYSTEM_GAP+80;
+        canvas.style.height=totalH+'px';
+        canvas.width=displayW*dpr;
+        canvas.height=totalH*dpr;
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+
+        // White background
+        ctx.fillStyle='#fff';
+        ctx.fillRect(0,0,displayW,totalH);
+
+        var usableW=displayW-MARGIN_L-MARGIN_R;
+
+        systems.forEach(function(sys,si){
+          var sysY=MARGIN_T+si*(systemH+SYSTEM_GAP);
+          sys.y=sysY;
+
+          // Draw 5 staff lines
+          ctx.strokeStyle='#333';
+          ctx.lineWidth=1;
+          for(var l=0;l<5;l++){
+            var ly=sysY+l*LINE_SP;
+            ctx.beginPath();
+            ctx.moveTo(MARGIN_L,ly);
+            ctx.lineTo(displayW-MARGIN_R,ly);
+            ctx.stroke();
+          }
+
+          // Draw treble clef on first system
+          if(si===0){
+            ctx.font='52px serif';
+            ctx.fillStyle='#333';
+            ctx.fillText('\uD834\uDD1E',MARGIN_L-8,sysY+STAFF_H+8);
+          }
+
+          // Key signature
+          if(si===0&&keySig!==0){
+            var ksX=MARGIN_L+40;
+            ctx.font='14px serif';
+            ctx.fillStyle='#333';
+            var accSharp=[65,72,67,74,60,67]; // F C G D A E
+            var accFlat=[70,65,68,63,66,71];   // B E A D G C
+            var sharpYs=[0,3*LINE_SP/2,LINE_SP/2,LINE_SP*5/2,LINE_SP*2,LINE_SP*3];
+            var flatYs=[LINE_SP*3,LINE_SP*5/2,LINE_SP*2,LINE_SP*7/2,LINE_SP*3,LINE_SP*5/2];
+            if(keySig>0){
+              for(var ks=0;ks<keySig;ks++){
+                ctx.fillText('#',ksX+ks*10,sysY+sharpYs[ks]+5);
+              }
+            } else {
+              for(var kf=0;kf<Math.abs(keySig);kf++){
+                ctx.fillText('b',ksX+kf*10,sysY+flatYs[kf]+5);
+              }
+            }
+          }
+
+          // Time signature on first system
+          if(si===0){
+            var tsX=MARGIN_L+(keySig!==0?40+Math.abs(keySig)*10+8:40);
+            ctx.font='bold 18px var(--sans), sans-serif';
+            ctx.fillStyle='#333';
+            ctx.fillText(String(timeSig.num),tsX,sysY+LINE_SP*1.5);
+            ctx.fillText(String(timeSig.den),tsX,sysY+LINE_SP*3.5);
+          }
+
+          // Draw notes
+          var noteStartX=MARGIN_L+(si===0?(keySig!==0?40+Math.abs(keySig)*10+30:70):20);
+          var noteSpacing=usableW/(sys.measures.reduce(function(s,m){return s+m.notes.length},0)+1);
+          if(noteSpacing<16)noteSpacing=16;
+          if(noteSpacing>40)noteSpacing=40;
+
+          var curX=noteStartX;
+          var measureWidth=usableW/Math.max(1,sys.measures.length);
+
+          sys.measures.forEach(function(measure,mi){
+            var mX=MARGIN_L+mi*measureWidth+(si===0?noteStartX-MARGIN_L:20);
+            var mNotes=measure.notes;
+            if(mNotes.length===0)return;
+
+            var innerSpacing=measureWidth/(mNotes.length+1);
+            if(innerSpacing<14)innerSpacing=14;
+            if(innerSpacing>36)innerSpacing=36;
+
+            mNotes.forEach(function(note,ni){
+              var nx=MARGIN_L+(si===0?noteStartX-MARGIN_L:20)+mi*measureWidth+(ni+1)*innerSpacing;
+              var ny=sysY+pitchToStaffY(note.pitch);
+
+              // Check if note needs ledger lines
+              if(ny<sysY-2){
+                // Above staff
+                for(var ld=LINE_SP;ny<sysY-ld+LINE_SP;ld+=LINE_SP){
+                  if(ny<=sysY-ld+LINE_SP/2){
+                    ctx.strokeStyle='#333';ctx.lineWidth=1;
+                    ctx.beginPath();ctx.moveTo(nx-8,sysY-ld+LINE_SP);ctx.lineTo(nx+8,sysY-ld+LINE_SP);ctx.stroke();
+                  }
+                }
+              }
+              if(ny>sysY+STAFF_H+2){
+                // Below staff
+                for(var ld2=LINE_SP;ny>sysY+STAFF_H+ld2-LINE_SP;ld2+=LINE_SP){
+                  if(ny>=sysY+STAFF_H+ld2-LINE_SP/2){
+                    ctx.strokeStyle='#333';ctx.lineWidth=1;
+                    ctx.beginPath();ctx.moveTo(nx-8,sysY+STAFF_H+ld2);ctx.lineTo(nx+8,sysY+STAFF_H+ld2);ctx.stroke();
+                  }
+                }
+              }
+              // Middle C ledger line
+              if(note.pitch===60){
+                ctx.strokeStyle='#333';ctx.lineWidth=1;
+                ctx.beginPath();ctx.moveTo(nx-8,sysY+STAFF_H+LINE_SP);ctx.lineTo(nx+8,sysY+STAFF_H+LINE_SP);ctx.stroke();
+              }
+
+              // Highlight during playback
+              var isHighlighted=false;
+              if(playing&&highlightTime!==undefined){
+                if(note.start<=highlightTime&&note.start+note.dur>highlightTime){
+                  isHighlighted=true;
+                }
+              }
+
+              // Draw accidental if needed
+              if(isAccidental(note.pitch)&&!isInKey(note.pitch)){
+                ctx.font='12px serif';
+                ctx.fillStyle=isHighlighted?'var(--coral)':'#333';
+                var accChar=note.pitch%12===1||note.pitch%12===3||note.pitch%12===6||note.pitch%12===8||note.pitch%12===10?'#':'b';
+                if([1,3,6,8,10].indexOf(note.pitch%12)!==-1)accChar='#';
+                ctx.fillText(accChar,nx-14,ny+4);
+              }
+
+              // Draw note head
+              ctx.save();
+              ctx.translate(nx,ny);
+              ctx.rotate(-0.25);
+              if(note.quantIdx<=1){
+                // Half or whole - open note head
+                ctx.strokeStyle=isHighlighted?'#e76d52':'#333';
+                ctx.lineWidth=1.5;
+                ctx.beginPath();
+                ctx.ellipse(0,0,6,4.5,0,0,Math.PI*2);
+                ctx.stroke();
+              } else {
+                // Quarter and shorter - filled note head
+                ctx.fillStyle=isHighlighted?'#e76d52':'#333';
+                ctx.beginPath();
+                ctx.ellipse(0,0,5.5,4,0,0,Math.PI*2);
+                ctx.fill();
+              }
+              ctx.restore();
+
+              // Draw stem (not for whole notes)
+              if(note.quantIdx!==0){
+                var stemX;
+                var stemUp=ny>sysY+LINE_SP*1.5; // stem up if below middle line
+                if(stemUp){
+                  stemX=nx+5;
+                  ctx.strokeStyle=isHighlighted?'#e76d52':'#333';
+                  ctx.lineWidth=1.2;
+                  ctx.beginPath();ctx.moveTo(stemX,ny);ctx.lineTo(stemX,ny-30);ctx.stroke();
+                } else {
+                  stemX=nx-5;
+                  ctx.strokeStyle=isHighlighted?'#e76d52':'#333';
+                  ctx.lineWidth=1.2;
+                  ctx.beginPath();ctx.moveTo(stemX,ny);ctx.lineTo(stemX,ny+30);ctx.stroke();
+                }
+
+                // Draw flags for eighth/sixteenth notes
+                if(note.quantIdx===3){ // eighth
+                  ctx.strokeStyle=isHighlighted?'#e76d52':'#333';
+                  ctx.lineWidth=1.2;
+                  ctx.beginPath();
+                  if(stemUp){
+                    ctx.moveTo(stemX,ny-30);
+                    ctx.quadraticCurveTo(stemX+8,ny-22,stemX+4,ny-14);
+                  } else {
+                    ctx.moveTo(stemX,ny+30);
+                    ctx.quadraticCurveTo(stemX+8,ny+22,stemX+4,ny+14);
+                  }
+                  ctx.stroke();
+                } else if(note.quantIdx>=4){ // sixteenth+
+                  ctx.strokeStyle=isHighlighted?'#e76d52':'#333';
+                  ctx.lineWidth=1.2;
+                  for(var fl=0;fl<2;fl++){
+                    ctx.beginPath();
+                    if(stemUp){
+                      ctx.moveTo(stemX,ny-30+fl*8);
+                      ctx.quadraticCurveTo(stemX+8,ny-22+fl*8,stemX+4,ny-14+fl*8);
+                    } else {
+                      ctx.moveTo(stemX,ny+30-fl*8);
+                      ctx.quadraticCurveTo(stemX+8,ny+22-fl*8,stemX+4,ny+14-fl*8);
+                    }
+                    ctx.stroke();
+                  }
+                }
+              }
+            });
+
+            // Draw bar line at end of measure (except last system's last measure)
+            if(mi<sys.measures.length-1||si<systems.length-1){
+              var barX=MARGIN_L+(mi+1)*measureWidth+(si===0?noteStartX-MARGIN_L:20);
+              if(barX<displayW-MARGIN_R){
+                ctx.strokeStyle='#333';ctx.lineWidth=1;
+                ctx.beginPath();ctx.moveTo(barX,sysY);ctx.lineTo(barX,sysY+STAFF_H);ctx.stroke();
+              }
+            }
+          });
+
+          // End bar line on last system
+          if(si===systems.length-1){
+            var endX=displayW-MARGIN_R;
+            ctx.strokeStyle='#333';ctx.lineWidth=1;
+            ctx.beginPath();ctx.moveTo(endX-3,sysY);ctx.lineTo(endX-3,sysY+STAFF_H);ctx.stroke();
+            ctx.lineWidth=3;
+            ctx.beginPath();ctx.moveTo(endX,sysY);ctx.lineTo(endX,sysY+STAFF_H);ctx.stroke();
+          }
+        });
+      }
+
+      /* ── Audio ── */
+      function ensureAudio(){
+        if(audioCtx){if(audioCtx.state==='suspended')audioCtx.resume();return true}
+        var AC=window.AudioContext||window.webkitAudioContext;
+        if(!AC)return false;
+        audioCtx=new AC();
+        masterGain=audioCtx.createGain();
+        masterGain.gain.value=0.4;
+        masterGain.connect(audioCtx.destination);
+        return true;
+      }
+
+      function scheduleFrom(elapsed){
+        var now=audioCtx.currentTime+0.05;
+        notes.forEach(function(n){
+          var t=now+Math.max(0,n.start-elapsed);
+          if(t<audioCtx.currentTime)return;
+          var osc=audioCtx.createOscillator();
+          var g=audioCtx.createGain();
+          osc.type='triangle';
+          osc.frequency.value=midiToFreq(n.pitch);
+          g.gain.setValueAtTime(0.0001,t);
+          g.gain.exponentialRampToValueAtTime(0.4,t+0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001,t+Math.max(0.08,n.dur*0.9));
+          osc.connect(g).connect(masterGain);
+          osc.start(t);
+          osc.stop(t+n.dur+0.05);
+        });
+      }
+
+      function tickPlayback(){
+        playElapsed=(performance.now()-playStart)/1000;
+        if(playElapsed>=totalDuration){
+          stopPlayback();
+          playElapsed=totalDuration;
+          renderSheet();
+          return;
+        }
+        renderSheet(null,playElapsed);
+        if(playing)raf=requestAnimationFrame(tickPlayback);
+      }
+
+      function startPlayback(){
+        if(!ensureAudio())return;
+        playStart=performance.now()-playElapsed*1000;
+        scheduleFrom(playElapsed);
+        playing=true;
+        playBtn.classList.add('active');
+        playBtn.textContent='\u23F8 Playing';
+        raf=requestAnimationFrame(tickPlayback);
+      }
+
+      function stopPlayback(){
+        playing=false;
+        cancelAnimationFrame(raf);
+        playBtn.classList.remove('active');
+        playBtn.textContent='\u25B6 Play';
+        renderSheet();
+      }
+
+      /* ── Events ── */
+      chooseBtn.addEventListener('click',function(){fileInput.click()});
+      fileInput.addEventListener('change',function(e){
+        var file=e.target.files[0];
+        if(!file)return;
+        var reader=new FileReader();
+        reader.onload=function(ev){
+          try{
+            parseMidi(new Uint8Array(ev.target.result));
+          }catch(err){
+            statusLine.textContent='Error: Could not parse this MIDI file.';
+            console.error(err);
+          }
+        };
+        reader.readAsArrayBuffer(file);
+      });
+
+      playBtn.addEventListener('click',function(){
+        if(playing){stopPlayback()}
+        else{
+          if(playElapsed>=totalDuration)playElapsed=0;
+          startPlayback();
+        }
+      });
+
+      stopBtn.addEventListener('click',function(){
+        stopPlayback();
+        playElapsed=0;
+        renderSheet();
+      });
+
+      printBtn.addEventListener('click',function(){
+        window.print();
+      });
+
+      keySelect.addEventListener('change',function(){
+        keySig=parseInt(keySelect.value)||0;
+        if(notes.length>0){renderSheet()}
+      });
+
+      // Drag and drop
+      var shell=document.querySelector('.sheet-shell');
+      shell.addEventListener('dragover',function(e){e.preventDefault();e.stopPropagation();shell.style.borderColor='var(--coral)'});
+      shell.addEventListener('dragleave',function(e){e.preventDefault();shell.style.borderColor=''});
+      shell.addEventListener('drop',function(e){
+        e.preventDefault();e.stopPropagation();
+        shell.style.borderColor='';
+        var file=e.dataTransfer.files[0];
+        if(!file)return;
+        var reader=new FileReader();
+        reader.onload=function(ev){
+          try{parseMidi(new Uint8Array(ev.target.result))}
+          catch(err){statusLine.textContent='Error: Could not parse this MIDI file.';console.error(err)}
+        };
+        reader.readAsArrayBuffer(file);
+      });
+
+      // Resize
+      function resize(){
+        if(notes.length>0)renderSheet();
+        else{
+          var dpr=window.devicePixelRatio||1;
+          var w=canvas.parentElement.clientWidth-52;
+          canvas.width=w*dpr;
+          canvas.height=300*dpr;
+          canvas.style.height='300px';
+          ctx.setTransform(dpr,0,0,dpr,0,0);
+          ctx.fillStyle='#fff';
+          ctx.fillRect(0,0,w,300);
+          ctx.fillStyle='#aaa';
+          ctx.font='14px var(--sans), sans-serif';
+          ctx.textAlign='center';
+          ctx.fillText('Upload a MIDI file to see sheet music here',w/2,150);
+          ctx.textAlign='start';
+        }
+      }
+      window.addEventListener('resize',resize);
+      resize();
+    })();
+    </script>
+  </body>
+</html>

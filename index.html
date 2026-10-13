@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Play MIDI files online in your browser with MIDI Room. Upload .mid or .midi files locally, view the piano roll, adjust tempo, loop practice sections, and keep your music private." />
+    <meta name="description" content="Play MIDI files online in your browser — no upload, no account, no install. Online MIDI Player with piano roll, tempo control, A/B loop practice, and 100% local processing." />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
@@ -12,15 +12,15 @@
     <meta name="adsense-client" content="" />
     <meta name="ga-measurement" content="" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="MIDI Player Online — Play and Visualize MIDI Files | MIDI Room" />
-    <meta property="og:description" content="Play, view, and practice MIDI files locally in your browser with a piano roll and tempo controls." />
+    <meta property="og:title" content="Online MIDI Player — Play & Visualize MIDI Files in Your Browser" />
+    <meta property="og:description" content="Play MIDI files online with piano roll visualization, tempo control, and A/B loop practice. 100% local — nothing uploaded." />
     <meta property="og:url" content="https://midiplayeronline.com/" />
     <meta property="og:image" content="https://midiplayeronline.com/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="MIDI Player Online — MIDI Room" />
-    <meta name="twitter:description" content="Play and visualize MIDI files in your browser. No upload, account, or installation required." />
+    <meta name="twitter:title" content="Online MIDI Player — Play & Visualize MIDI Files in Your Browser" />
+    <meta name="twitter:description" content="Play MIDI files online in your browser. No upload, no account, no install. 100% local." />
     <meta name="twitter:image" content="https://midiplayeronline.com/og-image.png" />
-    <title>MIDI Player Online — Play and Visualize MIDI Files | MIDI Room</title>
+    <title>Online MIDI Player — Play & Visualize MIDI Files in Your Browser</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -28,21 +28,96 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "MIDI Room",
+        "name": "MIDI Player Online",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Any",
-        "description": "Play, visualize, and practice MIDI files online in your browser.",
+        "description": "Play MIDI files online in your browser with piano roll visualization, tempo control, and A/B loop practice. 100% local processing — no upload required.",
         "url": "https://midiplayeronline.com/",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "featureList": ["MIDI player", "MIDI piano roll viewer", "Tempo control", "A/B practice loop", "Local browser playback"]
+        "featureList": ["Online MIDI player", "Piano roll visualization", "Tempo control", "A/B practice loop", "Local browser playback", "Multi-track support"]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an online MIDI player?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An online MIDI player is a web-based tool that lets you open and play MIDI files directly in your browser without installing any software. MIDI Player Online parses .mid and .midi files locally, displays the notes on a piano roll, and plays the audio using the Web Audio API. Your files never leave your device."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What MIDI file formats does this player support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MIDI Player Online supports standard .mid and .midi files in Type 0 (single-track), Type 1 (multi-track), and Type 2 (multi-sequence) formats. Files up to 50 MB are accepted. The player reads standard MIDI events including note-on, note-off, tempo changes, program changes, and control changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my MIDI files uploaded to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. MIDI Player Online processes everything locally in your browser using JavaScript and the Web Audio API. Your MIDI files are never uploaded, stored, or transmitted to any server. The tool works even without an internet connection after the initial page load."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the A/B loop practice feature work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The A/B loop lets you mark a start point (A) and an end point (B) on the timeline. When playback reaches B, it jumps back to A and repeats. This is ideal for practicing a difficult phrase, isolating a chord progression, or looping a section to study the arrangement. You can set A and B at the current playhead position by clicking the buttons while the song is playing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I slow down the tempo for practice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The tempo slider lets you adjust playback speed from 50% to 150% of the original tempo. Slowing down a passage makes it easier to follow individual notes on the piano roll and hear how the tracks interact, which is essential for learning by ear."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this MIDI player free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MIDI Player Online is completely free. There is no account required, no sign-up, and no usage limit. The tool runs entirely in your browser and is supported by minimal, non-intrusive advertising."
+            }
+          }
+        ]
       }
     </script>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .seo-long{padding:70px 5% 80px;border-bottom:1px solid var(--line)}
+      .seo-long h2{font-size:24px;letter-spacing:-.04em;margin:40px 0 14px;font-weight:700}
+      .seo-long h2:first-of-type{margin-top:0}
+      .seo-long h3{font-size:17px;letter-spacing:-.02em;margin:28px 0 10px;font-weight:600}
+      .seo-long p{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px}
+      .seo-long strong{color:var(--ink);font-weight:700}
+      .seo-long ul{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px;padding-left:1.5em}
+      .seo-long li{margin-bottom:6px}
+      .seo-faq{max-width:720px;margin-top:50px}
+      .seo-faq h2{font-size:22px;margin-bottom:20px}
+      .seo-faq-item{border-left:2px solid var(--coral);padding:12px 0 12px 20px;margin-bottom:18px}
+      .seo-faq-item h3{font-size:15px;margin:0 0 6px;letter-spacing:-.02em}
+      .seo-faq-item p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
+      .tool-links{display:flex;gap:16px;flex-wrap:wrap;margin:30px 0 10px}
+      .tool-links a{border:1px solid var(--line);border-radius:8px;padding:14px 18px;text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);transition:.15s;flex:1;min-width:180px}
+      .tool-links a:hover{border-color:var(--coral);transform:translateY(-2px)}
+      .tool-links small{display:block;color:var(--muted);font-weight:400;font-size:11px;margin-top:4px}
+    </style>
   </head>
   <body>
     <div class="shell">
       <header class="topbar">
-        <a class="brand" href="#top" aria-label="MIDI Room home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">ROOM</span></span></a>
+        <a class="brand" href="#top" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
         <nav class="nav-links" aria-label="Main navigation"><a class="active" href="#player">Player</a><a href="#features">How it works</a><a href="#privacy">Privacy</a></nav>
         <div class="top-actions"><span class="local-pill"><span class="pulse-dot"></span>100% local</span><button class="icon-btn" aria-label="Toggle theme">☼</button></div>
       </header>
@@ -50,9 +125,9 @@
       <main id="top">
         <section class="hero" id="player">
           <div class="hero-copy">
-            <div class="eyebrow"><span class="eyebrow-line"></span> THE PRIVATE MIDI WORKSPACE</div>
-            <h1>MIDI Player Online.<br /><em>See every note.</em></h1>
-            <p class="hero-text">Play MIDI files online without installing software. Upload a .mid or .midi file to view its piano roll, inspect tracks, adjust tempo, and practice sections directly in your browser.</p>
+            <div class="eyebrow"><span class="eyebrow-line"></span> FREE ONLINE MIDI PLAYER</div>
+            <h1>Online MIDI Player.</h1>
+            <p class="hero-text">Play MIDI files online without installing software. Drop a .mid or .midi file into your browser to hear it instantly, see every note on the piano roll, adjust tempo, and loop sections for practice.</p>
             <div class="hero-meta"><span><b>01</b> No upload</span><span><b>02</b> No account</span><span><b>03</b> No install</span></div>
           </div>
           <div class="upload-card" id="dropZone">
@@ -81,14 +156,120 @@
         </section>
 
          <section class="feature-strip" id="features"><div class="feature-intro"><div class="section-kicker">BUILT FOR THE WAY YOU LISTEN</div><h2>A closer look at<br /><em>your music.</em></h2></div><article><span class="feature-number">01</span><div class="feature-icon">◌</div><h3>Play it back</h3><p>Hear every instrument with clean, browser-native playback.</p></article><article><span class="feature-number">02</span><div class="feature-icon">⌗</div><h3>See the pattern</h3><p>Follow notes across the piano roll and understand the arrangement.</p></article><article><span class="feature-number">03</span><div class="feature-icon">↺</div><h3>Practice a phrase</h3><p>Slow down, loop a section, and make the hard parts yours.</p></article></section>
-         <section class="seo-content" aria-labelledby="seo-title">
-           <div class="seo-content-lead"><div class="section-kicker">A SIMPLE MIDI WORKSPACE</div><h2 id="seo-title">A MIDI viewer for<br /><em>playing and practice.</em></h2></div>
-           <div class="seo-content-copy"><p><strong>Play MIDI files online</strong> without sending your music to a server. MIDI Room is a browser-based MIDI file player that turns notes into an interactive piano roll, so you can listen to a song and understand how its tracks are arranged.</p><p>Use the <strong>MIDI piano roll viewer</strong> to inspect notes, instruments, timing, and track density. Slow the tempo down, set an A/B loop, mute a part, and repeat a difficult phrase with the <strong>MIDI practice player</strong>.</p><p>Your file is parsed locally in the browser. No account, installation, or upload is required.</p></div>
-         </section>
-         <section class="privacy-note" id="privacy"><div class="privacy-mark">✦</div><div><h3>Your music stays yours.</h3><p>MIDI Room processes files locally in your browser. Nothing is uploaded, stored, or shared.</p></div><span class="privacy-code">LOCAL / PRIVATE / FAST</span></section>
+
+        <section class="seo-long" aria-labelledby="seo-main-title">
+          <h2 id="seo-main-title">Online MIDI Player — Play MIDI Files in Your Browser</h2>
+
+          <p><strong>MIDI Player Online is a free online MIDI player that lets you play MIDI files directly in your browser.</strong> There is nothing to download, no account to create, and no file is ever uploaded to a server. Open the page, drop in a .mid or .midi file, and the player parses it locally using JavaScript and the Web Audio API. You hear the music, see every note on the piano roll, and can start practicing immediately.</p>
+
+          <p>Unlike desktop DAWs or heavyweight MIDI software, this online MIDI player is designed for one thing: opening a MIDI file and hearing it fast. Whether you received a .mid file from a colleague, downloaded a classical arrangement, or exported a pattern from a sequencer, you can play it back here in seconds — with a visual piano roll that shows you exactly what is happening in the file.</p>
+
+          <h2>Supported MIDI Formats</h2>
+
+          <p>MIDI Player Online accepts the two most common MIDI file extensions: <strong>.mid</strong> and <strong>.midi</strong>. Both are the same Standard MIDI File (SMF) format — the different extensions are a legacy quirk from the early days of Windows and Mac, and this player handles either one identically.</p>
+
+          <p>Under the hood, the player reads all three SMF types:</p>
+
+          <ul>
+            <li><strong>Type 0</strong> — a single track that contains all MIDI events interleaved. This is the simplest format and the most common for pop and rock MIDI files.</li>
+            <li><strong>Type 1</strong> — separate tracks for each instrument or channel. A typical Type 1 file might have a piano track, a bass track, a strings track, and a drums track. This is the format most useful for practice, because you can see and mute individual parts.</li>
+            <li><strong>Type 2</strong> — multiple independent sequences in one file. Less common, but supported.</li>
+          </ul>
+
+          <p>The player reads standard MIDI events including note-on, note-off, tempo changes (including mid-file tempo shifts), program changes (instrument switches), and control changes (volume, pan, sustain pedal). Files up to 50 MB are accepted, which covers virtually any MIDI file you will encounter.</p>
+
+          <h2>How the Piano Roll Visualization Works</h2>
+
+          <p>When you load a MIDI file, the online MIDI player renders a <strong>piano roll visualization</strong> on an HTML5 Canvas. Each note appears as a horizontal bar: the vertical position represents the pitch (higher notes sit higher on the roll), the horizontal position represents the start time, and the length of the bar represents how long the note is held. This is the same visual language used by DAWs like FL Studio, Logic Pro, and Ableton — but here it runs instantly in your browser with no setup.</p>
+
+          <p>The piano roll is especially useful for understanding how a MIDI file is arranged. You can see which instruments play together, where the bass line moves, how the melody sits on top of the harmony, and where the percussion fills occur. A moving playhead shows your current position in real time, so you always know where you are in the song.</p>
+
+          <h2>A/B Loop — Practice Any Phrase</h2>
+
+          <p>One of the most powerful features of this online MIDI player is the <strong>A/B practice loop</strong>. Here is how it works: while a MIDI file is playing, you press the <strong>A</strong> button to mark the start of a loop, and the <strong>B</strong> button to mark the end. When playback reaches point B, it jumps back to point A and repeats. You can loop a two-second chord change or a thirty-second passage — the loop keeps cycling until you clear it.</p>
+
+          <p>This is the feature musicians use most. If you are learning a piece by ear, slow the tempo down to 60% or 70%, set the A/B loop around the tricky bar, and play along on your instrument. The loop repeats indefinitely, so you can drill the passage until your fingers know it. Piano teachers also use the A/B loop to isolate sections for students during remote lessons — just share your screen and loop the passage.</p>
+
+          <p>Combined with the tempo slider (50% to 150%), the A/B loop turns this online MIDI player into a focused practice tool. You do not need a separate metronome app or loop pedal — everything is built in.</p>
+
+          <h2>100% Local — Your Files Never Leave Your Browser</h2>
+
+          <p>Privacy is a core design principle of MIDI Player Online. When you load a MIDI file, the entire file is read and parsed by JavaScript running in your browser. <strong>No data is sent to any server.</strong> There is no upload progress bar, no cloud processing, no server-side analysis. Your MIDI file stays on your device at all times.</p>
+
+          <p>This matters for several reasons. First, it means the player works even without an internet connection after the initial page load — useful for practicing in a studio with spotty Wi-Fi. Second, it means there is zero latency between dropping a file and hearing it, because there is no round-trip to a server. Third, it means you can confidently use the player with unreleased compositions, private arrangements, or any MIDI file you would not want to upload to a third party.</p>
+
+          <p>The audio is generated in real time by the Web Audio API using oscillators and gain nodes — no pre-recorded samples are streamed. This keeps the player lightweight and ensures it works on any modern browser (Chrome, Firefox, Safari, Edge) without plugins.</p>
+
+          <h2>How This Online MIDI Player Compares to Other Options</h2>
+
+          <p>There are several ways to play MIDI files, and each has trade-offs. Here is how MIDI Player Online compares:</p>
+
+          <p><strong>vs. desktop DAWs (FL Studio, Ableton, Logic):</strong> DAWs offer full editing, mixing, and production capabilities, but they cost hundreds of dollars, require installation, and have a steep learning curve. If you just need to hear a MIDI file and see the notes, loading it into a DAW is overkill. This online MIDI player gives you playback, visualization, tempo control, and looping in seconds — no install, no cost.</p>
+
+          <p><strong>vs. built-in OS players (Windows Media Player, macOS QuickTime):</strong> Operating system MIDI players typically just play the file with no visualization. You cannot see the piano roll, you cannot set an A/B loop, and you cannot adjust tempo independently. MIDI Player Online adds all of these on top of basic playback.</p>
+
+          <p><strong>vs. other online MIDI players:</strong> Many web-based MIDI players require you to create an account, upload your file to their server, or install a browser extension. MIDI Player Online does none of these. The player is a static web page that processes everything locally. There is also no file-size gatekeeping beyond a reasonable 50 MB limit, and no watermarked playback or time-limited previews.</p>
+
+          <h2>Who Uses This Online MIDI Player?</h2>
+
+          <p><strong>Musicians learning by ear</strong> use the tempo slowdown and A/B loop to transcribe MIDI arrangements note by note. Drop in a MIDI of a classical piece, slow it to 60%, loop the difficult run, and figure out the fingering.</p>
+
+          <p><strong>Piano teachers</strong> use it during remote lessons to play backing tracks, isolate a student's part by muting other tracks, and loop a passage for repeated practice.</p>
+
+          <p><strong>Music producers</strong> use it to quickly audition MIDI files received from collaborators — hearing the arrangement and seeing the note layout before importing into their DAW.</p>
+
+          <p><strong>Students and hobbyists</strong> use it to explore how their favorite public-domain compositions are structured. The piano roll makes it easy to see the relationship between melody, harmony, and rhythm.</p>
+
+          <h2>More Free MIDI Tools</h2>
+
+          <div class="tool-links">
+            <a href="/songs/"><strong>Browse MIDI Songs</strong><small>50 public-domain melodies with built-in demo players</small></a>
+            <a href="/view-midi-files/"><strong>View MIDI Files</strong><small>How to read and understand MIDI file structure</small></a>
+            <a href="/midi-viewer/"><strong>MIDI Viewer</strong><small>Open and inspect any MIDI file in your browser</small></a>
+            <a href="/mp3-to-midi/"><strong>MP3 to MIDI</strong><small>Convert audio to MIDI notes in your browser</small></a>
+            <a href="/midi-to-mp3/"><strong>MIDI to MP3</strong><small>Render MIDI files to MP3 audio</small></a>
+            <a href="/midi-editor-online/"><strong>MIDI Editor</strong><small>Edit notes, tempo, and tracks online</small></a>
+          </div>
+
+          <div class="seo-faq">
+            <h2>Frequently asked questions</h2>
+
+            <div class="seo-faq-item">
+              <h3>What is an online MIDI player?</h3>
+              <p>An online MIDI player is a web-based tool that lets you open and play MIDI files directly in your browser without installing any software. MIDI Player Online parses .mid and .midi files locally, displays the notes on a piano roll, and plays the audio using the Web Audio API. Your files never leave your device.</p>
+            </div>
+
+            <div class="seo-faq-item">
+              <h3>What MIDI file formats does this player support?</h3>
+              <p>MIDI Player Online supports standard .mid and .midi files in Type 0 (single-track), Type 1 (multi-track), and Type 2 (multi-sequence) formats. Files up to 50 MB are accepted. The player reads standard MIDI events including note-on, note-off, tempo changes, program changes, and control changes.</p>
+            </div>
+
+            <div class="seo-faq-item">
+              <h3>Are my MIDI files uploaded to a server?</h3>
+              <p>No. MIDI Player Online processes everything locally in your browser using JavaScript and the Web Audio API. Your MIDI files are never uploaded, stored, or transmitted to any server. The tool works even without an internet connection after the initial page load.</p>
+            </div>
+
+            <div class="seo-faq-item">
+              <h3>How does the A/B loop practice feature work?</h3>
+              <p>The A/B loop lets you mark a start point (A) and an end point (B) on the timeline. When playback reaches B, it jumps back to A and repeats. This is ideal for practicing a difficult phrase, isolating a chord progression, or looping a section to study the arrangement. You can set A and B at the current playhead position by clicking the buttons while the song is playing.</p>
+            </div>
+
+            <div class="seo-faq-item">
+              <h3>Can I slow down the tempo for practice?</h3>
+              <p>Yes. The tempo slider lets you adjust playback speed from 50% to 150% of the original tempo. Slowing down a passage makes it easier to follow individual notes on the piano roll and hear how the tracks interact, which is essential for learning by ear.</p>
+            </div>
+
+            <div class="seo-faq-item">
+              <h3>Is this MIDI player free to use?</h3>
+              <p>Yes, MIDI Player Online is completely free. There is no account required, no sign-up, and no usage limit. The tool runs entirely in your browser and is supported by minimal, non-intrusive advertising.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="privacy-note" id="privacy"><div class="privacy-mark">✦</div><div><h3>Your music stays yours.</h3><p>MIDI Player Online processes files locally in your browser. Nothing is uploaded, stored, or shared.</p></div><span class="privacy-code">LOCAL / PRIVATE / FAST</span></section>
       </main>
         <div class="ad-slot" aria-hidden="true"></div>
-      <footer><span>© 2025 MIDI ROOM</span><span>Made for curious ears.</span><a href="/songs/">Public-domain songs</a><span>·</span><a href="https://iammusicfont.app/" rel="noopener">I AM MUSIC Font ↗</a><span>·</span><a href="/privacy.html">Privacy</a><span>v0.1 beta</span></footer>
+      <footer><span>© 2026 MIDI PLAYER ONLINE</span><span>Made for curious ears.</span><a href="/songs/">Public-domain songs</a><span>·</span><a href="https://iammusicfont.app/" rel="noopener">I AM MUSIC Font ↗</a><span>·</span><a href="/privacy.html">Privacy</a><span>v0.1 beta</span></footer>
     </div>
     <script src="app.js"></script>
     <script src="/ads.js" defer></script>
