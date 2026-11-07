@@ -139,6 +139,15 @@ function faq(track) {
   return [...base, ...extra];
 }
 
+const ORG_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'MIDI Player Online',
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicon-192.png`,
+  sameAs: ['https://github.com/allenshi16/midiplayer']
+};
+
 function renderPage(track, prev, next) {
   const noteCount = track.notes.length;
   const jsonLd = {
@@ -148,7 +157,10 @@ function renderPage(track, prev, next) {
     composer: { '@type': 'Person', name: track.composer },
     inLanguage: 'en',
     description: track.description,
-    url: `${SITE_URL}/songs/${track.slug}/`
+    url: `${SITE_URL}/songs/${track.slug}/`,
+    author: { '@type': 'Organization', name: 'MIDI Player Online', url: SITE_URL },
+    datePublished: '2024-01-15',
+    dateModified: '2026-11-07'
   };
   const faqLd = {
     '@context': 'https://schema.org',
@@ -186,6 +198,7 @@ function renderPage(track, prev, next) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">${JSON.stringify(ORG_SCHEMA)}</script>
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
     <script type="application/ld+json">${JSON.stringify(faqLd)}</script>
     <link rel="stylesheet" href="/styles.css" />
@@ -298,7 +311,10 @@ function renderHub(tracks) {
     '@type': 'CollectionPage',
     name: 'Public Domain Songs — Play Online',
     description: 'Play public-domain classical and folk melodies instantly in your browser with MIDI Player Online.',
-    url: `${SITE_URL}/songs/`
+    url: `${SITE_URL}/songs/`,
+    author: { '@type': 'Organization', name: 'MIDI Player Online', url: SITE_URL },
+    datePublished: '2024-01-15',
+    dateModified: '2026-11-07'
   };
   return `<!doctype html>
 <html lang="en">
@@ -318,6 +334,7 @@ function renderHub(tracks) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">${JSON.stringify(ORG_SCHEMA)}</script>
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
     <link rel="stylesheet" href="/styles.css" />
     <style>
@@ -382,7 +399,10 @@ function renderCollectionHub(c, allTracks) {
     '@type': 'CollectionPage',
     name: c.h1,
     description: c.metaDescription,
-    url: `${SITE_URL}/songs/${c.slug}/`
+    url: `${SITE_URL}/songs/${c.slug}/`,
+    author: { '@type': 'Organization', name: 'MIDI Player Online', url: SITE_URL },
+    datePublished: '2024-01-15',
+    dateModified: '2026-11-07'
   };
   const faqLd = {
     '@context': 'https://schema.org',
@@ -415,6 +435,7 @@ function renderCollectionHub(c, allTracks) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">${JSON.stringify(ORG_SCHEMA)}</script>
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
     <script type="application/ld+json">${JSON.stringify(faqLd)}</script>
     <link rel="stylesheet" href="/styles.css" />
@@ -635,7 +656,7 @@ ${GTM_SNIPPET}
 // ---- update sitemap (static site: sitemap lives at repo root, not public/) ----
 const sitemapPath = join(ROOT, 'sitemap.xml');
 let sitemap = await readFile(sitemapPath, 'utf8');
-const LASTMOD = '2026-10-14';
+const LASTMOD = '2026-11-07';
 const songUrls = tracks
   .map((t) => `  <url>\n    <loc>${SITE_URL}/songs/${t.slug}/</loc>\n    <lastmod>${LASTMOD}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`)
   .join('\n');
