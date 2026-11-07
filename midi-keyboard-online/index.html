@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Play a MIDI keyboard online free — virtual piano with real-time sound, computer key input, octave shift, and sustain. No download, no install, 100% local." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/favicon-180.png" />
+    <link rel="canonical" href="https://midiplayeronline.com/midi-keyboard-online/" />
+    <meta property="og:title" content="MIDI Keyboard Online — Free Virtual Piano in Your Browser" />
+    <meta property="og:description" content="Play a MIDI keyboard online. Virtual piano with computer key input, octave shift, sustain pedal, and real-time sound. Free, no download." />
+    <meta property="og:url" content="https://midiplayeronline.com/midi-keyboard-online/" />
+    <meta property="og:image" content="https://midiplayeronline.com/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MIDI Keyboard Online — Free Virtual Piano in Your Browser" />
+    <meta name="twitter:description" content="Play a MIDI keyboard online. Virtual piano with computer key input, octave shift, and sustain. Free, no download." />
+    <title>MIDI Keyboard Online — Free Virtual Piano in Your Browser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MIDI Player Online","url":"https://midiplayeronline.com/","logo":"https://midiplayeronline.com/favicon-192.png","sameAs":["https://github.com/allenshi16/midiplayer"]}</script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"MIDI Keyboard Online","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Play a virtual MIDI keyboard online. Computer key input, octave shift, sustain, and real-time sound synthesis. Free, no download, 100% local.","url":"https://midiplayeronline.com/midi-keyboard-online/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+        "author":{"@type":"Organization","name":"MIDI Player Online","url":"https://midiplayeronline.com/"},
+        "datePublished":"2024-01-15",
+        "dateModified":"2026-11-07"}
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is a MIDI keyboard online?","acceptedAnswer":{"@type":"Answer","text":"A MIDI keyboard online is a virtual piano keyboard that runs entirely in your web browser. Instead of a physical MIDI controller connected via USB, you use your computer keyboard or mouse to play notes. The browser generates the sound in real time using the Web Audio API, so there is no plugin, no download, and no account required."}},
+        {"@type":"Question","name":"Can I use my computer keyboard to play the virtual piano?","acceptedAnswer":{"@type":"Answer","text":"Yes. The MIDI keyboard online maps your computer keyboard to piano keys: the row A S D F G H J K plays white keys (C D E F G A B C), and the row W E T Y U plays black keys (C# D# F# G# A#). Press and hold keys to sustain notes, and release to stop. You can also click or tap the on-screen keys directly."}},
+        {"@type":"Question","name":"Does the online MIDI keyboard connect to my physical MIDI controller?","acceptedAnswer":{"@type":"Answer","text":"This virtual keyboard uses your computer keyboard and mouse as input. To connect a physical MIDI controller, you would need a separate Web MIDI API application. However, the virtual piano is useful for quick composition, ear training, testing MIDI sounds, and practicing music theory without any hardware."}},
+        {"@type":"Question","name":"Is this MIDI keyboard online free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes. The online MIDI keyboard is completely free with no account, no sign-up, and no usage limit. All sound is generated locally in your browser using the Web Audio API. Nothing is uploaded to any server."}},
+        {"@type":"Question","name":"How many octaves does the virtual piano have?","acceptedAnswer":{"@type":"Answer","text":"The virtual piano displays two octaves by default. You can shift the range up or down using the octave controls to access higher or lower notes. This covers the most commonly used range for melody and chord practice."}},
+        {"@type":"Question","name":"Can I record what I play on the online keyboard?","acceptedAnswer":{"@type":"Answer","text":"The current version focuses on real-time playback and practice. To save what you play as a MIDI file, you can use the MIDI Editor Online tool on this site, which supports note input, editing, and export."}}
+      ]}
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .kb-page{max-width:960px;margin:0 auto;padding:64px 24px 90px}
+      .kb-page h1{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.06em;margin:8px 0 10px;font-weight:800}
+      .kb-page .lead{color:#5f5c55;font-size:16px;line-height:1.8;max-width:680px;margin-bottom:36px}
+      .kb-shell{background:#1a1b1b;border-radius:14px;padding:26px 26px 20px;margin-bottom:44px}
+      .kb-toolbar{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+      .kb-toolbar label{font:600 11px var(--sans);color:#aaa;letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+      .kb-toolbar select,.kb-toolbar input[type=range]{accent-color:var(--coral)}
+      .kb-toolbar select{background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:4px;padding:4px 8px;font:12px var(--mono)}
+      .kb-toolbar button{background:#2a2a2a;color:#ccc;border:1px solid #444;border-radius:4px;padding:6px 12px;font:600 11px var(--sans);cursor:pointer;transition:.15s}
+      .kb-toolbar button:hover{border-color:var(--coral);color:var(--coral)}
+      .kb-toolbar button.active{background:var(--coral);color:#fff;border-color:var(--coral)}
+      .kb-display{background:#111;border-radius:8px;padding:10px 14px;margin-bottom:14px;font:12px var(--mono);color:#8f938a;min-height:32px;display:flex;align-items:center;gap:12px}
+      .kb-display .note-name{color:var(--coral);font-size:16px;font-weight:700;min-width:60px}
+      .kb-display .midi-num{color:#666}
+      .piano{display:flex;position:relative;height:180px;user-select:none;overflow-x:auto}
+      .white-key{flex:1;min-width:38px;background:linear-gradient(180deg,#fafafa 0%,#e8e8e8 100%);border:1px solid #bbb;border-radius:0 0 6px 6px;cursor:pointer;position:relative;transition:background .08s}
+      .white-key:hover{background:linear-gradient(180deg,#f0f0f0 0%,#ddd 100%)}
+      .white-key.pressed{background:linear-gradient(180deg,var(--coral) 0%,#c85a3e 100%);border-color:#a04030}
+      .white-key .key-label{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font:600 10px var(--mono);color:#999;pointer-events:none}
+      .white-key.pressed .key-label{color:#fff}
+      .white-key .kb-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font:500 9px var(--mono);color:#ccc;background:#333;border-radius:3px;padding:1px 5px;pointer-events:none;opacity:.7}
+      .black-key{position:absolute;width:26px;height:110px;background:linear-gradient(180deg,#333 0%,#111 100%);border:1px solid #000;border-radius:0 0 4px 4px;cursor:pointer;z-index:2;transition:background .08s}
+      .black-key:hover{background:linear-gradient(180deg,#444 0%,#222 100%)}
+      .black-key.pressed{background:linear-gradient(180deg,var(--coral) 0%,#a04030 100%)}
+      .black-key .key-label{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font:600 9px var(--mono);color:#666;pointer-events:none}
+      .black-key.pressed .key-label{color:#fff}
+      .black-key .kb-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font:500 8px var(--mono);color:#aaa;background:#555;border-radius:2px;padding:1px 4px;pointer-events:none}
+      .kb-hint-row{display:flex;justify-content:center;gap:6px;margin-top:12px;font:11px var(--mono);color:#666}
+      .kb-hint-row kbd{background:#333;color:#aaa;padding:2px 7px;border-radius:3px;border:1px solid #555;font-size:10px}
+      .content h2{font-size:24px;letter-spacing:-.04em;margin:44px 0 14px;font-weight:700}
+      .content h2:first-of-type{margin-top:0}
+      .content p{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px}
+      .content strong{color:var(--ink);font-weight:700}
+      .content ul{color:#5f5c55;line-height:1.85;font-size:14px;max-width:720px;margin:0 0 16px;padding-left:1.5em}
+      .content li{margin-bottom:6px}
+      .faq-section{max-width:720px;margin-top:50px}
+      .faq-section h2{font-size:22px;margin-bottom:20px}
+      .faq-item{border-left:2px solid var(--coral);padding:12px 0 12px 20px;margin-bottom:18px}
+      .faq-item h3{font-size:15px;margin:0 0 6px;letter-spacing:-.02em}
+      .faq-item p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
+      .back-home{display:inline-block;margin-bottom:26px;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none}
+      .back-home:hover{color:var(--coral)}
+      .tool-nav{display:flex;gap:16px;flex-wrap:wrap;margin:36px 0 0}
+      .tool-nav a{border:1px solid var(--line);border-radius:8px;padding:12px 16px;text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);transition:.15s}
+      .tool-nav a:hover{border-color:var(--coral)}
+      @media(max-width:700px){.kb-page{padding:40px 16px 60px}.piano{height:140px}.white-key{min-width:28px}.black-key{width:20px;height:80px}}
+    </style>
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K34XB9WJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MIDI Player Online home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>MIDI<span class="brand-dim">PLAYER ONLINE</span></span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/">Player</a><a href="/songs/">Songs</a></nav>
+      </header>
+      <main class="kb-page">
+        <a class="back-home" href="/">← Back to Online MIDI Player</a>
+        <h1>MIDI Keyboard Online</h1>
+        <p class="lead">Play a virtual piano keyboard right in your browser. Use your computer keyboard, click the keys, or tap on mobile. No download, no install, no account — just open and play.</p>
+
+        <section class="kbshell" aria-label="Virtual MIDI keyboard">
+          <div class="kb-toolbar">
+            <label>Octave <select id="octaveSelect"><option value="2">C2–B3</option><option value="3" selected>C3–B4</option><option value="4">C4–B5</option><option value="5">C5–B6</option></select></label>
+            <label>Sound <select id="soundSelect"><option value="sine">Sine</option><option value="triangle" selected>Triangle</option><option value="square">Square</option><option value="sawtooth">Saw</option></select></label>
+            <label>Vol <input type="range" id="volumeSlider" min="0" max="100" value="60" /></label>
+            <button id="sustainBtn" aria-pressed="false">Sustain: OFF</button>
+            <button id="labelsBtn" class="active" aria-pressed="true">Labels</button>
+          </div>
+          <div class="kb-display">
+            <span class="note-name" id="noteName">—</span>
+            <span class="midi-num" id="midiNum"></span>
+            <span id="freqDisplay"></span>
+          </div>
+          <div class="piano" id="piano"></div>
+          <div class="kb-hint-row">
+            <span>White:</span> <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><kbd>F</kbd><kbd>G</kbd><kbd>H</kbd><kbd>J</kbd><kbd>K</kbd>
+            <span style="margin-left:12px">Black:</span> <kbd>W</kbd><kbd>E</kbd><kbd>T</kbd><kbd>Y</kbd><kbd>U</kbd>
+          </div>
+        </section>
+
+        <div class="content">
+          <h2>Play a MIDI Keyboard Online — No Download Required</h2>
+
+          <p><strong>A MIDI keyboard online lets you play piano notes directly in your web browser</strong> without installing any software or connecting physical hardware. The virtual keyboard above maps to your computer's keyboard keys, so you can start playing within seconds of opening the page. Each key press generates real-time audio using the Web Audio API — there is no pre-recorded sample streaming, and nothing is uploaded to any server.</p>
+
+          <p>This tool is designed for musicians, students, producers, and anyone who needs a quick piano reference. Whether you want to check how a chord sounds, practice ear training, compose a melody idea, or test MIDI note values, the online MIDI keyboard gives you instant access to a fully playable virtual piano.</p>
+
+          <h2>How to Use the Virtual Piano Keyboard</h2>
+
+          <p>The virtual piano above displays two octaves of keys — white keys for the natural notes (C D E F G A B) and black keys for the sharps and flats. You can play notes in three ways:</p>
+
+          <ul>
+            <li><strong>Computer keyboard:</strong> The row A S D F G H J K maps to the white keys (C D E F G A B C), and W E T Y U maps to the black keys (C# D# F# G# A#). Press and hold a key to sustain the note; release to stop.</li>
+            <li><strong>Mouse click:</strong> Click any key on the screen to play its note. Click and hold to sustain.</li>
+            <li><strong>Touch (mobile):</strong> Tap the keys on the screen. The keyboard is responsive and works on phones and tablets.</li>
+          </ul>
+
+          <p>The display bar above the keyboard shows the note name (e.g., C4), the MIDI note number (e.g., 60), and the frequency in hertz. This is useful for music theory study and for understanding how MIDI maps pitches to numbers.</p>
+
+          <h2>Octave Shift and Sound Selection</h2>
+
+          <p>Use the <strong>Octave</strong> dropdown to shift the keyboard range from C2 up to C6. The default is C3–B4, which places middle C (C4) at the boundary — the most useful range for melody and chord practice. Shift down to C2 for bass lines, or up to C5 for high-register exploration.</p>
+
+          <p>The <strong>Sound</strong> selector lets you choose the waveform used for synthesis: Sine (pure, soft tone), Triangle (warm, mellow), Square (buzzy, retro), or Sawtooth (bright, rich harmonics). Each waveform has a different harmonic character, which helps you hear how timbre affects the same pitch.</p>
+
+          <p>The <strong>Sustain</strong> button toggles a sustain mode: when active, notes continue ringing after you release the key, simulating a piano sustain pedal. Press it again to disable.</p>
+
+          <h2>Who Uses an Online MIDI Keyboard?</h2>
+
+          <p><strong>Music students</strong> use the virtual piano for ear training, interval recognition, and chord identification. Being able to see the note name and MIDI number while hearing the pitch accelerates music theory learning.</p>
+
+          <p><strong>Songwriters and producers</strong> use it to quickly audition chord progressions or melody ideas without opening a DAW. When you have a musical idea in your head, the online MIDI keyboard lets you test it in seconds.</p>
+
+          <p><strong>Piano teachers</strong> use it during remote lessons to demonstrate intervals, chords, and scales. Screen-sharing the virtual keyboard gives students a clear visual reference.</p>
+
+          <p><strong>Developers</strong> building music applications use it to test Web Audio API integration, verify MIDI note mappings, or prototype instrument interfaces before building custom UIs.</p>
+
+          <h2>MIDI Keyboard Online vs. Physical MIDI Controllers</h2>
+
+          <p>A physical MIDI controller is a hardware keyboard connected to your computer via USB or MIDI cable. It offers weighted keys, velocity sensitivity, pitch bend wheels, and tactile feedback that a virtual keyboard cannot replicate. However, physical controllers cost money, require setup, and are not always available.</p>
+
+          <p>The <strong>MIDI keyboard online</strong> fills the gap when you need a piano reference but do not have hardware handy. It runs in any modern browser, requires zero setup, and is always available. For composition sketching, ear training, music theory study, and quick note checks, the virtual piano is faster and more convenient than booting up a DAW and connecting a controller.</p>
+
+          <h2>More Free MIDI Tools</h2>
+
+          <div class="tool-nav">
+            <a href="/mp3-to-midi/">MP3 to MIDI</a>
+            <a href="/midi-to-mp3/">MIDI to MP3</a>
+            <a href="/midi-editor-online/">MIDI Editor</a>
+            <a href="/online-midi-visualizer/">MIDI Visualizer</a>
+            <a href="/midi-to-piano-sheet/">MIDI to Sheet</a>
+            <a href="/midi-viewer/">MIDI Viewer</a>
+            <a href="/songs/">Song Library</a>
+          </div>
+
+          <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+              <h3>What is a MIDI keyboard online?</h3>
+              <p>A MIDI keyboard online is a virtual piano keyboard that runs entirely in your web browser. Instead of a physical MIDI controller connected via USB, you use your computer keyboard or mouse to play notes. The browser generates the sound in real time using the Web Audio API, so there is no plugin, no download, and no account required.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Can I use my computer keyboard to play the virtual piano?</h3>
+              <p>Yes. The MIDI keyboard online maps your computer keyboard to piano keys: the row A S D F G H J K plays white keys (C D E F G A B C), and the row W E T Y U plays black keys (C# D# F# G# A#). Press and hold keys to sustain notes, and release to stop. You can also click or tap the on-screen keys directly.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Does the online MIDI keyboard connect to my physical MIDI controller?</h3>
+              <p>This virtual keyboard uses your computer keyboard and mouse as input. To connect a physical MIDI controller, you would need a separate Web MIDI API application. However, the virtual piano is useful for quick composition, ear training, testing MIDI sounds, and practicing music theory without any hardware.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Is this MIDI keyboard online free to use?</h3>
+              <p>Yes. The online MIDI keyboard is completely free with no account, no sign-up, and no usage limit. All sound is generated locally in your browser using the Web Audio API. Nothing is uploaded to any server.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>How many octaves does the virtual piano have?</h3>
+              <p>The virtual piano displays two octaves by default. You can shift the range up or down using the octave controls to access higher or lower notes. This covers the most commonly used range for melody and chord practice.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Can I record what I play on the online keyboard?</h3>
+              <p>The current version focuses on real-time playback and practice. To save what you play as a MIDI file, you can use the <a href="/midi-editor-online/">MIDI Editor Online</a> tool on this site, which supports note input, editing, and export.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="ad-slot" aria-hidden="true"></div>
+      <footer><span>© 2026 MIDI PLAYER ONLINE</span><span>Made for curious ears.</span><a href="/songs/">Public-domain songs</a><span>·</span><a href="https://iammusicfont.app/" rel="noopener">I AM MUSIC Font ↗</a><span>·</span><a href="/privacy.html">Privacy</a><span>v0.1 beta</span></footer>
+    </div>
+    <script src="/ads.js" defer></script>
+    <script src="/ga.js" defer></script>
+    <script>
+    (function() {
+      const NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+      const WHITE_NOTES = [0,2,4,5,7,9,11]; // C D E F G A B
+      const BLACK_NOTES = [1,3,6,8,10]; // C# D# F# G# A#
+      const BLACK_POS = [0.6,1.6,3.5,4.5,5.5]; // relative positions within octave
+      const KB_WHITE = ['a','s','d','f','g','h','j','k'];
+      const KB_BLACK = ['w','e','t','y','u'];
+
+      let audioCtx = null;
+      let baseOctave = 3;
+      let waveform = 'triangle';
+      let volume = 0.6;
+      let sustain = false;
+      let showLabels = true;
+      const activeOscs = {};
+
+      function getAudioCtx() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        return audioCtx;
+      }
+
+      function midiToFreq(midi) { return 440 * Math.pow(2, (midi - 69) / 12); }
+
+      function playNote(midi) {
+        if (activeOscs[midi]) return;
+        const ctx = getAudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = waveform;
+        osc.frequency.value = midiToFreq(midi);
+        gain.gain.value = 0;
+        gain.gain.linearRampToValueAtTime(volume * 0.3, ctx.currentTime + 0.02);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        activeOscs[midi] = { osc, gain };
+        updateDisplay(midi);
+        highlightKey(midi, true);
+      }
+
+      function stopNote(midi) {
+        const entry = activeOscs[midi];
+        if (!entry) return;
+        const ctx = getAudioCtx();
+        if (sustain) {
+          entry.gain.gain.cancelScheduledValues(ctx.currentTime);
+          entry.gain.gain.setValueAtTime(entry.gain.gain.value, ctx.currentTime);
+          entry.gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.8);
+          const o = entry.osc;
+          setTimeout(() => { try { o.stop(); } catch(e){} }, 1000);
+        } else {
+          entry.gain.gain.cancelScheduledValues(ctx.currentTime);
+          entry.gain.gain.setValueAtTime(entry.gain.gain.value, ctx.currentTime);
+          entry.gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.05);
+          const o = entry.osc;
+          setTimeout(() => { try { o.stop(); } catch(e){} }, 100);
+        }
+        delete activeOscs[midi];
+        highlightKey(midi, false);
+      }
+
+      function updateDisplay(midi) {
+        const octave = Math.floor(midi / 12) - 1;
+        const name = NOTE_NAMES[midi % 12];
+        document.getElementById('noteName').textContent = name + octave;
+        document.getElementById('midiNum').textContent = 'MIDI ' + midi;
+        document.getElementById('freqDisplay').textContent = midiToFreq(midi).toFixed(1) + ' Hz';
+      }
+
+      function highlightKey(midi, on) {
+        const el = document.querySelector('[data-midi="' + midi + '"]');
+        if (el) el.classList.toggle('pressed', on);
+      }
+
+      function buildKeyboard() {
+        const piano = document.getElementById('piano');
+        piano.innerHTML = '';
+        const startMidi = (baseOctave + 1) * 12; // C baseOctave
+        const whiteCount = 14; // 2 octaves of white keys
+
+        for (let i = 0; i < whiteCount; i++) {
+          const octaveIdx = Math.floor(i / 7);
+          const noteIdx = WHITE_NOTES[i % 7];
+          const midi = startMidi + octaveIdx * 12 + noteIdx;
+          const key = document.createElement('div');
+          key.className = 'white-key';
+          key.dataset.midi = midi;
+          if (showLabels) {
+            const label = document.createElement('span');
+            label.className = 'key-label';
+            label.textContent = NOTE_NAMES[noteIdx] + (baseOctave + octaveIdx);
+            key.appendChild(label);
+          }
+          if (i < KB_WHITE.length) {
+            const hint = document.createElement('span');
+            hint.className = 'kb-hint';
+            hint.textContent = KB_WHITE[i].toUpperCase();
+            key.appendChild(hint);
+          }
+          key.addEventListener('mousedown', (e) => { e.preventDefault(); playNote(midi); });
+          key.addEventListener('mouseup', () => stopNote(midi));
+          key.addEventListener('mouseleave', () => stopNote(midi));
+          key.addEventListener('touchstart', (e) => { e.preventDefault(); playNote(midi); }, { passive: false });
+          key.addEventListener('touchend', () => stopNote(midi));
+          piano.appendChild(key);
+        }
+
+        const whiteWidth = 100 / whiteCount;
+        for (let i = 0; i < 10; i++) {
+          const octaveIdx = Math.floor(i / 5);
+          const noteIdx = BLACK_NOTES[i % 5];
+          const midi = startMidi + octaveIdx * 12 + noteIdx;
+          const pos = i % 5;
+          const leftPct = (octaveIdx * 7 + WHITE_NOTES.indexOf(noteIdx) + 0.55) * whiteWidth;
+          const key = document.createElement('div');
+          key.className = 'black-key';
+          key.dataset.midi = midi;
+          key.style.left = leftPct + '%';
+          if (showLabels) {
+            const label = document.createElement('span');
+            label.className = 'key-label';
+            label.textContent = NOTE_NAMES[noteIdx];
+            key.appendChild(label);
+          }
+          if (pos < KB_BLACK.length) {
+            const hint = document.createElement('span');
+            hint.className = 'kb-hint';
+            hint.textContent = KB_BLACK[pos].toUpperCase();
+            key.appendChild(hint);
+          }
+          key.addEventListener('mousedown', (e) => { e.preventDefault(); playNote(midi); });
+          key.addEventListener('mouseup', () => stopNote(midi));
+          key.addEventListener('mouseleave', () => stopNote(midi));
+          key.addEventListener('touchstart', (e) => { e.preventDefault(); playNote(midi); }, { passive: false });
+          key.addEventListener('touchend', () => stopNote(midi));
+          piano.appendChild(key);
+        }
+      }
+
+      const kbMap = {};
+      function buildKbMap() {
+        const startMidi = (baseOctave + 1) * 12;
+        KB_WHITE.forEach((k, i) => { kbMap[k] = startMidi + Math.floor(i / 7) * 12 + WHITE_NOTES[i % 7]; });
+        KB_BLACK.forEach((k, i) => { kbMap[k] = startMidi + Math.floor(i / 5) * 12 + BLACK_NOTES[i % 5]; });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.repeat) return;
+        const k = e.key.toLowerCase();
+        if (kbMap[k] !== undefined) { e.preventDefault(); playNote(kbMap[k]); }
+      });
+      document.addEventListener('keyup', (e) => {
+        const k = e.key.toLowerCase();
+        if (kbMap[k] !== undefined) { e.preventDefault(); stopNote(kbMap[k]); }
+      });
+
+      document.getElementById('octaveSelect').addEventListener('change', (e) => {
+        Object.keys(activeOscs).forEach(m => stopNote(Number(m)));
+        baseOctave = Number(e.target.value);
+        buildKbMap();
+        buildKeyboard();
+      });
+      document.getElementById('soundSelect').addEventListener('change', (e) => { waveform = e.target.value; });
+      document.getElementById('volumeSlider').addEventListener('input', (e) => { volume = e.target.value / 100; });
+      document.getElementById('sustainBtn').addEventListener('click', (e) => {
+        sustain = !sustain;
+        e.target.textContent = 'Sustain: ' + (sustain ? 'ON' : 'OFF');
+        e.target.classList.toggle('active', sustain);
+        e.target.setAttribute('aria-pressed', sustain);
+      });
+      document.getElementById('labelsBtn').addEventListener('click', (e) => {
+        showLabels = !showLabels;
+        e.target.classList.toggle('active', showLabels);
+        e.target.setAttribute('aria-pressed', showLabels);
+        buildKeyboard();
+      });
+
+      buildKbMap();
+      buildKeyboard();
+    })();
+    </script>
+  </body>
+</html>
