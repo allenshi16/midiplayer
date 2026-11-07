@@ -19,6 +19,14 @@ const SITE_URL = 'https://midiplayeronline.com';
 const ADSENSE_CLIENT = (process.env.ADSENSE_CLIENT || '').trim();
 // GA4 measurement id (e.g. G-XXXXXXXXXX). Empty = analytics disabled.
 const GA_ID = (process.env.GA_ID || '').trim();
+const GTM_SNIPPET = `    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K34XB9WJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+    <!-- End Google Tag Manager -->`;
 // Static site: webroot IS the repo root (index.html lives at root, no build step).
 // Songs must be generated here so they deploy with the site.
 const OUT_DIR = join(ROOT, 'songs');
@@ -207,6 +215,7 @@ function renderPage(track, prev, next) {
       .back-home:hover{color:var(--coral)}
       @media(max-width:700px){.faq-grid{grid-template-columns:1fr;gap:20px}.song-nav{flex-direction:column;gap:10px}}
     </style>
+${GTM_SNIPPET}
   </head>
   <body>
     <div class="shell">
@@ -327,6 +336,7 @@ function renderHub(tracks) {
       .back-home:hover{color:var(--coral)}
       @media(max-width:700px){.song-cards{grid-template-columns:1fr}}
     </style>
+${GTM_SNIPPET}
   </head>
   <body>
     <div class="shell">
@@ -426,6 +436,7 @@ function renderCollectionHub(c, allTracks) {
       .back-home:hover{color:var(--coral)}
       @media(max-width:700px){.song-cards{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr;gap:20px}}
     </style>
+${GTM_SNIPPET}
   </head>
   <body>
     <div class="shell">
@@ -612,6 +623,7 @@ await writeFile(join(OUT_DIR, 'songs-index.html'), `<!doctype html>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${SITE_URL}/songs/" />
     <link rel="stylesheet" href="/styles.css" />
+${GTM_SNIPPET}
   </head>
   <body>
 <p style="padding:40px;font-family:sans-serif">This page has moved to <a href="/songs/">/songs/</a>.</p>
