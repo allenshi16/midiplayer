@@ -192,8 +192,10 @@ function renderPage(track, prev, next) {
     <meta property="og:url" content="${SITE_URL}/songs/${track.slug}/" />
     <meta property="og:image" content="${SITE_URL}/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ovsvoyager" />
     <meta name="twitter:title" content="${esc(track.title)} — Play Online | MIDI Player Online" />
     <meta name="twitter:description" content="Play ${esc(track.title)} in your browser. No upload, no account, no install." />
+    <meta name="twitter:image" content="${SITE_URL}/og-image.png" />
     <title>${esc(track.title)} — Play Online | MIDI Player Online</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -330,6 +332,11 @@ function renderHub(tracks) {
     <meta property="og:description" content="Hear famous public-domain melodies in your browser. Free, private, no install." />
     <meta property="og:url" content="${SITE_URL}/songs/" />
     <meta property="og:image" content="${SITE_URL}/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ovsvoyager" />
+    <meta name="twitter:title" content="Public Domain Songs — Play Online | MIDI Player Online" />
+    <meta name="twitter:description" content="Hear famous public-domain melodies in your browser. Free, private, no install." />
+    <meta name="twitter:image" content="${SITE_URL}/og-image.png" />
     <title>Public Domain Songs — Play Online | MIDI Player Online</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -431,6 +438,11 @@ function renderCollectionHub(c, allTracks) {
     <meta property="og:description" content="${esc(c.ogDescription)}" />
     <meta property="og:url" content="${SITE_URL}/songs/${c.slug}/" />
     <meta property="og:image" content="${SITE_URL}/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ovsvoyager" />
+    <meta name="twitter:title" content="${esc(c.pageTitle)}" />
+    <meta name="twitter:description" content="${esc(c.ogDescription)}" />
+    <meta name="twitter:image" content="${SITE_URL}/og-image.png" />
     <title>${esc(c.pageTitle)}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
